@@ -1,0 +1,61 @@
+{
+    "welcome": "Welcome to JORA Studio, where every project begins with a vision — and transforms into a space defined by precision, beauty, and quiet sophistication.",
+    "nav": {
+        "objects": "Objects",
+        "about": "About",
+        "editions": "Editions",
+        "contact": "Contact"
+    },
+    "project": {
+        "location": "Location:",
+        "status": "Status:",
+        "area": "Area:",
+        "year": "Year:"
+    },
+    "contact": {
+        "title": "Contact Us",
+        "description": "We'd love to hear from you. Whether you're planning a new project or exploring ideas, our team will guide you through each step — from concept to completion.",
+        "infoTitle": "Info",
+        "phone": "Phone",
+        "email": "Email",
+        "name": "Name",
+        "surname": "Surname",
+        "projectLocation": "Project Location",
+        "projectType": "Type Of Project",
+        "briefDescription": "Brief Project Description",
+        "selectType": "Select a type",
+        "types": {
+            "residential": "Residential",
+            "partnerships": "Partnerships",
+            "commercial": "Commercial",
+            "other": "Other"
+        },
+        "disclaimer": "By submitting your data, you are giving us permission to use the information to assist you and contact you. Don't worry, we can reassure the entirety of your data is secure.",
+        "submit": "Submit",
+        "sending": "Sending...",
+        "successMessage": "Thanks! We received your message.",
+        "errorMessage": "Sorry, something went wrong. Please try again later.",
+        "validationError": "Please fill name, email, project description, and select a project type.",
+        "errors": {
+            "nameRequired": "Name is required",
+            "emailRequired": "Email is required",
+            "locationRequired": "Project location is required",
+            "projectTypeRequired": "Please select a project type",
+            "descriptionRequired": "Project description is required"
+        }
+    },
+    "about": {
+        "title": "Jora Studio.",
+        "description": "**JORA Studio** is led by Rachel Cambier and Joaquim Pinheiro Torres, an international duo of designers/architects with **Belgian and Portuguese** roots.\n\nTogether, they bring over 25 years of combined experience in architecture, interior design, and bespoke furniture creation.\n\nTheir new collaboration merges two distinct design cultures — the refined precision of Northern Europe and the natural warmth of the South — resulting in a distinctive aesthetic that is both **timeless and contemporary**.\n\nGrounded in architecture and guided by a deep sensitivity to materials, light, and proportion, **JORA Studio** crafts environments that feel effortless yet meticulously composed.\n\nTheir shared philosophy is rooted in quiet luxury: an approach that values **restraint**, **authenticity**, and **craftsmanship** over excess.\n\nOperating from Algarve, Portugal and working on international projects, **JORA Studio** delivers comprehensive design services that integrate architecture, interiors, and custom design into one seamless narrative.",
+        "rachel": {
+            "name": "Rachel",
+            "role": "CEO & Interior Architect",
+            "location": "Faro, Algarve"
+        },
+        "joaquim": {
+            "name": "Joaquim",
+            "role": "CEO & Architect",
+            "location": "Faro, Algarve"
+        }
+    }
+}

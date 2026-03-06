@@ -1,0 +1,24 @@
+@import './base.css';
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Sedgwick+Ave+Display&display=swap');
+
+:root {
+  --header-h: 95px; /* adjust to your real header height */
+}
+
+.jora {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  background: #fff;
+  background-size: cover;
+  background-position: center;
+  color: var(--color-text);
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+.v-application,
+.v-application__wrap {
+  background: #fff !important;
+}
