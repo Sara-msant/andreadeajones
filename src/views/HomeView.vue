@@ -3,33 +3,38 @@
     <section v-if="featuredProject" class="home">
       <section class="home-hero">
         <div class="home-brand">
-          <span>Andrea</span>
-          <span>Dea</span>
-          <span>Jones.</span>
+          <span>{{ t('home.brand.line1') }}</span>
+          <span>{{ t('home.brand.line2') }}</span>
+          <span>{{ t('home.brand.line3') }}</span>
         </div>
 
         <article class="home-intro-card">
           <div class="home-intro-photos">
-            <img v-no-right-click :src="portraitImage" alt="Andrea portrait" draggable="false" />
+            <img
+              v-no-right-click
+              :src="portraitImage"
+              :alt="t('home.portraitAlt')"
+              draggable="false"
+            />
           </div>
 
           <div class="home-intro-copy">
-            <p class="intro-yo">Yo,</p>
+            <p class="intro-yo">{{ t('home.intro.yo') }}</p>
             <div class="intro-spacer" aria-hidden="true"></div>
 
             <div class="intro-im-row">
               <div aria-hidden="true"></div>
-              <p class="intro-im">I'm Andrea.</p>
+              <p class="intro-im">{{ t('home.intro.im') }}</p>
             </div>
 
             <div class="intro-spacer" aria-hidden="true"></div>
-            <p class="intro-and">And I did</p>
-            <p class="intro-this">this.</p>
+            <p class="intro-and">{{ t('home.intro.andIDid') }}</p>
+            <p class="intro-this">{{ t('home.intro.this') }}</p>
           </div>
         </article>
       </section>
 
-      <p class="home-caption">An object with structure and attitude.</p>
+      <p class="home-caption">{{ t('home.caption') }}</p>
 
       <img
         v-no-right-click
@@ -42,42 +47,27 @@
       <section class="home-actions">
         <button class="home-explore" type="button" @click="goToObjectDetail">
           <span class="home-explore-name">{{ featuredProject.title }}.</span>
-          <span class="home-explore-link">Explore &nbsp;→</span>
+          <span class="home-explore-link">{{ t('home.explore') }} &nbsp;→</span>
         </button>
 
-        <button class="home-inquiry" type="button" @click="goToContact">Purshase // Inquiry</button>
+        <button class="home-inquiry" type="button" @click="goToContact">
+          {{ t('home.purchaseInquiry') }}
+        </button>
       </section>
-
-      <footer class="home-footer">
-        <div class="home-socials">
-          <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer"
-            >Instagram</a
-          >
-          <a href="https://www.tiktok.com/" target="_blank" rel="noopener noreferrer">TikTok</a>
-        </div>
-
-        <p class="home-copyright">© Andrea Dea Jones. All rights reserved.</p>
-
-        <form class="home-subscribe" @submit.prevent>
-          <label class="home-subscribe-title" for="home-email">Subscribe</label>
-          <div class="home-subscribe-row">
-            <input id="home-email" type="email" placeholder="E-Mail *" />
-            <button type="submit">Subscribe</button>
-          </div>
-        </form>
-      </footer>
     </section>
   </PageWrapper>
 </template>
 
 <script setup lang="ts">
 import { computed } from 'vue'
+import { useI18n } from 'vue-i18n'
 import { useRouter } from 'vue-router'
 import PageWrapper from '@/components/PageWrapper.vue'
 import { useObjects } from '@/composables/useObjects'
 import portraitImage from '@/assets/home/rachel.png'
 
 const router = useRouter()
+const { t } = useI18n()
 const { objects } = useObjects()
 
 // Keep home hero object in sync with the first object shown on the Objects page.
@@ -236,84 +226,8 @@ const goToContact = () => {
   padding: 0.55rem 1rem;
 }
 
-.home-footer {
-  margin-top: 12rem;
-  display: grid;
-  grid-template-columns: 1fr auto 1fr;
-  align-items: end;
-  gap: 1.8rem;
-}
-
-.home-socials {
-  display: flex;
-  flex-direction: column;
-  gap: 0.45rem;
-}
-
-.home-socials a {
-  text-decoration: none;
-  color: var(--color-text);
-  text-transform: uppercase;
-  font-size: clamp(2.2rem, 4.1vw, 5.3rem);
-  line-height: 0.95;
-  font-weight: 700;
-}
-
-.home-copyright {
-  font-size: 0.92rem;
-  white-space: nowrap;
-}
-
-.home-subscribe {
-  justify-self: end;
-  width: 430px;
-  padding: 0.75rem 0.95rem;
-  background: var(--color-accent);
-}
-
-.home-subscribe-title {
-  text-transform: uppercase;
-  font-size: 2.05rem;
-  font-weight: 700;
-}
-
-.home-subscribe-row {
-  margin-top: 0.55rem;
-  display: flex;
-  align-items: center;
-  gap: 0.8rem;
-}
-
-.home-subscribe-row input {
-  flex: 1;
-  border: none;
-  border-bottom: 2px solid var(--color-text);
-  background: transparent;
-  padding: 0.2rem 0;
-  font-family: var(--font-body);
-  font-size: 1.2rem;
-}
-
-.home-subscribe-row input:focus {
-  outline: none;
-}
-
-.home-subscribe-row button {
-  border: 2px solid var(--color-text);
-  border-radius: 10px;
-  background: transparent;
-  color: var(--color-text);
-  cursor: pointer;
-  text-transform: uppercase;
-  font-family: var(--font-body);
-  font-size: 1.1rem;
-  padding: 0.2rem 0.75rem;
-}
-
 .home-explore:hover,
-.home-inquiry:hover,
-.home-socials a:hover,
-.home-subscribe-row button:hover {
+.home-inquiry:hover {
   background: var(--color-text);
   color: var(--color-accent);
 }
@@ -336,20 +250,6 @@ const goToContact = () => {
     margin-top: 4rem;
   }
 
-  .home-footer {
-    margin-top: 5rem;
-    grid-template-columns: 1fr;
-    gap: 1.3rem;
-  }
-
-  .home-copyright {
-    white-space: normal;
-  }
-
-  .home-subscribe {
-    justify-self: start;
-    width: min(100%, 430px);
-  }
 }
 
 @media (max-width: 768px) {
@@ -406,16 +306,5 @@ const goToContact = () => {
     font-size: 1.05rem;
   }
 
-  .home-socials a {
-    font-size: 3.8rem;
-  }
-
-  .home-subscribe {
-    width: 100%;
-  }
-
-  .home-subscribe-title {
-    font-size: 1.2rem;
-  }
 }
 </style>

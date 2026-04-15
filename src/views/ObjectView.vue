@@ -6,16 +6,18 @@
           <img
             v-no-right-click
             :src="heroImage"
-            :alt="objectItem.title + ' hero image'"
+            :alt="t('object.heroAlt', { title: objectItem.title })"
             draggable="false"
           />
         </figure>
 
         <aside class="object-specs" v-if="objectItem.dimensions || objectItem.weight">
           <p class="spec-title">{{ objectItem.title }}.</p>
-          <p class="spec-subtitle">Dimensions :</p>
+          <p class="spec-subtitle">{{ t('object.dimensions') }}</p>
           <p v-if="objectItem.dimensions" class="spec-line">{{ objectItem.dimensions }}</p>
-          <p v-if="objectItem.weight" class="spec-line">Weight : {{ objectItem.weight }}</p>
+          <p v-if="objectItem.weight" class="spec-line">
+            {{ t('object.weight') }} {{ objectItem.weight }}
+          </p>
         </aside>
       </section>
 
@@ -30,7 +32,7 @@
           <img
             v-no-right-click
             :src="imageForParagraph(index + 1)"
-            :alt="objectItem.title + ' image ' + (index + 2)"
+            :alt="t('object.imageAlt', { title: objectItem.title, index: index + 2 })"
             draggable="false"
           />
         </figure>
@@ -40,18 +42,20 @@
     </section>
 
     <section v-else class="object-not-found">
-      <p>Object not found.</p>
+      <p>{{ t('object.notFound') }}</p>
     </section>
   </PageWrapper>
 </template>
 
 <script setup lang="ts">
 import { computed } from 'vue'
+import { useI18n } from 'vue-i18n'
 import { useRoute } from 'vue-router'
 import { useObjects } from '@/composables/useObjects'
 import PageWrapper from '@/components/PageWrapper.vue'
 
 const route = useRoute()
+const { t } = useI18n()
 const { getObjectBySlug } = useObjects()
 
 const slug = computed(() => route.params.slug as string)

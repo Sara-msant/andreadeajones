@@ -26,13 +26,30 @@ const metaModules = import.meta.glob('@/assets/objects/*/meta-*.json', {
 // load all images inside each project folder
 const imageModules = import.meta.glob('@/assets/objects/*/*.{png,jpg,jpeg,webp}', { eager: true })
 
+type PortfolioMeta = {
+  slug?: string
+  title?: string
+  type?: string
+  location?: string
+  area?: string
+  year?: string | number
+  status?: string
+  description?: string
+  order?: number
+}
+
+type PortfolioConfig = {
+  order?: number
+  slug?: string
+}
+
 export const usePortfolioProjects = () => {
   const { locale } = useI18n()
   const projects = computed<PortfolioProject[]>(() => {
     // folder -> meta (language-specific)
-    const metaByFolder = new Map<string, any>()
+    const metaByFolder = new Map<string, PortfolioMeta>()
     // Build config from consolidated meta.json
-    const configByFolder = new Map<string, any>()
+    const configByFolder = new Map<string, PortfolioConfig>()
     portfolioMeta.projects.forEach((project) => {
       configByFolder.set(project.folder, { order: project.order, slug: project.slug })
     })
@@ -41,7 +58,13 @@ export const usePortfolioProjects = () => {
       const parts = path.split('/')
       const folder = parts[parts.length - 2] as string // the project folder name
       const file = parts[parts.length - 1] as string // meta-en.json, meta-fr.json, etc.
-      const meta = (mod as any).default ?? mod
+      const metaCandidate = (mod as { default?: unknown }).default ?? mod
+
+      if (!metaCandidate || typeof metaCandidate !== 'object') {
+        return
+      }
+
+      const meta = metaCandidate as PortfolioMeta
 
       if (file.startsWith('meta-')) {
         // Language-specific content
@@ -59,7 +82,7 @@ export const usePortfolioProjects = () => {
     >()
 
     Object.entries(imageModules).forEach(([path, mod]) => {
-      const src = (mod as any).default ?? (mod as string)
+      const src = ((mod as { default?: string }).default ?? mod) as string
       const parts = path.split('/')
       const folder = parts[parts.length - 2] as string
       const file = parts[parts.length - 1] as string

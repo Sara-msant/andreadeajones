@@ -1,3 +1,4 @@
-User-agent: *
+﻿User-agent: *
 Allow: /
-Sitemap: https://www.jora-studio.com/sitemap.xml
+Sitemap: https://www.andrea-studio.com/sitemap.xml
+

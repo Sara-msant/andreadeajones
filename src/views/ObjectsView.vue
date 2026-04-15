@@ -1,251 +1,153 @@
 <template>
   <PageWrapper>
     <div class="portfolio-grid-wrapper">
-      <Carousel
-        :key="isMobile ? 'mobile' : 'desktop'"
-        class="portfolio-carousel"
-        v-bind="carouselConfig"
+      <section class="objects-intro" :aria-label="t('objects.introAria')">
+        <p>
+          {{ t('objects.intro') }}
+        </p>
+      </section>
+
+      <div
+        class="portfolio-grid"
+        :class="{ 'single-object': objects.length === 1 }"
       >
-        <Slide v-for="item in objects" :key="item.slug">
-          <article class="portfolio-card" @click="goToObject(item)">
+        <article
+          v-for="item in objects"
+          :key="item.slug"
+          class="portfolio-card"
+          @click="goToObject(item)"
+        >
+          <div class="portfolio-card-image">
             <img v-no-right-click :src="item.cover" :alt="item.title" draggable="false" />
+          </div>
 
-            <div class="portfolio-card-overlay">
-              <div class="portfolio-card-overlay-content">
-                <div class="portfolio-card-title">{{ item.title }}</div>
-                <div v-if="item.dimensions || item.weight" class="portfolio-card-specs">
-                  <p v-if="item.dimensions">Dimensions: {{ item.dimensions }}</p>
-                  <p v-if="item.weight">Weight: {{ item.weight }}</p>
-                </div>
-              </div>
+          <div class="portfolio-card-info">
+            <p class="portfolio-card-title">{{ item.title }}</p>
+            <div v-if="item.dimensions || item.weight" class="portfolio-card-specs">
+              <p v-if="item.dimensions">{{ t('objects.dimensions') }} {{ item.dimensions }}</p>
+              <p v-if="item.weight">{{ t('objects.weight') }} {{ item.weight }}</p>
             </div>
-          </article>
-        </Slide>
-
-        <template #addons>
-          <Navigation />
-        </template>
-      </Carousel>
+          </div>
+        </article>
+      </div>
     </div>
   </PageWrapper>
 </template>
 
 <script setup lang="ts">
-import { computed, ref } from 'vue'
+import { useI18n } from 'vue-i18n'
 import { useRouter } from 'vue-router'
 import PageWrapper from '@/components/PageWrapper.vue'
 import { useObjects, type ObjectItem } from '@/composables/useObjects'
 
-import 'vue3-carousel/carousel.css'
-import { Carousel, Slide, Navigation } from 'vue3-carousel'
-
+const { t } = useI18n()
 const { objects } = useObjects()
 const router = useRouter()
-const isMobile = ref(window.innerWidth < 600)
 
 const goToObject = (item: ObjectItem) => {
   router.push({ name: 'object', params: { slug: item.slug } })
 }
-
-// Breakpoints are min-width based
-const baseConfig = {
-  wrapAround: false,
-  mouseDrag: true,
-  touchDrag: true,
-  transition: 450,
-  snapAlign: 'start',
-} as const
-
-const carouselConfig = computed(() => {
-  if (isMobile.value) {
-    // Mobile: show one object card at a time
-    return {
-      ...baseConfig,
-      dir: 'ltr' as const,
-      itemsToShow: 1,
-      height: '100%',
-    }
-  }
-
-  // Desktop: max 2 objects visible at a time
-  return {
-    ...baseConfig,
-    dir: 'ltr' as const,
-    height: '100%',
-    itemsToShow: Math.min(2, objects.value.length || 1),
-  }
-})
-
-// Listen for window resize to update orientation
-if (typeof window !== 'undefined') {
-  window.addEventListener('resize', () => {
-    isMobile.value = window.innerWidth < 600
-  })
-}
 </script>
 
 <style scoped>
-/* Fill viewport minus fixed header.
-   box-sizing keeps padding inside the height. */
 .portfolio-grid-wrapper {
-  flex: 1;
-  min-height: 0;
-  height: calc(100vh - var(--header-h) - 8rem);
-  position: relative;
-  overflow: hidden;
+  width: 100%;
+  padding: 1rem 0 0;
 }
 
-.portfolio-carousel,
-.portfolio-carousel :deep(.carousel__viewport),
-.portfolio-carousel :deep(.carousel__track),
-.portfolio-carousel :deep(.carousel__slide) {
-  height: 100%;
-  cursor: pointer;
+.objects-intro {
+  max-width: 760px;
+  margin: 0 auto 2.75rem;
+  text-align: center;
+  font-size: 0.88rem;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+}
+
+.objects-intro p {
+  margin: 0;
+}
+
+.objects-intro p + p {
+  margin-top: 0.35rem;
+}
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem;
   width: 100%;
 }
 
-.portfolio-carousel :deep(.carousel__viewport) {
-  overflow: hidden;
-}
-
-/* Track: minimal padding (desktop only) */
-@media (min-width: 601px) {
-  .portfolio-carousel :deep(.carousel__track) {
-    padding: 0.25rem 0;
-  }
-
-  .portfolio-carousel :deep(.carousel__slide) {
-    padding: 0 0.75rem;
-    box-sizing: border-box;
-  }
-}
-
-/* Mobile: no padding on slides/track for clean vertical scrolling */
-@media (max-width: 600px) {
-  .portfolio-carousel :deep(.carousel__track) {
-    padding: 0;
-  }
-
-  .portfolio-carousel :deep(.carousel__slide) {
-    padding: 1.5rem 0;
-  }
+.portfolio-grid.single-object {
+  grid-template-columns: minmax(280px, 50%);
+  justify-content: center;
 }
 
 .portfolio-card {
-  position: relative;
-  height: calc(100vh - var(--header-h) - 10rem);
-  background: #fff;
-  border-radius: 18px;
-  overflow: hidden;
+  width: 100%;
+  max-width: 430px;
   display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  justify-self: center;
 }
 
-.portfolio-card img {
+.portfolio-card-image {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  border: 1px solid #868686;
+  background: #e8e8e8;
+  overflow: hidden;
+}
+
+.portfolio-card-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center;
   user-select: none;
   -webkit-user-select: none;
 }
 
-.portfolio-card-overlay {
-  position: absolute;
-  inset: 0;
-  background: #262a36;
-  opacity: 0;
-  transition: opacity 0.25s ease;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  pointer-events: none; /* click still goes through */
-  border-radius: 18px;
-}
-
-.portfolio-card-overlay-content {
-  color: #fff;
-  padding: 1rem;
-  transform: translateY(6px);
-  opacity: 0;
-  transition:
-    transform 0.25s ease,
-    opacity 0.25s ease;
+.portfolio-card-info {
+  margin-top: 1rem;
 }
 
 .portfolio-card-title {
-  font-size: 1.5rem;
-  line-height: 1.6rem;
-  font-weight: 600;
-  letter-spacing: 0.05em;
+  margin: 0;
+  font-size: 1.05rem;
+  line-height: 1.4;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
 .portfolio-card-specs {
-  margin-top: 0.75rem;
+  margin-top: 0.5rem;
   font-size: 0.82rem;
-  line-height: 1.45;
-  opacity: 0.95;
+  line-height: 1.4;
+  color: #2f2f2f;
 }
 
 .portfolio-card-specs p {
   margin: 0;
 }
 
-@media (hover: hover) {
-  .portfolio-card:hover .portfolio-card-overlay {
-    opacity: 1;
-  }
-
-  .portfolio-card:hover .portfolio-card-overlay-content {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.portfolio-carousel :deep(.carousel__prev),
-.portfolio-carousel :deep(.carousel__next) {
-  background: transparent;
-  color: #323542;
-  border: none;
-  font-size: 2.5rem;
-}
-
 /* ===== Mobile (< 600px) ===== */
 @media (max-width: 600px) {
-  /* Carousel Track - let carousel handle scrolling naturally */
-  .portfolio-carousel :deep(.carousel__track) {
-    padding: 0;
+  .objects-intro {
+    margin-bottom: 1.5rem;
+    font-size: 0.8rem;
+    line-height: 1.45;
+    padding: 0 0.25rem;
   }
 
-  .portfolio-card {
-    height: calc(100vh - var(--header-h) - 6rem);
+  .portfolio-grid {
+    gap: 0.75rem;
   }
 
-  /* Overlay */
-  .portfolio-card-overlay {
-    background: transparent;
-    opacity: 1;
-    align-items: flex-start;
-    justify-content: flex-start;
-  }
-
-  .portfolio-card-overlay-content {
-    opacity: 1;
-    transform: translateY(0);
-    padding: 1rem;
-  }
-
-  /* Navigation */
-  .portfolio-carousel :deep(.carousel__prev) {
-    order: -1;
-  }
-
-  .portfolio-carousel :deep(.carousel__next) {
-    order: 1;
-  }
-
-  /* Maintain padding while sliding or dragging */
-  .portfolio-carousel.is-sliding :deep(.carousel__slide),
-  .portfolio-carousel.is-dragging :deep(.carousel__slide) {
-    padding: 1.5rem 0 !important;
+  .portfolio-grid.single-object {
+    grid-template-columns: minmax(220px, 1fr);
   }
 }
 </style>

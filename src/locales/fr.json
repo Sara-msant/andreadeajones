@@ -1,61 +1,111 @@
-{
-    "welcome": "Bienvenue à JORA Studio, où chaque projet naît d’une vision — et se transforme en un espace façonné par la précision, la beauté et une sophistication discrète.",
+﻿{
     "nav": {
         "objects": "Objets",
         "about": "À propos",
         "editions": "Éditions",
         "contact": "Contact"
     },
-    "project": {
-        "location": "Localisation:",
-        "status": "Statut:",
-        "area": "Surface:",
-        "year": "Année:"
+    "header": {
+        "goHomeAria": "Aller à l'accueil",
+        "mainNavigationAria": "Navigation principale",
+        "openMenuAria": "Ouvrir le menu",
+        "logoAlt": "Andrea Dea Jones",
+        "languageAria": "Changer la langue"
+    },
+    "common": {
+        "social": {
+            "instagram": "Instagram",
+            "tiktok": "TikTok"
+        }
+    },
+    "home": {
+        "brand": {
+            "line1": "Andrea",
+            "line2": "Dea",
+            "line3": "Jones."
+        },
+        "portraitAlt": "Portrait d'Andrea",
+        "intro": {
+            "yo": "Salut,",
+            "im": "Je suis Andrea.",
+            "andIDid": "Et j'ai fait",
+            "this": "ça."
+        },
+        "caption": "Un objet avec structure et attitude.",
+        "explore": "Explorer",
+        "purchaseInquiry": "Achat // Demande",
+        "copyright": "© Andrea Dea Jones. Tous droits réservés.",
+        "subscribe": "S'abonner",
+        "emailPlaceholder": "E-mail *"
+    },
+    "objects": {
+        "introAria": "Texte d'introduction des objets",
+        "intro": "Chaque objet est développé de manière indépendante, tout en appartenant au même langage matériel et conceptuel où durabilité et élégance coexistent naturellement.",
+        "dimensions": "Dimensions :",
+        "weight": "Poids :"
+    },
+    "object": {
+        "heroAlt": "Image principale de {title}",
+        "imageAlt": "Image {index} de {title}",
+        "dimensions": "Dimensions :",
+        "weight": "Poids :",
+        "notFound": "Objet introuvable."
+    },
+    "editions": {
+        "title": "Éditions",
+        "comingSoon": "Contenu à venir.",
+        "objectEdition": {
+            "title": "Éditions d'objets",
+            "description": "Nos objets existent en différentes éditions. Chaque édition définit la manière dont un objet est produit, personnalisé et distribué, sans jamais compromettre son intégrité conceptuelle."
+        },
+        "studio": {
+            "title": "Édition Studio",
+            "description": "L'Édition Studio est produite à la commande. Elle permet des variations de matériaux et de finitions, tout en respectant la forme et l'intention d'origine de l'objet."
+        },
+        "gallery": {
+            "title": "Édition Galerie",
+            "description": "L'Édition Galerie est produite en série limitée. Chaque version est définie par une combinaison précise de matériaux et de finitions, choisie comme une interprétation spécifique de l'objet."
+        },
+        "note": "Toutes les editions ne sont pas disponibles pour chaque objet. Certaines pieces existent uniquement en Édition Studio, d'autres uniquement en Édition Galerie."
     },
     "contact": {
-        "title": "Contact",
-        "description": "Nous aimerions beaucoup vous entendre. Que vous planifiez un nouveau projet ou explorez des idées, notre équipe vous guidera à chaque étape — du concept à la réalisation.",
-        "infoTitle": "Informations",
-        "phone": "Téléphone",
-        "email": "E-mail",
+        "title": "PRENONS CONTACT",
+        "description": "Pour les demandes, commandes ou collaborations, veuillez utiliser le formulaire ci-dessous ou nous contacter directement. Chaque message reçoit une réponse personnelle.",
         "name": "Nom",
-        "surname": "Prénom",
-        "projectLocation": "Localisation du Projet",
-        "projectType": "Type de Projet",
-        "briefDescription": "Brève Description du Projet",
-        "selectType": "Sélectionnez un type",
-        "types": {
-            "residential": "Résidentiel",
-            "partnerships": "Partenariats",
-            "commercial": "Commercial",
-            "other": "Autre"
+        "email": "E-mail",
+        "interestLabel": "Intérêt pour",
+        "selectOption": "Sélectionnez une option",
+        "interests": {
+            "yomartinsLowStool": "YOMARTINS LOW STOOL",
+            "studioEdition": "ÉDITION STUDIO",
+            "galleryEdition": "ÉDITION GALERIE",
+            "projectInquiry": "DEMANDE DE PROJET",
+            "collaboration": "COLLABORATION",
+            "other": "AUTRE"
         },
-        "disclaimer": "En envoyant vos données, vous nous donnez la permission d'utiliser les informations pour vous aider et vous contacter. Ne vous inquiétez pas, nous pouvons assurer que la totalité de vos données est sécurisée.",
-        "submit": "Soumettre",
-        "sending": "Envoi en cours...",
-        "successMessage": "Merci ! Nous avons reçu votre message.",
-        "errorMessage": "Désolé, quelque chose s'est mal passé. Veuillez réessayer plus tard.",
-        "validationError": "Veuillez remplir le nom, l'e-mail, la description du projet et sélectionner un type de projet.",
+        "messageLabel": "Message",
+        "send": "ENVOYER",
+        "sending": "Envoi...",
+        "successMessage": "Merci. Nous avons bien reçu votre message.",
+        "errorMessage": "Désolé, une erreur est survenue. Veuillez réessayer plus tard.",
         "errors": {
             "nameRequired": "Le nom est obligatoire",
             "emailRequired": "L'e-mail est obligatoire",
-            "locationRequired": "La localisation du projet est obligatoire",
-            "projectTypeRequired": "Veuillez sélectionner un type de projet",
-            "descriptionRequired": "La description du projet est obligatoire"
+            "projectTypeRequired": "Veuillez sélectionner un intérêt",
+            "descriptionRequired": "Le message est obligatoire"
         }
     },
     "about": {
-        "title": "Jora Studio.",
-        "description": "**JORA Studio** est dirigé par Rachel Cambier et Joaquim Pinheiro Torres, un duo international de designers/architectes aux racines **belges et portugaises**.\n\nEnsemble, ils apportent plus de 25 ans d'expérience combinée en architecture, design d'intérieur et création de mobilier sur mesure.\n\nLeur nouvelle collaboration fusionne deux cultures de design distinctes — la précision raffinée du nord de l'Europe et la chaleur naturelle du sud — créant une esthétique distinctive à la fois **intemporelle et contemporaine**.\n\nEnraciné dans l'architecture et guidé par une profonde sensibilité aux matériaux, à la lumière et aux proportions, **JORA Studio** crée des environnements qui semblent naturels tout en étant méticuleusement composés.\n\nLeur philosophie commune repose sur le luxe discret : une approche qui valorise la **retenue**, l'**authenticité** et l'**artisanat** plutôt que l'excès.\n\nOpérant depuis l'Algarve, au Portugal et travaillant sur des projets internationaux, **JORA Studio** offre des services de design complets intégrant l'architecture, les intérieurs et le design personnalisé dans un seul récit cohérent.",
-        "rachel": {
-            "name": "Rachel",
-            "role": "PDG & Architecte Intérieure",
-            "location": "Faro, Algarve"
+        "portraitAlt": "Portrait d'Andrea Dea Jones",
+        "paragraphs": {
+            "p1": "Née en Belgique, âgée de 37 ans, Andrea Dea Jones est diplômée d'un Master en architecture d'intérieur de l'Académie des Beaux-Arts en Belgique.",
+            "p2": "Son parcours créatif commence tôt avec des stages dans des agences d'architecture en France, en parallèle de missions freelance sur des défilés de mode à Paris à l'âge de 25 ans. Ces expériences formatrices l'ont menée à un poste d'architecte d'intérieur chez l'iconique Saint Laurent Paris. C'est là qu'elle fait ses premiers pas dans le design d'objet.",
+            "p3": "Il y a cinq ans, elle s'installe au Portugal, où elle passe quatre ans en tant que lead interior designer dans une entreprise renommée de design de bureaux. Elle y découvre une passion profonde pour la création de pièces de mobilier sur mesure et artisanales qui apportent singularité et âme à chaque espace.",
+            "p4": "Andrea Dea Jones aborde le design avec une sensibilité audacieuse et ludique, bousculant les conventions en apportant proximité et esprit à la création contemporaine. Influencée par le street art, Virgil Abloh, le minimalisme et les principes du Bauhaus, son travail est à la fois intentionnel et expressif.",
+            "p5": "Ancrée dans une pensée centrée sur l'humain, chaque projet traduit l'expérience vécue en espaces fonctionnels et émotionnellement résonants. Ses designs allient précision esthétique et sensibilité, pour créer des intérieurs et des objets qui enrichissent le quotidien.",
+            "p6": "Elle est aussi cofondatrice de Jora Studio, une agence d'architecture et de design d'intérieur basée en Algarve, qui associe créativité et fonctionnalité dans chaque projet."
         },
-        "joaquim": {
-            "name": "Joaquim",
-            "role": "PDG & Architecte",
-            "location": "Faro, Algarve"
-        }
+        "agencyIntro": "Découvrez son agence de design d'intérieur",
+        "agencyLink": "ici"
     }
 }

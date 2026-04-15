@@ -1,11 +1,11 @@
-<template>
-  <transition name="jora-menu-fade">
-    <div v-if="menuOpen" class="jora-menu-overlay" @click.self="close">
-      <div class="jora-menu">
-        <div class="jora-menu-inner">
+﻿<template>
+  <transition name="andrea-menu-fade">
+    <div v-if="menuOpen" class="andrea-menu-overlay" @click.self="close">
+      <div class="andrea-menu">
+        <div class="andrea-menu-inner">
           <!-- Header -->
-          <header class="jora-menu-header">
-            <div class="jora-menu-lang-wrapper">
+          <header class="andrea-menu-header">
+            <div class="andrea-menu-lang-wrapper">
               <button class="lang-toggle" @click="langOpen = !langOpen">
                 <span>{{ currentLocaleLabel }}</span>
                 <span class="dropdown-arrow">▼</span>
@@ -27,29 +27,29 @@
           </header>
 
           <!-- Navigation -->
-          <nav class="jora-menu-nav">
+          <nav class="andrea-menu-nav">
             <button v-for="item in items" :key="item.key" class="nav-link" @click="go(item)">
               {{ t(item.labelKey) }}
             </button>
           </nav>
 
           <!-- Social -->
-          <footer class="jora-menu-footer">
+          <footer class="andrea-menu-footer">
             <a
-              href="https://www.instagram.com/"
+              href="https://www.instagram.com/andrea_dea_jones"
               target="_blank"
               rel="noopener noreferrer"
               class="social-link"
             >
-              Instagram
+              {{ t('common.social.instagram') }}
             </a>
             <a
-              href="https://www.tiktok.com/"
+              href="https://www.tiktok.com/@andrea.dea.jones"
               target="_blank"
               rel="noopener noreferrer"
               class="social-link"
             >
-              TikTok
+              {{ t('common.social.tiktok') }}
             </a>
           </footer>
         </div>
@@ -107,7 +107,7 @@ onMounted(() => {
 
 <style scoped>
 /* Overlay */
-.jora-menu-overlay {
+.andrea-menu-overlay {
   position: fixed;
   inset: 0;
   z-index: 50;
@@ -119,7 +119,7 @@ onMounted(() => {
 }
 
 /* Menu card */
-.jora-menu {
+.andrea-menu {
   background: var(--color-background);
   border-left: 1px solid var(--color-border);
   width: min(88vw, 360px);
@@ -130,13 +130,13 @@ onMounted(() => {
 }
 
 @media (max-width: 768px) {
-  .jora-menu-overlay {
+  .andrea-menu-overlay {
     padding: 0;
     justify-content: stretch;
     align-items: stretch;
   }
 
-  .jora-menu {
+  .andrea-menu {
     width: 100%;
     height: 100%;
     border-radius: 0;
@@ -145,43 +145,43 @@ onMounted(() => {
     flex-direction: column;
   }
 
-  .jora-menu-inner {
+  .andrea-menu-inner {
     padding: 2rem 2rem 1.7rem;
     flex: 1;
     display: flex;
     flex-direction: column;
   }
 
-  .jora-menu-nav {
+  .andrea-menu-nav {
     flex: 1;
   }
 
-  .jora-menu-footer {
+  .andrea-menu-footer {
     margin-top: auto;
   }
 }
 
-.jora-menu-inner {
+.andrea-menu-inner {
   padding: 1.9rem 1.6rem 1.7rem;
   color: var(--color-text);
 }
 
 /* Fade animation */
-.jora-menu-fade-enter-active,
-.jora-menu-fade-leave-active {
+.andrea-menu-fade-enter-active,
+.andrea-menu-fade-leave-active {
   transition:
     opacity 0.18s ease,
     transform 0.18s ease;
 }
 
-.jora-menu-fade-enter-from,
-.jora-menu-fade-leave-to {
+.andrea-menu-fade-enter-from,
+.andrea-menu-fade-leave-to {
   opacity: 0;
   transform: translateY(-8px);
 }
 
 /* Header */
-.jora-menu-header {
+.andrea-menu-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -200,7 +200,7 @@ onMounted(() => {
 }
 
 /* Lang dropdown */
-.jora-menu-lang-wrapper {
+.andrea-menu-lang-wrapper {
   position: relative;
 }
 
@@ -223,7 +223,7 @@ onMounted(() => {
 }
 
 /* Nav links */
-.jora-menu-nav {
+.andrea-menu-nav {
   display: flex;
   flex-direction: column;
   gap: 0.9rem;
@@ -251,7 +251,7 @@ onMounted(() => {
 }
 
 /* Footer */
-.jora-menu-footer {
+.andrea-menu-footer {
   display: flex;
   gap: 1rem;
 }
@@ -270,7 +270,7 @@ onMounted(() => {
 }
 
 /* Lang dropdown */
-.jora-menu-lang-wrapper {
+.andrea-menu-lang-wrapper {
   position: relative;
 }
 
@@ -324,3 +324,5 @@ onMounted(() => {
   font-weight: 600;
 }
 </style>
+
+

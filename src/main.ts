@@ -18,26 +18,35 @@ app.use(vuetify)
 app.directive('no-right-click', noRightClick)
 
 // Google Analytics setup
+type GtagCommand = [string, ...unknown[]]
+
 declare global {
   interface Window {
-    dataLayer: any[]
-    gtag: any
+    dataLayer: GtagCommand[]
+    gtag: (...args: GtagCommand) => void
   }
 }
 
 const loadGoogleAnalytics = () => {
+  const googleAnalyticsSrc = ''
+  const measurementId = ''
+
   const script = document.createElement('script')
   script.async = true
-  script.src = 'https://www.googletagmanager.com/gtag/js?id=G-67LH0LX1WS'
-  document.head.appendChild(script)
+  if (googleAnalyticsSrc) {
+    script.src = googleAnalyticsSrc
+    document.head.appendChild(script)
+  }
 
   window.dataLayer = window.dataLayer || []
-  function gtag(...args: any[]) {
+  function gtag(...args: GtagCommand) {
     window.dataLayer.push(args)
   }
   window.gtag = gtag
   gtag('js', new Date())
-  gtag('config', 'G-67LH0LX1WS')
+  if (measurementId) {
+    gtag('config', measurementId)
+  }
 }
 
 loadGoogleAnalytics()

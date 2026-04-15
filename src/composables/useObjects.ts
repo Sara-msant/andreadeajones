@@ -23,13 +23,27 @@ const metaModules = import.meta.glob('@/assets/objects/*/meta-*.json', {
 // load all images inside each project folder
 const imageModules = import.meta.glob('@/assets/objects/*/*.{png,jpg,jpeg,webp}', { eager: true })
 
+type ObjectMeta = {
+  slug?: string
+  title?: string
+  dimensions?: string
+  weight?: string
+  description?: string[] | string
+  order?: number
+}
+
+type ObjectConfig = {
+  order?: number
+  slug?: string
+}
+
 export const useObjects = () => {
   const { locale } = useI18n()
   const objects = computed<ObjectItem[]>(() => {
     // folder -> meta (language-specific)
-    const metaByFolder = new Map<string, any>()
+    const metaByFolder = new Map<string, ObjectMeta>()
     // Build config from consolidated meta.json
-    const configByFolder = new Map<string, any>()
+    const configByFolder = new Map<string, ObjectConfig>()
     objectsMeta.projects.forEach((item) => {
       configByFolder.set(item.folder, { order: item.order, slug: item.slug })
     })
@@ -38,7 +52,13 @@ export const useObjects = () => {
       const parts = path.split('/')
       const folder = parts[parts.length - 2] as string // the project folder name
       const file = parts[parts.length - 1] as string // meta-en.json, meta-fr.json, etc.
-      const meta = (mod as any).default ?? mod
+      const metaCandidate = (mod as { default?: unknown }).default ?? mod
+
+      if (!metaCandidate || typeof metaCandidate !== 'object') {
+        return
+      }
+
+      const meta = metaCandidate as ObjectMeta
 
       if (file.startsWith('meta-')) {
         // Language-specific content
@@ -56,7 +76,7 @@ export const useObjects = () => {
     >()
 
     Object.entries(imageModules).forEach(([path, mod]) => {
-      const src = (mod as any).default ?? (mod as string)
+      const src = ((mod as { default?: string }).default ?? mod) as string
       const parts = path.split('/')
       const folder = parts[parts.length - 2] as string
       const file = parts[parts.length - 1] as string
