@@ -3,9 +3,7 @@
     <section v-if="featuredProject" class="home">
       <section class="home-hero">
         <div class="home-brand">
-          <span>{{ t('home.brand.line1') }}</span>
-          <span>{{ t('home.brand.line2') }}</span>
-          <span>{{ t('home.brand.line3') }}</span>
+          <img v-no-right-click :src="fatLogo" alt="Andrea Dea Jones" draggable="false" />
         </div>
 
         <article class="home-intro-card">
@@ -65,6 +63,7 @@ import { useRouter } from 'vue-router'
 import PageWrapper from '@/components/PageWrapper.vue'
 import { useObjects } from '@/composables/useObjects'
 import portraitImage from '@/assets/home/rachel.png'
+import fatLogo from '@/assets/home/fat-logo.png'
 
 const router = useRouter()
 const { t } = useI18n()
@@ -101,13 +100,16 @@ const goToContact = () => {
 }
 
 .home-brand {
-  font-family: 'Sedgwick Ave Display', cursive;
-  font-size: clamp(6rem, 10.6vw, 12rem);
-  line-height: 0.92;
-  text-transform: uppercase;
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   padding-top: 0.25rem;
+}
+
+.home-brand img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
 }
 
 .home-intro-card {
@@ -263,8 +265,7 @@ const goToContact = () => {
   }
 
   .home-brand {
-    font-size: 5.5rem;
-    line-height: 0.95;
+    width: 100%;
   }
 
   .home-intro-photos img {
