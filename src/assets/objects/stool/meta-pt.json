@@ -1,13 +1,47 @@
 {
-    "title": "YoMartins",
-    "dimensions": "W 37 x D 37 x H 45 cm",
-    "weight": "9.0 Kg",
-    "description": [
-        "YOMARTINS is a cork stool that explores the balance between sculptural form and material honesty. Made from Portuguese cork, naturally lightweight, resilient, and tactile. It offers a comfortable seat defined by soft, considered proportions.",
-        "Composed of three solid cork elements, the piece is assembled without glue or tools. Designed to be transported flat, assembled on site.",
-        "The structure relies on a carefully designed interlocking system, where form and tension work together to ensure stability.",
-        "Sustainable by nature, the piece is made entirely from cork - a renewable, biodegradable material harvested without harming the tree. Its natural properties ensure durability, lightness, and longevity, making sustainability an inherent part of the design rather than an added feature.",
-        "Shaped by skilled artisans, the piece embraces imperfection and material honesty, resulting in an object that feels both grounded and expressive. More than a seat, it is a statement - quiet, tactile, and confidently contemporary.",
-        "YOMARTINS exists at the crossroads of object and sculpture. Its bold, almost architectural form elevates cork beyond function, revealing its texture, warmth, and raw beauty."
-    ]
+    "sections": {
+        "overview": {
+            "caption": [
+                "YOMARTINS STOOL 2026.",
+                "__DIMENSOES:__ L 37 x P 37 x A 45 cm",
+                "__PESO:__ 9,0 Kg"
+            ],
+            "text": "YOMARTINS e um banco de cortica que explora o equilibrio entre forma escultorica e honestidade material. Feito em cortica portuguesa, naturalmente leve, resistente e tatil. Oferece um assento confortavel definido por proporcoes suaves e bem ponderadas."
+        },
+        "deconstruction": {
+            "caption": [
+                "DESCONSTRUCAO."
+            ],
+            "text": "Composta por tres elementos solidos de cortica, a peca e montada sem cola nem ferramentas. Concebida para ser transportada em plano, montada no local."
+        },
+        "separated_blocks": {
+            "caption": [
+                "BLOCOS",
+                "SEPARADOS"
+            ],
+            "text": "A estrutura assenta num sistema de encaixe cuidadosamente desenhado, onde forma e tensao trabalham em conjunto para garantir estabilidade."
+        },
+        "interlocking_system": {
+            "caption": [
+                "SISTEMA",
+                "DE ENCAIXE."
+            ],
+            "text": "Sustentavel por natureza e fabricado com cuidado, o banco reflete um dialogo pensado entre conhecimento local, construcao inteligente e design moderno."
+        },
+        "material_variations": {
+            "text": "A colecao de bancos Yomartins esta disponivel numa gama de variacoes distintas, cada uma definida pela sua composicao material unica e expressao estetica. Estas incluem variacoes em cortica clara, cortica castanha e cortica mista, oferecendo um espectro de tons e texturas para se adequar a diferentes preferencias e contextos de interiores."
+        },
+        "cork_trees": {
+            "caption": [
+                "SOBREIROS."
+            ],
+            "text": "Moldada por artesaos experientes, a peca assume a imperfeicao e a honestidade material, resultando num objeto que se sente simultaneamente enraizado e expressivo. Mais do que um assento, e uma afirmacao - silenciosa, tatil e confiantemente contemporanea."
+        },
+        "craftsmanship": {
+            "caption": [
+                "ARTESANATO."
+            ],
+            "text": "YOMARTINS existe no cruzamento entre objeto e escultura. A sua forma ousada, quase arquitetonica, eleva a cortica para alem da funcao, revelando a sua textura, calor e beleza crua."
+        }
+    }
 }

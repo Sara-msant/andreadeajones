@@ -1,44 +1,45 @@
 <template>
   <PageWrapper>
     <section v-if="objectItem" class="object-page">
-      <section class="object-hero">
-        <figure v-if="heroImage" class="object-hero-image">
-          <img
-            v-no-right-click
-            :src="heroImage"
-            :alt="t('object.heroAlt', { title: objectItem.title })"
-            draggable="false"
-          />
-        </figure>
-
-        <aside class="object-specs" v-if="objectItem.dimensions || objectItem.weight">
-          <p class="spec-title">{{ objectItem.title }}.</p>
-          <p class="spec-subtitle">{{ t('object.dimensions') }}</p>
-          <p v-if="objectItem.dimensions" class="spec-line">{{ objectItem.dimensions }}</p>
-          <p v-if="objectItem.weight" class="spec-line">
-            {{ t('object.weight') }} {{ objectItem.weight }}
-          </p>
-        </aside>
-      </section>
-
-      <p v-if="descriptionBlocks[0]" class="object-paragraph">{{ descriptionBlocks[0] }}</p>
-
       <section
-        v-for="(paragraph, index) in descriptionBlocks.slice(1)"
-        :key="`paragraph-${index + 1}`"
+        v-for="(section, index) in sections"
+        :key="`section-${index + 1}`"
         class="object-block"
       >
-        <figure v-if="imageForParagraph(index + 1)" class="object-image">
+        <figure v-if="section.image || section.videoEmbedUrl" class="object-image">
           <img
+            v-if="section.image"
             v-no-right-click
-            :src="imageForParagraph(index + 1)"
-            :alt="t('object.imageAlt', { title: objectItem.title, index: index + 2 })"
+            :src="section.image"
+            :alt="t('object.imageAlt', { title: objectItem.title, index: index + 1 })"
             draggable="false"
           />
+
+          <div v-else-if="section.videoEmbedUrl" class="object-video-wrap">
+            <iframe
+              :src="section.videoEmbedUrl"
+              :title="`${objectItem.title} video ${index + 1}`"
+              loading="lazy"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen
+            ></iframe>
+          </div>
         </figure>
 
-        <p class="object-paragraph">{{ paragraph }}</p>
+        <p v-if="section.caption" class="object-image-caption" v-html="formatRichText(section.caption)"></p>
+
+        <p class="object-paragraph" v-html="formatRichText(section.text)"></p>
       </section>
+
+      <button
+        type="button"
+        class="scroll-top-button"
+        :aria-label="t('object.scrollToTop')"
+        @click="scrollToTop"
+      >
+        ↑
+      </button>
     </section>
 
     <section v-else class="object-not-found">
@@ -60,12 +61,26 @@ const { getObjectBySlug } = useObjects()
 
 const slug = computed(() => route.params.slug as string)
 const objectItem = computed(() => getObjectBySlug(slug.value) ?? null)
+const sections = computed(() => objectItem.value?.sections ?? [])
 
-const heroImage = computed(() => objectItem.value?.gallery[0] ?? null)
-const descriptionBlocks = computed(() => objectItem.value?.description ?? [])
+const escapeHtml = (value: string): string => {
+  return value
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;')
+}
 
-const imageForParagraph = (paragraphIndex: number): string | undefined => {
-  return objectItem.value?.gallery[paragraphIndex]
+const formatRichText = (value: string): string => {
+  const escaped = escapeHtml(value)
+  const withUnderline = escaped.replace(/__([^_\n]+)__/g, '<span class="rich-underline">$1</span>')
+  const withItalic = withUnderline.replace(/_([^_\n]+)_/g, '<span class="rich-italic">$1</span>')
+  return withItalic.replace(/\n/g, '<br />')
+}
+
+const scrollToTop = (): void => {
+  window.scrollTo({ top: 0, behavior: 'smooth' })
 }
 </script>
 
@@ -76,46 +91,6 @@ const imageForParagraph = (paragraphIndex: number): string | undefined => {
   flex-direction: column;
   gap: 9.5rem;
   padding: 5rem 0 8rem;
-}
-
-.object-hero {
-  width: min(100%, 980px);
-  margin: 0 auto;
-}
-
-.object-hero-image {
-  width: 100%;
-}
-
-.object-hero-image img {
-  display: block;
-  width: 100%;
-  height: auto;
-  object-fit: contain;
-}
-
-.object-specs {
-  margin-top: 0.9rem;
-  margin-left: auto;
-  width: max-content;
-  text-align: right;
-  text-transform: uppercase;
-  font-size: 0.95rem;
-  line-height: 1.2;
-}
-
-.spec-title {
-  letter-spacing: 0.06em;
-  margin-bottom: 0.6rem;
-}
-
-.spec-subtitle {
-  text-decoration: underline;
-  margin-bottom: 0.5rem;
-}
-
-.spec-line {
-  margin-bottom: 0.2rem;
 }
 
 .object-block {
@@ -137,6 +112,31 @@ const imageForParagraph = (paragraphIndex: number): string | undefined => {
   object-fit: contain;
 }
 
+.object-video-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: #000;
+}
+
+.object-video-wrap iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.object-image-caption {
+  width: 100%;
+  margin-top: 0.7rem;
+  text-align: right;
+  text-transform: uppercase;
+  white-space: pre-line;
+  font-size: 0.9rem;
+  line-height: 1.2;
+}
+
 .object-paragraph {
   width: min(100%, 980px);
   margin: 0 auto;
@@ -145,10 +145,42 @@ const imageForParagraph = (paragraphIndex: number): string | undefined => {
   line-height: 1.45;
 }
 
+.object-image-caption :deep(.rich-italic),
+.object-paragraph :deep(.rich-italic) {
+  font-style: italic;
+}
+
+.object-image-caption :deep(.rich-underline),
+.object-paragraph :deep(.rich-underline) {
+  text-decoration: underline;
+  text-underline-offset: 0.12em;
+}
+
 .object-not-found {
   width: 100%;
   padding: 3rem 0;
   text-align: center;
+}
+
+.scroll-top-button {
+  align-self: center;
+  margin-top: -1.5rem;
+  border: none;
+  background: transparent;
+  color: inherit;
+  font-size: 2rem;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0.25rem 0.6rem;
+}
+
+.scroll-top-button:hover {
+  opacity: 0.7;
+}
+
+.scroll-top-button:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 3px;
 }
 
 @media (max-width: 768px) {
@@ -158,15 +190,12 @@ const imageForParagraph = (paragraphIndex: number): string | undefined => {
   }
 
   .object-paragraph,
-  .object-block,
-  .object-hero {
+  .object-block {
     width: 100%;
   }
 
-  .object-specs {
-    width: 100%;
+  .object-image-caption {
     text-align: left;
-    margin-top: 1rem;
   }
 
   .object-paragraph {

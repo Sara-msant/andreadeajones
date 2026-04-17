@@ -1,13 +1,48 @@
 {
-  "title": "YoMartins",
-  "dimensions": "W 37 x D 37 x H 45 cm",
-  "weight": "9.0 Kg",
-  "description": [
-    "YOMARTINS is a cork stool that explores the balance between sculptural form and material honesty. Made from Portuguese cork, naturally lightweight, resilient, and tactile. It offers a comfortable seat defined by soft, considered proportions.",
-    "Composed of three solid cork elements, the piece is assembled without glue or tools. Designed to be transported flat, assembled on site.",
-    "The structure relies on a carefully designed interlocking system, where form and tension work together to ensure stability.",
-    "Sustainable by nature, the piece is made entirely from cork - a renewable, biodegradable material harvested without harming the tree. Its natural properties ensure durability, lightness, and longevity, making sustainability an inherent part of the design rather than an added feature.",
-    "Shaped by skilled artisans, the piece embraces imperfection and material honesty, resulting in an object that feels both grounded and expressive. More than a seat, it is a statement - quiet, tactile, and confidently contemporary.",
-    "YOMARTINS exists at the crossroads of object and sculpture. Its bold, almost architectural form elevates cork beyond function, revealing its texture, warmth, and raw beauty."
-  ]
+  "sections": {
+    "overview": {
+      "caption": [
+        "YOMARTINS STOOL 2026.",
+        "__DIMENSIONS:__ W 37 x D 37 x H 45 cm",
+        "__WEIGHT:__ 9.0 Kg"
+      ],
+      "text": "YOMARTINS is a cork stool that explores the balance between sculptural form and material honesty. Made from Portuguese cork, naturally lightweight, resilient, and tactile. It offers a comfortable seat defined by soft, considered proportions."
+    },
+    "deconstruction": {
+      "caption": [
+        "DECONSTRUCTION."
+      ],
+      "text": "Composed of three solid cork elements, the piece is assembled without glue or tools. Designed to be transported flat, assembled on site."
+    },
+    "separated_blocks": {
+      "caption": [
+        "SEPARATED",
+        "BLOCKS"
+      ],
+      "text": "The structure relies on a carefully designed interlocking system, where form and tension work together to ensure stability."
+    },
+    "interlocking_system": {
+      "caption": [
+        "INTERLOCKING",
+        "SYSTEM."
+      ],
+      "text": "Sustainable by nature and crafted with care, the stool reflects a thoughtful dialogue between local expertise, intelligent construction, and modern design."
+    },
+    "material_variations": {
+      "text": "Yomartins stool collection are available in a range of distinct variations, each defined by its unique material composition and aesthetic expression. These include light cork, brown cork, and mixed cork variations, offering a spectrum of tones and textures to suit different preferences and interior contexts."
+    },
+    "cork_trees": {
+      "caption": [
+        "CORK",
+        "TREES."
+      ],
+      "text": "Shaped by skilled artisans, the piece embraces imperfection and material honesty, resulting in an object that feels both grounded and expressive. More than a seat, it is a statement — quiet, tactile, and confidently contemporary."
+    },
+    "craftsmanship": {
+      "caption": [
+        "CRAFTSMANSHIP."
+      ],
+      "text": "YOMARTINS exists at the crossroads of object and sculpture. Its bold, almost architectural form elevates cork beyond function, revealing its texture, warmth, and raw beauty."
+    }
+  }
 }

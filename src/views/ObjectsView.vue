@@ -9,16 +9,23 @@
 
       <div
         class="portfolio-grid"
-        :class="{ 'single-object': objects.length === 1 }"
+        :class="{ 'single-object': displayObjects.length === 1 }"
       >
         <article
-          v-for="item in objects"
-          :key="item.slug"
+          v-for="item in displayObjects"
+          :key="item.slug ?? 'coming-soon'"
           class="portfolio-card"
+          :class="{ 'portfolio-card--placeholder': item.isPlaceholder }"
           @click="goToObject(item)"
         >
           <div class="portfolio-card-image">
-            <img v-no-right-click :src="item.cover" :alt="item.title" draggable="false" />
+            <img
+              v-no-right-click
+              :src="item.cover"
+              :alt="item.title"
+              :class="{ 'portfolio-card-image--blurred': item.isPlaceholder }"
+              draggable="false"
+            />
           </div>
 
           <div class="portfolio-card-info">
@@ -35,6 +42,7 @@
 </template>
 
 <script setup lang="ts">
+import { computed } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useRouter } from 'vue-router'
 import PageWrapper from '@/components/PageWrapper.vue'
@@ -44,7 +52,27 @@ const { t } = useI18n()
 const { objects } = useObjects()
 const router = useRouter()
 
-const goToObject = (item: ObjectItem) => {
+type ObjectsGridItem = ObjectItem & { isPlaceholder?: boolean }
+
+// Put your blurred placeholder image in /public and update this path if needed.
+const comingSoonCover = '/images/objects-coming-soon.jpg'
+
+const comingSoonItem: ObjectsGridItem = {
+  slug: '',
+  title: 'Coming soon',
+  sections: [],
+  cover: comingSoonCover,
+  gallery: [],
+  isPlaceholder: true,
+}
+
+const displayObjects = computed<ObjectsGridItem[]>(() => [...objects.value, comingSoonItem])
+
+const goToObject = (item: ObjectsGridItem) => {
+  if (item.isPlaceholder || !item.slug) {
+    return
+  }
+
   router.push({ name: 'object', params: { slug: item.slug } })
 }
 </script>
@@ -74,8 +102,9 @@ const goToObject = (item: ObjectItem) => {
 
 .portfolio-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(280px, 430px));
   gap: 1.5rem;
+  justify-content: center;
   width: 100%;
 }
 
@@ -93,6 +122,11 @@ const goToObject = (item: ObjectItem) => {
   justify-self: center;
 }
 
+.portfolio-card--placeholder {
+  cursor: default;
+  pointer-events: none;
+}
+
 .portfolio-card-image {
   width: 100%;
   aspect-ratio: 4 / 5;
@@ -108,6 +142,11 @@ const goToObject = (item: ObjectItem) => {
   object-position: center;
   user-select: none;
   -webkit-user-select: none;
+}
+
+.portfolio-card-image--blurred {
+  filter: blur(14px);
+  transform: scale(1.12);
 }
 
 .portfolio-card-info {
@@ -143,6 +182,7 @@ const goToObject = (item: ObjectItem) => {
   }
 
   .portfolio-grid {
+    grid-template-columns: minmax(220px, 1fr);
     gap: 0.75rem;
   }
 

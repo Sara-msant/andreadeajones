@@ -1,13 +1,48 @@
 {
-    "title": "YoMartins",
-    "dimensions": "W 37 x D 37 x H 45 cm",
-    "weight": "9.0 Kg",
-    "description": [
-        "YOMARTINS is a cork stool that explores the balance between sculptural form and material honesty. Made from Portuguese cork, naturally lightweight, resilient, and tactile. It offers a comfortable seat defined by soft, considered proportions.",
-        "Composed of three solid cork elements, the piece is assembled without glue or tools. Designed to be transported flat, assembled on site.",
-        "The structure relies on a carefully designed interlocking system, where form and tension work together to ensure stability.",
-        "Sustainable by nature, the piece is made entirely from cork - a renewable, biodegradable material harvested without harming the tree. Its natural properties ensure durability, lightness, and longevity, making sustainability an inherent part of the design rather than an added feature.",
-        "Shaped by skilled artisans, the piece embraces imperfection and material honesty, resulting in an object that feels both grounded and expressive. More than a seat, it is a statement - quiet, tactile, and confidently contemporary.",
-        "YOMARTINS exists at the crossroads of object and sculpture. Its bold, almost architectural form elevates cork beyond function, revealing its texture, warmth, and raw beauty."
-    ]
+    "sections": {
+        "overview": {
+            "caption": [
+                "YOMARTINS STOOL 2026.",
+                "__DIMENSIONS:__ L 37 x P 37 x H 45 cm",
+                "__POIDS:__ 9,0 Kg"
+            ],
+            "text": "YOMARTINS est un tabouret en liège qui explore l'équilibre entre forme sculpturale et sincérité du matériau. Fabriqué en liège portugais, naturellement léger, résilient et tactile. Il offre une assise confortable définie par des proportions douces et réfléchies."
+        },
+        "deconstruction": {
+            "caption": [
+                "DECONSTRUCTION."
+            ],
+            "text": "Composée de trois éléments pleins en liège, la pièce s'assemble sans colle ni outils. Conçue pour être transportée à plat, puis assemblée sur place."
+        },
+        "separated_blocks": {
+            "caption": [
+                "BLOCS",
+                "SEPARES"
+            ],
+            "text": "La structure repose sur un système d'emboitement soigneusement conçu, où la forme et la tension travaillent ensemble pour garantir la stabilité."
+        },
+        "interlocking_system": {
+            "caption": [
+                "SYSTEME",
+                "D'EMBOITEMENT."
+            ],
+            "text": "Durable par nature et fabriqué avec soin, le tabouret reflète un dialogue réfléchi entre savoir-faire local, construction intelligente et design moderne."
+        },
+        "material_variations": {
+            "text": "La collection de tabourets Yomartins est disponible en une gamme de variations distinctes, chacune définie par sa composition matérielle unique et son expression esthétique. Celles-ci incluent des variations en liège clair, liège brun et liège mixte, offrant un éventail de tons et de textures pour répondre à différentes préférences et à divers contextes intérieurs."
+        },
+        "cork_trees": {
+            "caption": [
+                "CHENES",
+                "LIEGE."
+            ],
+            "text": "Façonnée par des artisans qualifiés, la pièce assume l'imperfection et la sincérité du matériau, donnant naissance à un objet à la fois ancré et expressif. Plus qu'une assise, c'est une déclaration - silencieuse, tactile et résolument contemporaine."
+        },
+        "craftsmanship": {
+            "caption": [
+                "SAVOIR-FAIRE."
+            ],
+            "text": "YOMARTINS existe à la croisée de l'objet et de la sculpture. Sa forme audacieuse, presque architecturale, élève le liège au-delà de la fonction, révélant sa texture, sa chaleur et sa beauté brute."
+        }
+    }
 }

@@ -21,7 +21,7 @@ if ($isSubscribeRequest) {
         exit;
     }
 } else {
-    $required = ['name', 'email', 'description'];
+    $required = ['name', 'email', 'type', 'description'];
     foreach ($required as $field) {
         if (empty($input[$field])) {
             http_response_code(400);
@@ -41,17 +41,15 @@ $smtpPort    = (int) getenv('SMTP_PORT');
 $smtpSecure  = 'ssl';
 
 $email = trim((string) ($input['email'] ?? ''));
-$fullName = trim(($input['name'] ?? '') . ' ' . ($input['surname'] ?? ''));
+$fullName = trim((string) ($input['name'] ?? ''));
 
 if ($isSubscribeRequest) {
-    $subject = "Subscibe Request: {$email}";
-    $body = "You have received a subscription request from : {$email}";
+    $subject = "Subscribe Request: {$email}";
+    $body = "You have received a subscription request from: {$email}";
 } else {
     $subject = 'New contact form submission';
     $body = "Name: {$fullName}\n"
           . "Email: {$email}\n"
-          . "Phone: " . ($input['phone'] ?? '') . "\n"
-          . "Location: " . ($input['location'] ?? '') . "\n"
           . "Type: " . ($input['type'] ?? '') . "\n"
           . "Description:\n" . ($input['description'] ?? '') . "\n";
 }

@@ -18,7 +18,7 @@
 
         <p>
           {{ t('about.agencyIntro') }}
-          <a href="https://www.andrea-studio.com/" target="_blank" rel="noopener noreferrer">
+          <a href="https://www.jora-studio.com/" target="_blank" rel="noopener noreferrer">
             {{ t('about.agencyLink') }}
           </a>.
         </p>

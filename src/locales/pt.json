@@ -1,5 +1,6 @@
 ﻿{
     "nav": {
+        "home": "Início",
         "objects": "Objetos",
         "about": "Sobre",
         "editions": "Edições",
@@ -9,6 +10,7 @@
         "goHomeAria": "Ir para a página inicial",
         "mainNavigationAria": "Navegação principal",
         "openMenuAria": "Abrir menu",
+        "closeMenuAria": "Fechar menu",
         "logoAlt": "Andrea Dea Jones",
         "languageAria": "Alterar idioma"
     },
@@ -49,6 +51,7 @@
         "imageAlt": "Imagem {index} de {title}",
         "dimensions": "Dimensões :",
         "weight": "Peso :",
+        "scrollToTop": "Voltar ao topo",
         "notFound": "Objeto não encontrado."
     },
     "editions": {

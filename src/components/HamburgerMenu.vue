@@ -6,7 +6,7 @@
           <!-- Header -->
           <header class="andrea-menu-header">
             <div class="andrea-menu-lang-wrapper">
-              <button class="lang-toggle" @click="langOpen = !langOpen">
+              <button class="lang-toggle" type="button" @click="langOpen = !langOpen">
                 <span>{{ currentLocaleLabel }}</span>
                 <span class="dropdown-arrow">▼</span>
               </button>
@@ -23,12 +23,15 @@
               </ul>
             </div>
 
-            <button class="menu-close" @click="close">✕</button>
+            <button class="menu-close" type="button" :aria-label="t('header.closeMenuAria')" @click="close">
+              <span class="menu-close-line menu-close-line-first" aria-hidden="true"></span>
+              <span class="menu-close-line menu-close-line-second" aria-hidden="true"></span>
+            </button>
           </header>
 
           <!-- Navigation -->
           <nav class="andrea-menu-nav">
-            <button v-for="item in items" :key="item.key" class="nav-link" @click="go(item)">
+            <button v-for="item in items" :key="item.key" class="nav-link" type="button" @click="go(item)">
               {{ t(item.labelKey) }}
             </button>
           </nav>
@@ -73,6 +76,7 @@ const langOpen = ref(false)
 const languages = ['en', 'fr', 'pt']
 
 const items = [
+  { key: 'home', labelKey: 'nav.home', to: '/' },
   { key: 'objects', labelKey: 'nav.objects', to: '/object' },
   { key: 'about', labelKey: 'nav.about', to: '/about' },
   { key: 'editions', labelKey: 'nav.editions', to: '/edition' },
@@ -199,6 +203,32 @@ onMounted(() => {
   text-transform: uppercase;
 }
 
+.menu-close {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  padding: 0;
+}
+
+.menu-close-line {
+  position: absolute;
+  width: 1.5rem;
+  height: 2px;
+  border-radius: 999px;
+  background: currentColor;
+}
+
+.menu-close-line-first {
+  transform: rotate(45deg);
+}
+
+.menu-close-line-second {
+  transform: rotate(-45deg);
+}
+
 /* Lang dropdown */
 .andrea-menu-lang-wrapper {
   position: relative;
@@ -226,6 +256,7 @@ onMounted(() => {
 .andrea-menu-nav {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 0.9rem;
   margin-bottom: 1.5rem;
 }
@@ -233,7 +264,7 @@ onMounted(() => {
 .nav-link {
   background: transparent;
   border: none;
-  text-align: left;
+  text-align: center;
   font-size: 1.2rem;
   font-family: var(--font-body);
   text-transform: uppercase;
@@ -243,6 +274,7 @@ onMounted(() => {
   color: var(--color-text);
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 0.5rem;
 }
 

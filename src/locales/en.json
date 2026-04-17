@@ -1,5 +1,6 @@
 ﻿{
     "nav": {
+        "home": "Home",
         "objects": "Objects",
         "about": "About",
         "editions": "Editions",
@@ -9,6 +10,7 @@
         "goHomeAria": "Go to home",
         "mainNavigationAria": "Main navigation",
         "openMenuAria": "Open menu",
+        "closeMenuAria": "Close menu",
         "logoAlt": "Andrea Dea Jones",
         "languageAria": "Change language"
     },
@@ -49,6 +51,7 @@
         "imageAlt": "{title} image {index}",
         "dimensions": "Dimensions :",
         "weight": "Weight :",
+        "scrollToTop": "Scroll to top",
         "notFound": "Object not found."
     },
     "editions": {

@@ -39,6 +39,7 @@ type PortfolioMeta = {
 }
 
 type PortfolioConfig = {
+  folder?: string
   order?: number
   slug?: string
 }
@@ -50,7 +51,13 @@ export const usePortfolioProjects = () => {
     const metaByFolder = new Map<string, PortfolioMeta>()
     // Build config from consolidated meta.json
     const configByFolder = new Map<string, PortfolioConfig>()
-    portfolioMeta.projects.forEach((project) => {
+    const objectEntries =
+      (Array.isArray((portfolioMeta as { objects?: unknown[] }).objects) &&
+        (portfolioMeta as { objects?: PortfolioConfig[] }).objects) ||
+      []
+
+    objectEntries.forEach((project) => {
+      if (!project.folder) return
       configByFolder.set(project.folder, { order: project.order, slug: project.slug })
     })
 

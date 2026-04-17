@@ -7,7 +7,14 @@ import sitemap from 'vite-plugin-sitemap'
 import objectsMeta from './src/assets/objects/meta.json'
 
 const staticRoutes = ['/', '/object', '/edition', '/about', '/contact']
-const objectRoutes = objectsMeta.projects
+const objectEntries =
+  (Array.isArray((objectsMeta as { objects?: unknown[] }).objects) &&
+    (objectsMeta as { objects?: { slug?: string }[] }).objects) ||
+  (Array.isArray((objectsMeta as { projects?: unknown[] }).projects) &&
+    (objectsMeta as { projects?: { slug?: string }[] }).projects) ||
+  []
+
+const objectRoutes = objectEntries
   .map((project) => project.slug?.trim())
   .filter((slug): slug is string => Boolean(slug))
   .map((slug) => `/object/${slug}`)

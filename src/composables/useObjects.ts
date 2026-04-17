@@ -6,10 +6,18 @@ export interface ObjectItem {
   title: string
   dimensions?: string
   weight?: string
-  description: string[]
+  sections: ObjectSection[]
   cover: string
   gallery: string[]
   order?: number
+}
+
+export interface ObjectSection {
+  id: string
+  text: string
+  caption?: string
+  image?: string
+  videoEmbedUrl?: string
 }
 
 // load consolidated object metadata
@@ -25,27 +33,117 @@ const imageModules = import.meta.glob('@/assets/objects/*/*.{png,jpg,jpeg,webp}'
 
 type ObjectMeta = {
   slug?: string
-  title?: string
-  dimensions?: string
-  weight?: string
-  description?: string[] | string
+  sections?: Record<string, { text?: string; caption?: string | string[] }>
   order?: number
+}
+
+type SectionConfig = {
+  id?: string
+  image?: string
+  youtube?: string
 }
 
 type ObjectConfig = {
   order?: number
   slug?: string
+  title?: string
+  dimensions?: string
+  weight?: string
+  sections?: SectionConfig[]
 }
 
 export const useObjects = () => {
   const { locale } = useI18n()
+
+  const getYoutubeEmbedUrl = (value?: string): string | undefined => {
+    if (!value) return undefined
+
+    const trimmed = value.trim()
+    if (!trimmed) return undefined
+
+    const idPattern = /^[A-Za-z0-9_-]{11}$/
+    if (idPattern.test(trimmed)) {
+      return `https://www.youtube.com/embed/${trimmed}`
+    }
+
+    try {
+      const url = new URL(trimmed)
+      const host = url.hostname.toLowerCase()
+
+      if (host === 'youtu.be') {
+        const id = url.pathname.replace(/^\//, '').split('/')[0]
+        if (id && idPattern.test(id)) return `https://www.youtube.com/embed/${id}`
+      }
+
+      if (host === 'www.youtube.com' || host === 'youtube.com' || host === 'm.youtube.com') {
+        const vParam = url.searchParams.get('v')
+        if (vParam && idPattern.test(vParam)) {
+          return `https://www.youtube.com/embed/${vParam}`
+        }
+
+        const parts = url.pathname.split('/').filter(Boolean)
+        const markerIndex = parts.findIndex((part) =>
+          ['embed', 'shorts', 'live'].includes(part.toLowerCase()),
+        )
+        if (markerIndex >= 0) {
+          const id = parts[markerIndex + 1]
+          if (id && idPattern.test(id)) return `https://www.youtube.com/embed/${id}`
+        }
+      }
+    } catch {
+      return undefined
+    }
+
+    return undefined
+  }
+
+  const normalizeSectionConfigs = (value: unknown): { id: string; image?: string; youtube?: string }[] => {
+    if (!Array.isArray(value)) return []
+
+    return value
+      .map((entry): { id: string; image?: string; youtube?: string } | null => {
+        if (!entry || typeof entry !== 'object') return null
+
+        const id =
+          typeof (entry as { id?: unknown }).id === 'string'
+            ? (entry as { id: string }).id.trim()
+            : ''
+
+        if (!id) return null
+
+        const image =
+          typeof (entry as { image?: unknown }).image === 'string'
+            ? (entry as { image: string }).image.trim()
+            : ''
+
+        const youtube =
+          typeof (entry as { youtube?: unknown }).youtube === 'string'
+            ? (entry as { youtube: string }).youtube.trim()
+            : ''
+
+        return {
+          id,
+          image: image || undefined,
+          youtube: youtube || undefined,
+        }
+      })
+      .filter((entry): entry is { id: string; image?: string; youtube?: string } => Boolean(entry))
+  }
+
   const objects = computed<ObjectItem[]>(() => {
     // folder -> meta (language-specific)
     const metaByFolder = new Map<string, ObjectMeta>()
     // Build config from consolidated meta.json
     const configByFolder = new Map<string, ObjectConfig>()
-    objectsMeta.projects.forEach((item) => {
-      configByFolder.set(item.folder, { order: item.order, slug: item.slug })
+    objectsMeta.objects.forEach((item) => {
+      configByFolder.set(item.folder, {
+        order: item.order,
+        slug: item.slug,
+        title: item.title,
+        dimensions: item.dimensions,
+        weight: item.weight,
+        sections: item.sections,
+      })
     })
 
     Object.entries(metaModules).forEach(([path, mod]) => {
@@ -130,21 +228,54 @@ export const useObjects = () => {
 
       const cover = coverSrc
 
-      const description = Array.isArray(meta.description)
-        ? (meta.description as string[])
-        : typeof meta.description === 'string'
-          ? meta.description
-              .split(/\n\n+/)
-              .map((paragraph: string) => paragraph.trim())
-              .filter(Boolean)
-          : []
+      const sectionConfigs = normalizeSectionConfigs(config.sections)
+      const localizedSections = meta.sections ?? {}
+
+      const sections: ObjectSection[] = sectionConfigs
+        .map((sectionConfig): ObjectSection | null => {
+          const localizedSection = localizedSections[sectionConfig.id]
+          if (!localizedSection || typeof localizedSection !== 'object') {
+            return null
+          }
+
+          const text = typeof localizedSection.text === 'string' ? localizedSection.text.trim() : ''
+          if (!text) {
+            return null
+          }
+
+          const caption =
+            typeof localizedSection.caption === 'string'
+              ? localizedSection.caption.trim()
+              : Array.isArray(localizedSection.caption)
+                ? localizedSection.caption
+                    .map((line) => (typeof line === 'string' ? line.trim() : ''))
+                    .filter(Boolean)
+                    .join('\n')
+                : ''
+
+          const imageSrc = sectionConfig.image
+            ? allImages.find((img) => img.file.toLowerCase() === sectionConfig.image?.toLowerCase())
+                ?.src
+            : undefined
+
+          const videoEmbedUrl = getYoutubeEmbedUrl(sectionConfig.youtube)
+
+          return {
+            id: sectionConfig.id,
+            text,
+            ...(caption ? { caption } : {}),
+            ...(imageSrc ? { image: imageSrc } : {}),
+            ...(videoEmbedUrl ? { videoEmbedUrl } : {}),
+          }
+        })
+        .filter((section): section is ObjectSection => section !== null)
 
       const objectItem: ObjectItem = {
         slug,
-        title: meta.title ?? folder,
-        dimensions: meta.dimensions,
-        weight: meta.weight,
-        description,
+        title: config.title ?? folder,
+        dimensions: config.dimensions,
+        weight: config.weight,
+        sections,
         cover,
         gallery,
         order: config.order ?? meta.order,

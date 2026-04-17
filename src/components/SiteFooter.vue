@@ -81,14 +81,19 @@ const handleSubscribe = async () => {
 <style scoped>
 .site-footer {
   margin: 0 2.5rem 2.5rem 2.5rem;
-  padding: 2.1rem 0;
+  padding: 2.1rem 0 0;
   display: grid;
-  grid-template-columns: 1fr auto 1fr;
+  grid-template-columns: minmax(0, 1fr) auto;
+  grid-template-areas:
+    'social subscribe'
+    'copyright copyright';
   align-items: end;
+  row-gap: 1rem;
   gap: 1.8rem;
 }
 
 .site-socials {
+  grid-area: social;
   display: flex;
   flex-direction: column;
   gap: 0.45rem;
@@ -104,11 +109,16 @@ const handleSubscribe = async () => {
 }
 
 .site-copyright {
+  grid-area: copyright;
+  margin: 0;
+  justify-self: center;
+  text-align: center;
   font-size: 0.92rem;
-  white-space: nowrap;
+  white-space: normal;
 }
 
 .site-subscribe {
+  grid-area: subscribe;
   justify-self: end;
   width: 430px;
   padding: 0.75rem 0.95rem;
@@ -184,11 +194,11 @@ const handleSubscribe = async () => {
   .site-footer {
     margin: 0 2.5rem 2rem 2.5rem;
     grid-template-columns: 1fr;
+    grid-template-areas:
+      'social'
+      'subscribe'
+      'copyright';
     gap: 1.3rem;
-  }
-
-  .site-copyright {
-    white-space: normal;
   }
 
   .site-subscribe {
