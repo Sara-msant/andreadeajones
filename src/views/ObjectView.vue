@@ -27,7 +27,7 @@
           </div>
         </figure>
 
-        <p v-if="section.caption" class="object-image-caption" v-html="formatRichText(section.caption)"></p>
+        <p v-if="section.caption" class="object-image-caption" v-html="formatRichText(section.caption)"></p>         
 
         <p class="object-paragraph" v-html="formatRichText(section.text)"></p>
       </section>
@@ -89,8 +89,8 @@ const scrollToTop = (): void => {
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 9.5rem;
-  padding: 5rem 0 8rem;
+  gap: 15rem;         /* espace entre dessus de la photo et texte du desssus*/ 
+  padding: 1rem 0 8rem;    /* espace entre header et photo du tabouret 1*/
 }
 
 .object-block {
@@ -98,7 +98,7 @@ const scrollToTop = (): void => {
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1rem;       /*espace entre photos et sous-titre */
 }
 
 .object-image {
@@ -140,6 +140,7 @@ const scrollToTop = (): void => {
 .object-paragraph {
   width: min(100%, 980px);
   margin: 0 auto;
+  padding-top: 150px;        /*espace entre le haut du text et le sous titre */
   text-align: center;
   font-size: 1.02rem;
   line-height: 1.45;
@@ -168,7 +169,7 @@ const scrollToTop = (): void => {
   border: none;
   background: transparent;
   color: inherit;
-  font-size: 2rem;
+  font-size: 5rem;
   line-height: 1;
   cursor: pointer;
   padding: 0.25rem 0.6rem;

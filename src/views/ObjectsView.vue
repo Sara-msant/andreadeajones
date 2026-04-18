@@ -31,8 +31,6 @@
           <div class="portfolio-card-info">
             <p class="portfolio-card-title">{{ item.title }}</p>
             <div v-if="item.dimensions || item.weight" class="portfolio-card-specs">
-              <p v-if="item.dimensions">{{ t('objects.dimensions') }} {{ item.dimensions }}</p>
-              <p v-if="item.weight">{{ t('objects.weight') }} {{ item.weight }}</p>
             </div>
           </div>
         </article>
@@ -80,12 +78,12 @@ const goToObject = (item: ObjectsGridItem) => {
 <style scoped>
 .portfolio-grid-wrapper {
   width: 100%;
-  padding: 1rem 0 0;
+  padding: 10rem 0 0; /* espace entre header et texte d intro */
 }
 
 .objects-intro {
   max-width: 760px;
-  margin: 0 auto 2.75rem;
+  margin: 0 auto 10rem;  /* espace entre texte d intro et cards */
   text-align: center;
   font-size: 0.88rem;
   line-height: 1.5;
@@ -103,7 +101,7 @@ const goToObject = (item: ObjectsGridItem) => {
 .portfolio-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(280px, 430px));
-  gap: 1.5rem;
+  gap: 1.5rem;     /* espace entre les 2 cardsds */
   justify-content: center;
   width: 100%;
 }
@@ -149,7 +147,7 @@ const goToObject = (item: ObjectsGridItem) => {
   transform: scale(1.12);
 }
 
-.portfolio-card-info {
+.portfolio-card-info {     /*espace entre card et sous titre */
   margin-top: 1rem;
 }
 

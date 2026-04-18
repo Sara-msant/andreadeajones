@@ -32,7 +32,10 @@
         </article>
       </section>
 
-      <p class="home-caption">{{ t('home.caption') }}</p>
+      <p class="home-caption">
+  <span class="line-1">“An object with structure and attitude”</span>
+  <span class="line-2">Allow me to introduce YOMARTINS collection</span>
+</p>
 
       <img
         v-no-right-click
@@ -96,7 +99,7 @@ const goToContact = () => {
   flex-direction: column;
   align-items: stretch;
   gap: 0;
-  padding-top: 1.4rem;
+  padding-top: 10rem;
 }
 
 .home-brand {
@@ -114,7 +117,7 @@ const goToContact = () => {
 
 .home-intro-card {
   width: 400px;
-  margin-top: 1.8rem;
+  margin-top: 13rem;
   margin-left: auto;
   background: var(--color-accent);
 }
@@ -173,30 +176,30 @@ const goToContact = () => {
 }
 
 .intro-this {
-  margin-top: 0.25rem;
+  margin-top: 8rem;
   font-size: clamp(2.55rem, 3vw, 3.4rem);
   line-height: 1;
 }
 
 .home-caption {
-  margin-top: 10rem;
+  margin-top: 11rem;
   text-align: center;
   font-size: clamp(1.05rem, 1.2vw, 1.95rem);
 }
 
-.home-object-image {
-  margin: 3.2rem auto 0;
+.home-object-image {  /* ← image stool */
+  margin: 15rem auto 0;
   width: min(100%, 820px);
   height: auto;
   object-fit: contain;
 }
 
-.home-actions {
-  margin: 2.4rem auto 0;
+.home-actions {   
+  margin: 5rem auto 0;   /* ← changer espace entre stool image et texte "yomartins explore" */
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.8rem;
+  gap: 1rem;    /* ← espace entre  YOMARTINS EXPLORE et button Purshase */
 }
 
 .home-explore {
@@ -205,8 +208,9 @@ const goToContact = () => {
   color: var(--color-text);
   cursor: pointer;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
+  gap: 30px;
   text-transform: uppercase;
   font-family: var(--font-body);
 }
@@ -225,7 +229,7 @@ const goToContact = () => {
   text-transform: uppercase;
   font-family: var(--font-body);
   font-size: 1.45rem;
-  padding: 0.55rem 1rem;
+  padding: 0.55rem 5rem;
 }
 
 .home-explore:hover,
@@ -236,6 +240,18 @@ const goToContact = () => {
 
 .home-inquiry:hover {
   background: var(--color-text);
+}
+
+.home-caption span {
+  display: block;
+}
+
+.line-1 {
+  font-size: 1.8rem; /* ou ta taille actuelle */
+}
+
+.line-2 {
+  font-size: 1.2rem; /* plus petit */
 }
 
 @media (max-width: 1200px) {

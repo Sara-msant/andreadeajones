@@ -38,7 +38,7 @@ const { t } = useI18n()
   display: flex;
   flex-direction: column;
   gap: clamp(5.5rem, 12vh, 8.5rem);
-  padding: clamp(3rem, 9vh, 6rem) 0 clamp(2.5rem, 9vh, 6rem);
+  padding: clamp(10rem, 9vh, 6rem) 0 clamp(2.5rem, 9vh, 6rem);
 }
 
 .editions-block {

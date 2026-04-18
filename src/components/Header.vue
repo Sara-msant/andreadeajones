@@ -192,8 +192,8 @@ const setLang = (lang: (typeof languages)[number]) => {
   padding: 34px 2.5rem 0 1.4rem;
 }
 
-.andrea-favicon {
-  height: 42px;
+.andrea-favicon {         /* logo back button*/
+  height: 25px;
   width: auto;
   border: none;
   background: transparent;
@@ -405,7 +405,7 @@ const setLang = (lang: (typeof languages)[number]) => {
 @media (max-width: 768px) {
   .andrea-header {
     height: 82px;
-    padding: 0 1.5rem;
+    padding: 0 rem;
     align-items: center;
   }
 

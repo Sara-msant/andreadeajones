@@ -172,8 +172,8 @@ const handleSubmit = async () => {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: clamp(2rem, 6vw, 5rem);
-  padding-bottom: 3rem;
+  padding-top: clamp(10rem, 6vw, 5rem);
+  padding-bottom: 10rem;
 }
 
 .contact-header {
@@ -235,7 +235,7 @@ const handleSubmit = async () => {
 .form-input:focus,
 .form-textarea:focus {
   outline: none;
-  border-color: #6b6b6b;
+  border-color: #00ff40;
 }
 
 .input-error {
@@ -264,9 +264,11 @@ const handleSubmit = async () => {
   transition: filter 0.2s ease, transform 0.2s ease;
 }
 
+
 .submit-btn:hover:not(:disabled) {
   filter: brightness(0.95);
-  transform: translateY(-1px);
+  background: #000000;
+  color: #6DFF14;
 }
 
 .submit-btn:disabled {

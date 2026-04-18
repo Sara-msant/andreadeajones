@@ -80,8 +80,8 @@ const handleSubscribe = async () => {
 
 <style scoped>
 .site-footer {
-  margin: 0 2.5rem 2.5rem 2.5rem;
-  padding: 2.1rem 0 0;
+  margin: 10rem 2.5rem 2.5rem;
+  padding: 10rem 0 0;
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto;
   grid-template-areas:
@@ -132,11 +132,16 @@ const handleSubscribe = async () => {
   font-weight: 700;
 }
 
-.site-subscribe-row {
+.site-subscribe-row {    /*E-mail*/
   margin-top: 0.55rem;
   display: flex;
   align-items: center;
   gap: 0.8rem;
+}
+
+.site-subscribe-row input::placeholder {
+  color: rgb(87, 87, 87); /* mets la couleur que tu veux */
+  opacity: 1; /* important pour certains navigateurs */
 }
 
 .site-subscribe-row input {
@@ -146,7 +151,7 @@ const handleSubscribe = async () => {
   background: transparent;
   padding: 0.2rem 0;
   font-family: var(--font-body);
-  font-size: 1.2rem;
+  font-size: 1rem;
 }
 
 .site-subscribe-row input:focus {

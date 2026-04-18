@@ -1,7 +1,13 @@
 ﻿<template>
   <PageWrapper>
     <section class="about-page">
-      <img class="about-portrait" :src="rachelImage" :alt="t('about.portraitAlt')" />
+      <div class="about-portrait-wrapper">
+  <img class="about-portrait" :src="rachelImage" :alt="t('about.portraitAlt')" />
+
+  <div class="about-portrait-title">
+    {{ t('ANDREA DEA JONES') }}
+  </div>
+</div>   
 
       <div class="about-copy">
         <p>{{ t('about.paragraphs.p1') }}</p>
@@ -41,14 +47,14 @@ const { t } = useI18n()
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: clamp(2.25rem, 4vw, 4rem) 0 2rem;
+  padding: clamp(10rem, 4vw, 4rem) 0 2rem;
 }
 
-.about-portrait {
+.about-portrait {      /* photo autoportrait*/
   width: min(100%, 430px);
   height: auto;
   display: block;
-  margin-bottom: clamp(2.5rem, 5vw, 4rem);
+  margin-bottom: clamp(2rem, 1vw, 4rem);
 }
 
 .about-copy {
@@ -67,6 +73,26 @@ const { t } = useI18n()
   color: inherit;
   text-decoration: underline;
   text-underline-offset: 2px;
+}
+
+.about-portrait-wrapper {
+  position: relative;
+  width: min(100%, 430px);
+  margin-bottom: clamp(10rem, 5vw, 4rem);
+}
+
+.about-portrait {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.about-portrait-title {       /* ANDREA DEA JONES subtitle*/
+  text-align: right;
+  margin-top: 0.1rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.02em;
+  opacity: 0.8;
 }
 
 @media (max-width: 768px) {
