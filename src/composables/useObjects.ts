@@ -97,7 +97,9 @@ export const useObjects = () => {
     return undefined
   }
 
-  const normalizeSectionConfigs = (value: unknown): { id: string; image?: string; youtube?: string }[] => {
+  const normalizeSectionConfigs = (
+    value: unknown,
+  ): { id: string; image?: string; youtube?: string }[] => {
     if (!Array.isArray(value)) return []
 
     return value

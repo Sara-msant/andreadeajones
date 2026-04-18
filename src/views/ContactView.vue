@@ -44,7 +44,9 @@
             :class="{ 'input-error': fieldErrors.type }"
           >
             <option value="" disabled>{{ t('contact.selectOption') }}</option>
-            <option value="yomartins-low-stool">{{ t('contact.interests.yomartinsLowStool') }}</option>
+            <option value="yomartins-low-stool">
+              {{ t('contact.interests.yomartinsLowStool') }}
+            </option>
             <option value="studio-edition">{{ t('contact.interests.studioEdition') }}</option>
             <option value="gallery-edition">{{ t('contact.interests.galleryEdition') }}</option>
             <option value="project-inquiry">{{ t('contact.interests.projectInquiry') }}</option>
@@ -261,14 +263,15 @@ const handleSubmit = async () => {
   font-family: var(--font-body);
   font-size: 0.88rem;
   cursor: pointer;
-  transition: filter 0.2s ease, transform 0.2s ease;
+  transition:
+    filter 0.2s ease,
+    transform 0.2s ease;
 }
-
 
 .submit-btn:hover:not(:disabled) {
   filter: brightness(0.95);
   background: #000000;
-  color: #6DFF14;
+  color: #6dff14;
 }
 
 .submit-btn:disabled {

@@ -33,9 +33,9 @@
       </section>
 
       <p class="home-caption">
-  <span class="line-1">“An object with structure and attitude”</span>
-  <span class="line-2">Allow me to introduce YOMARTINS collection</span>
-</p>
+        <span class="line-1">{{ t('home.caption.line1') }}</span>
+        <span class="line-2">{{ t('home.caption.line2') }}</span>
+      </p>
 
       <img
         v-no-right-click
@@ -187,19 +187,20 @@ const goToContact = () => {
   font-size: clamp(1.05rem, 1.2vw, 1.95rem);
 }
 
-.home-object-image {  /* ← image stool */
+.home-object-image {
+  /* ← image stool */
   margin: 15rem auto 0;
   width: min(100%, 820px);
   height: auto;
   object-fit: contain;
 }
 
-.home-actions {   
-  margin: 5rem auto 0;   /* ← changer espace entre stool image et texte "yomartins explore" */
+.home-actions {
+  margin: 5rem auto 0; /* ← changer espace entre stool image et texte "yomartins explore" */
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1rem;    /* ← espace entre  YOMARTINS EXPLORE et button Purshase */
+  gap: 1rem; /* ← espace entre  YOMARTINS EXPLORE et button Purshase */
 }
 
 .home-explore {
@@ -267,7 +268,6 @@ const goToContact = () => {
   .home-caption {
     margin-top: 4rem;
   }
-
 }
 
 @media (max-width: 768px) {
@@ -322,6 +322,5 @@ const goToContact = () => {
   .home-inquiry {
     font-size: 1.05rem;
   }
-
 }
 </style>

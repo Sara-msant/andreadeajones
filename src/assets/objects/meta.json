@@ -1,42 +1,42 @@
 {
-    "objects": [
+  "objects": [
+    {
+      "folder": "stool",
+      "order": 1,
+      "slug": "stool",
+      "title": "YoMartins",
+      "dimensions": "W 37 x D 37 x H 45 cm",
+      "weight": "9.0 Kg",
+      "sections": [
         {
-            "folder": "stool",
-            "order": 1,
-            "slug": "stool",
-            "title": "YoMartins",
-            "dimensions": "W 37 x D 37 x H 45 cm",
-            "weight": "9.0 Kg",
-            "sections": [
-                {
-                    "id": "overview",
-                    "image": "a-overview.png"
-                },
-                {
-                    "id": "deconstruction",
-                    "youtube": "https://www.youtube.com/embed/9nXoVh8j2s0"
-                },
-                {
-                    "id": "separated_blocks",
-                    "image": "b-separated-blocks.png"
-                },
-                {
-                    "id": "interlocking_system",
-                    "image": "c-interlocking-system.png"
-                },
-                {
-                    "id": "material_variations",
-                    "image": "d-material-variations.png"
-                },
-                {
-                    "id": "cork_trees",
-                    "image": "e-cork-trees.png"
-                },
-                {
-                    "id": "craftsmanship",
-                    "image": "f-craftsmanship.png"
-                }
-            ]
+          "id": "overview",
+          "image": "a-overview.png"
+        },
+        {
+          "id": "deconstruction",
+          "youtube": "https://www.youtube.com/embed/9nXoVh8j2s0"
+        },
+        {
+          "id": "separated_blocks",
+          "image": "b-separated-blocks.png"
+        },
+        {
+          "id": "interlocking_system",
+          "image": "c-interlocking-system.png"
+        },
+        {
+          "id": "material_variations",
+          "image": "d-material-variations.png"
+        },
+        {
+          "id": "cork_trees",
+          "image": "e-cork-trees.png"
+        },
+        {
+          "id": "craftsmanship",
+          "image": "f-craftsmanship.png"
         }
-    ]
+      ]
+    }
+  ]
 }

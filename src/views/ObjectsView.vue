@@ -7,10 +7,7 @@
         </p>
       </section>
 
-      <div
-        class="portfolio-grid"
-        :class="{ 'single-object': displayObjects.length === 1 }"
-      >
+      <div class="portfolio-grid" :class="{ 'single-object': displayObjects.length === 1 }">
         <article
           v-for="item in displayObjects"
           :key="item.slug ?? 'coming-soon'"
@@ -30,8 +27,7 @@
 
           <div class="portfolio-card-info">
             <p class="portfolio-card-title">{{ item.title }}</p>
-            <div v-if="item.dimensions || item.weight" class="portfolio-card-specs">
-            </div>
+            <div v-if="item.dimensions || item.weight" class="portfolio-card-specs"></div>
           </div>
         </article>
       </div>
@@ -83,7 +79,7 @@ const goToObject = (item: ObjectsGridItem) => {
 
 .objects-intro {
   max-width: 760px;
-  margin: 0 auto 10rem;  /* espace entre texte d intro et cards */
+  margin: 0 auto 10rem; /* espace entre texte d intro et cards */
   text-align: center;
   font-size: 0.88rem;
   line-height: 1.5;
@@ -101,7 +97,7 @@ const goToObject = (item: ObjectsGridItem) => {
 .portfolio-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(280px, 430px));
-  gap: 1.5rem;     /* espace entre les 2 cardsds */
+  gap: 1.5rem; /* espace entre les 2 cardsds */
   justify-content: center;
   width: 100%;
 }
@@ -147,7 +143,8 @@ const goToObject = (item: ObjectsGridItem) => {
   transform: scale(1.12);
 }
 
-.portfolio-card-info {     /*espace entre card et sous titre */
+.portfolio-card-info {
+  /*espace entre card et sous titre */
   margin-top: 1rem;
 }
 

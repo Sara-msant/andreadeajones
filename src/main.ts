@@ -56,7 +56,7 @@ router.afterEach((to) => {
   if (window.gtag) {
     window.gtag('event', 'page_view', {
       page_path: to.path,
-      page_title: document.title
+      page_title: document.title,
     })
   }
 })

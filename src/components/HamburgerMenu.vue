@@ -23,7 +23,12 @@
               </ul>
             </div>
 
-            <button class="menu-close" type="button" :aria-label="t('header.closeMenuAria')" @click="close">
+            <button
+              class="menu-close"
+              type="button"
+              :aria-label="t('header.closeMenuAria')"
+              @click="close"
+            >
               <span class="menu-close-line menu-close-line-first" aria-hidden="true"></span>
               <span class="menu-close-line menu-close-line-second" aria-hidden="true"></span>
             </button>
@@ -31,7 +36,13 @@
 
           <!-- Navigation -->
           <nav class="andrea-menu-nav">
-            <button v-for="item in items" :key="item.key" class="nav-link" type="button" @click="go(item)">
+            <button
+              v-for="item in items"
+              :key="item.key"
+              class="nav-link"
+              type="button"
+              @click="go(item)"
+            >
               {{ t(item.labelKey) }}
             </button>
           </nav>
@@ -356,5 +367,3 @@ onMounted(() => {
   font-weight: 600;
 }
 </style>
-
-

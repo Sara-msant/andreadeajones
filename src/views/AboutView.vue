@@ -2,12 +2,10 @@
   <PageWrapper>
     <section class="about-page">
       <div class="about-portrait-wrapper">
-  <img class="about-portrait" :src="rachelImage" :alt="t('about.portraitAlt')" />
+        <img class="about-portrait" :src="rachelImage" :alt="t('about.portraitAlt')" />
 
-  <div class="about-portrait-title">
-    {{ t('ANDREA DEA JONES') }}
-  </div>
-</div>   
+        <div class="about-portrait-title">ANDREA DEA JONES</div>
+      </div>
 
       <div class="about-copy">
         <p>{{ t('about.paragraphs.p1') }}</p>
@@ -25,8 +23,8 @@
         <p>
           {{ t('about.agencyIntro') }}
           <a href="https://www.jora-studio.com/" target="_blank" rel="noopener noreferrer">
-            {{ t('about.agencyLink') }}
-          </a>.
+            {{ t('about.agencyLink') }} </a
+          >.
         </p>
       </div>
     </section>
@@ -50,7 +48,8 @@ const { t } = useI18n()
   padding: clamp(10rem, 4vw, 4rem) 0 2rem;
 }
 
-.about-portrait {      /* photo autoportrait*/
+.about-portrait {
+  /* photo autoportrait*/
   width: min(100%, 430px);
   height: auto;
   display: block;
@@ -87,7 +86,8 @@ const { t } = useI18n()
   display: block;
 }
 
-.about-portrait-title {       /* ANDREA DEA JONES subtitle*/
+.about-portrait-title {
+  /* ANDREA DEA JONES subtitle*/
   text-align: right;
   margin-top: 0.1rem;
   font-size: 0.75rem;
@@ -112,4 +112,3 @@ const { t } = useI18n()
   }
 }
 </style>
-

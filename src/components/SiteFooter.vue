@@ -1,7 +1,11 @@
 <template>
   <footer class="site-footer" aria-label="Site footer">
     <div class="site-socials">
-      <a href="https://www.instagram.com/andrea_dea_jones" target="_blank" rel="noopener noreferrer">
+      <a
+        href="https://www.instagram.com/andrea_dea_jones"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         {{ t('common.social.instagram') }}
       </a>
       <a href="https://www.tiktok.com/@andrea.dea.jones" target="_blank" rel="noopener noreferrer">
@@ -28,8 +32,12 @@
           {{ loading ? t('contact.sending') : t('home.subscribe') }}
         </button>
       </div>
-      <p v-if="status === 'ok'" class="subscribe-status success">{{ t('contact.successMessage') }}</p>
-      <p v-if="status === 'error'" class="subscribe-status error">{{ t('contact.errorMessage') }}</p>
+      <p v-if="status === 'ok'" class="subscribe-status success">
+        {{ t('contact.successMessage') }}
+      </p>
+      <p v-if="status === 'error'" class="subscribe-status error">
+        {{ t('contact.errorMessage') }}
+      </p>
     </form>
   </footer>
 </template>
@@ -132,7 +140,8 @@ const handleSubscribe = async () => {
   font-weight: 700;
 }
 
-.site-subscribe-row {    /*E-mail*/
+.site-subscribe-row {
+  /*E-mail*/
   margin-top: 0.55rem;
   display: flex;
   align-items: center;

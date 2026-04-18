@@ -1,10 +1,25 @@
 ﻿<template>
-  <header ref="headerRef" class="andrea-header" :class="{ 'andrea-white': isWhite, 'is-compact': isCompact }">
-    <button ref="faviconRef" class="andrea-favicon" type="button" :aria-label="t('header.goHomeAria')" @click="goHome">
+  <header
+    ref="headerRef"
+    class="andrea-header"
+    :class="{ 'andrea-white': isWhite, 'is-compact': isCompact }"
+  >
+    <button
+      ref="faviconRef"
+      class="andrea-favicon"
+      type="button"
+      :aria-label="t('header.goHomeAria')"
+      @click="goHome"
+    >
       <img src="/header-logo.png" :alt="t('header.logoAlt')" />
     </button>
 
-    <nav ref="navRef" class="andrea-nav" :aria-label="t('header.mainNavigationAria')" :inert="isCompact">
+    <nav
+      ref="navRef"
+      class="andrea-nav"
+      :aria-label="t('header.mainNavigationAria')"
+      :inert="isCompact"
+    >
       <template v-for="(item, index) in navItems" :key="item.name">
         <div class="andrea-nav-item">
           <RouterLink
@@ -19,7 +34,8 @@
             class="andrea-nav-subroute"
             aria-current="page"
           >
-            <span class="andrea-nav-subroute-connector" aria-hidden="true">└</span><span class="andrea-nav-subroute-title">{{ currentObjectTitle }}</span>
+            <span class="andrea-nav-subroute-connector" aria-hidden="true">└</span
+            ><span class="andrea-nav-subroute-title">{{ currentObjectTitle }}</span>
           </span>
         </div>
         <span v-if="index < navItems.length - 1" class="andrea-nav-sep" aria-hidden="true">▪</span>
@@ -192,7 +208,8 @@ const setLang = (lang: (typeof languages)[number]) => {
   padding: 34px 2.5rem 0 1.4rem;
 }
 
-.andrea-favicon {         /* logo back button*/
+.andrea-favicon {
+  /* logo back button*/
   height: 25px;
   width: auto;
   border: none;
@@ -423,5 +440,3 @@ const setLang = (lang: (typeof languages)[number]) => {
   }
 }
 </style>
-
-

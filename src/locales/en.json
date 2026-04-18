@@ -1,114 +1,117 @@
 ﻿{
-    "nav": {
-        "home": "Home",
-        "objects": "Objects",
-        "about": "About",
-        "editions": "Editions",
-        "contact": "Contact"
-    },
-    "header": {
-        "goHomeAria": "Go to home",
-        "mainNavigationAria": "Main navigation",
-        "openMenuAria": "Open menu",
-        "closeMenuAria": "Close menu",
-        "logoAlt": "Andrea Dea Jones",
-        "languageAria": "Change language"
-    },
-    "common": {
-        "social": {
-            "instagram": "Instagram",
-            "tiktok": "TikTok"
-        }
-    },
-    "home": {
-        "brand": {
-            "line1": "Andrea",
-            "line2": "Dea",
-            "line3": "Jones."
-        },
-        "portraitAlt": "Andrea portrait",
-        "intro": {
-            "yo": "Yo,",
-            "im": "I'm Andrea.",
-            "andIDid": "And I did",
-            "this": "this."
-        },
-        "caption": "“An object with structure and attitude”<br>Allow me to introduce YOMARTINS",
-        "explore": "Explore",
-        "purchaseInquiry": "Purchase // Inquiry",
-        "copyright": "© Andrea Dea Jones. All rights reserved.",
-        "subscribe": "Subscribe",
-        "emailPlaceholder": "E-Mail *"
-    },
-    "objects": {
-        "introAria": "Objects intro text",
-        "intro": "Each object is developed independently, yet part of the same material and conceptual language where sustainability and elegance naturally coexist.",
-        "dimensions": "Dimensions:",
-        "weight": "Weight:"
-    },
-    "object": {
-        "heroAlt": "{title} hero image",
-        "imageAlt": "{title} image {index}",
-        "dimensions": "Dimensions :",
-        "weight": "Weight :",
-        "scrollToTop": "Scroll to top",
-        "notFound": "Object not found."
-    },
-    "editions": {
-        "title": "Editions",
-        "comingSoon": "Content coming soon.",
-        "objectEdition": {
-            "title": "Objects Edition",
-            "description": "Our objects exist in different editions. Each edition defines how an object is produced, customized, and distributed, without ever compromising its conceptual integrity."
-        },
-        "studio": {
-            "title": "Studio Edition",
-            "description": "The Studio Edition is produced to order. It allows for variations in materials and finishes, while respecting the object's original form and intent."
-        },
-        "gallery": {
-            "title": "Gallery Edition",
-            "description": "The Gallery Edition is produced in limited series. Each version is defined by a precise combination of materials and finishes, chosen as a specific interpretation of the object."
-        },
-        "note": "Not all editions are available for every object. Some pieces exist only as Studio Editions, others only as Gallery Editions."
-    },
-    "contact": {
-        "title": "GET IN TOUCH",
-        "description": "For inquiries, commissions or collaborations, please use the form below or contact directly. All messages are answered personally.",
-        "name": "Name",
-        "email": "Email",
-        "interestLabel": "Interest in",
-        "selectOption": "Select an option",
-        "interests": {
-            "yomartinsLowStool": "YOMARTINS LOW STOOL",
-            "studioEdition": "STUDIO EDITION",
-            "galleryEdition": "GALLERY EDITION",
-            "projectInquiry": "PROJECT INQUIRY",
-            "collaboration": "COLLABORATION",
-            "other": "OTHER"
-        },
-        "messageLabel": "Message",
-        "send": "SEND",
-        "sending": "Sending...",
-        "successMessage": "Thanks! We received your message.",
-        "errorMessage": "Sorry, something went wrong. Please try again later.",
-        "errors": {
-            "nameRequired": "Name is required",
-            "emailRequired": "Email is required",
-            "projectTypeRequired": "Please select an interest",
-            "descriptionRequired": "Message is required"
-        }
-    },
-    "about": {
-        "portraitAlt": "Andrea Dea Jones portrait",
-        "paragraphs": {
-            "p1": "Belgian-born, 37 years old, Andrea Dea Jones holds a Master's degree in Interior Architecture from the Academie des Beaux-Arts in Belgium.",
-            "p2": "Her creative journey began early through internships at architectural studios across France, alongside freelance work on Paris fashion shows at the age of 25. These formative experiences led her to a role as an interior architect at the iconic Saint Laurent Paris. There, she took her first steps in object design.",
-            "p3": "Five years ago, she relocated to Portugal, where she spent four years as a lead interior designer at a renowned office design company. There, she discovered a deep passion for creating bespoke, handcrafted furniture pieces that bring individuality and soul into every space.",
-            "p4": "Andrea Dea Jones approaches design with a bold, playful sensibility, challenging convention by bringing approachability and a sense of fun into contemporary design. Influenced by street art as well as Virgil Abloh, minimalism, and Bauhaus principles, her work is both intentional and expressive.",
-            "p5": "Grounded in human-centered thinking, each project translates lived experience into functional, emotionally resonant spaces. Her designs fuse aesthetic precision with feeling, creating interiors and objects that enrich daily life.",
-            "p6": "She is also the co-founder of Jora Studio, an architecture and interior design office that combines creativity and functionality in every project, based in the Algarve."
-        },
-        "agencyIntro": "Explore her interior design agency",
-        "agencyLink": "here"
+  "nav": {
+    "home": "Home",
+    "objects": "Objects",
+    "about": "About",
+    "editions": "Editions",
+    "contact": "Contact"
+  },
+  "header": {
+    "goHomeAria": "Go to home",
+    "mainNavigationAria": "Main navigation",
+    "openMenuAria": "Open menu",
+    "closeMenuAria": "Close menu",
+    "logoAlt": "Andrea Dea Jones",
+    "languageAria": "Change language"
+  },
+  "common": {
+    "social": {
+      "instagram": "Instagram",
+      "tiktok": "TikTok"
     }
+  },
+  "home": {
+    "brand": {
+      "line1": "Andrea",
+      "line2": "Dea",
+      "line3": "Jones."
+    },
+    "portraitAlt": "Andrea portrait",
+    "intro": {
+      "yo": "Yo,",
+      "im": "I'm Andrea.",
+      "andIDid": "And I did",
+      "this": "this."
+    },
+    "caption": {
+      "line1": "“An object with structure and attitude”",
+      "line2": "Allow me to introduce YOMARTINS collection"
+    },
+    "explore": "Explore",
+    "purchaseInquiry": "Purchase // Inquiry",
+    "copyright": "© Andrea Dea Jones. All rights reserved.",
+    "subscribe": "Subscribe",
+    "emailPlaceholder": "E-Mail *"
+  },
+  "objects": {
+    "introAria": "Objects intro text",
+    "intro": "Each object is developed independently, yet part of the same material and conceptual language where sustainability and elegance naturally coexist.",
+    "dimensions": "Dimensions:",
+    "weight": "Weight:"
+  },
+  "object": {
+    "heroAlt": "{title} hero image",
+    "imageAlt": "{title} image {index}",
+    "dimensions": "Dimensions :",
+    "weight": "Weight :",
+    "scrollToTop": "Scroll to top",
+    "notFound": "Object not found."
+  },
+  "editions": {
+    "title": "Editions",
+    "comingSoon": "Content coming soon.",
+    "objectEdition": {
+      "title": "Objects Edition",
+      "description": "Our objects exist in different editions. Each edition defines how an object is produced, customized, and distributed, without ever compromising its conceptual integrity."
+    },
+    "studio": {
+      "title": "Studio Edition",
+      "description": "The Studio Edition is produced to order. It allows for variations in materials and finishes, while respecting the object's original form and intent."
+    },
+    "gallery": {
+      "title": "Gallery Edition",
+      "description": "The Gallery Edition is produced in limited series. Each version is defined by a precise combination of materials and finishes, chosen as a specific interpretation of the object."
+    },
+    "note": "Not all editions are available for every object. Some pieces exist only as Studio Editions, others only as Gallery Editions."
+  },
+  "contact": {
+    "title": "GET IN TOUCH",
+    "description": "For inquiries, commissions or collaborations, please use the form below or contact directly. All messages are answered personally.",
+    "name": "Name",
+    "email": "Email",
+    "interestLabel": "Interest in",
+    "selectOption": "Select an option",
+    "interests": {
+      "yomartinsLowStool": "YOMARTINS LOW STOOL",
+      "studioEdition": "STUDIO EDITION",
+      "galleryEdition": "GALLERY EDITION",
+      "projectInquiry": "PROJECT INQUIRY",
+      "collaboration": "COLLABORATION",
+      "other": "OTHER"
+    },
+    "messageLabel": "Message",
+    "send": "SEND",
+    "sending": "Sending...",
+    "successMessage": "Thanks! We received your message.",
+    "errorMessage": "Sorry, something went wrong. Please try again later.",
+    "errors": {
+      "nameRequired": "Name is required",
+      "emailRequired": "Email is required",
+      "projectTypeRequired": "Please select an interest",
+      "descriptionRequired": "Message is required"
+    }
+  },
+  "about": {
+    "portraitAlt": "Andrea Dea Jones portrait",
+    "paragraphs": {
+      "p1": "Belgian-born, 37 years old, Andrea Dea Jones holds a Master's degree in Interior Architecture from the Academie des Beaux-Arts in Belgium.",
+      "p2": "Her creative journey began early through internships at architectural studios across France, alongside freelance work on Paris fashion shows at the age of 25. These formative experiences led her to a role as an interior architect at the iconic Saint Laurent Paris. There, she took her first steps in object design.",
+      "p3": "Five years ago, she relocated to Portugal, where she spent four years as a lead interior designer at a renowned office design company. There, she discovered a deep passion for creating bespoke, handcrafted furniture pieces that bring individuality and soul into every space.",
+      "p4": "Andrea Dea Jones approaches design with a bold, playful sensibility, challenging convention by bringing approachability and a sense of fun into contemporary design. Influenced by street art as well as Virgil Abloh, minimalism, and Bauhaus principles, her work is both intentional and expressive.",
+      "p5": "Grounded in human-centered thinking, each project translates lived experience into functional, emotionally resonant spaces. Her designs fuse aesthetic precision with feeling, creating interiors and objects that enrich daily life.",
+      "p6": "She is also the co-founder of Jora Studio, an architecture and interior design office that combines creativity and functionality in every project, based in the Algarve."
+    },
+    "agencyIntro": "Explore her interior design agency",
+    "agencyLink": "here"
+  }
 }

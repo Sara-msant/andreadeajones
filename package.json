@@ -13,7 +13,7 @@
     "build-only": "vite build",
     "type-check": "vue-tsc --build",
     "lint": "eslint . --fix --cache",
-    "format": "prettier --write --experimental-cli src/"
+    "format": "prettier --write --experimental-cli \"src/**/*.{vue,ts,tsx,js,jsx,mts,cts,css,scss,sass,less,json,md,html,yml,yaml}\" \"public/**/*.{html,css,scss,sass,less,json,md,yml,yaml}\" \"scripts/**/*.{ts,tsx,js,jsx,mts,cts,json,md,yml,yaml}\" \"*.{ts,js,json,md,html,css,yml,yaml}\" \".vscode/**/*.json\""
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^7.1.0",
