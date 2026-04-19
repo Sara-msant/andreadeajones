@@ -44,7 +44,7 @@ import { useI18n } from 'vue-i18n'
 import { useRouter } from 'vue-router'
 import PageWrapper from '@/components/PageWrapper.vue'
 import fatLogo from '@/assets/home/fat-logo.png'
-import introCopyImage from '@/assets/home/i-did-this.jpg'
+import introCopyImage from '@/assets/home/i-did-this.png'
 import featuredMetaRaw from '@/assets/home/featured/meta.json'
 
 type FeaturedMeta = {
@@ -74,12 +74,14 @@ const featuredCover = computed(() => {
 })
 
 const featuredObject = computed(() => {
-  if (!featuredCover.value || !featuredMeta.slug || !featuredMeta.title) {
+  if (!featuredCover.value || !featuredMeta.title) {
     return null
   }
 
+  const slug = typeof featuredMeta.slug === 'string' ? featuredMeta.slug.trim() : ''
+
   return {
-    slug: featuredMeta.slug,
+    slug: slug || undefined,
     title: featuredMeta.title,
     cover: featuredCover.value,
     alt: featuredMeta.alt,
@@ -88,7 +90,13 @@ const featuredObject = computed(() => {
 
 const goToObjectDetail = () => {
   if (!featuredObject.value) return
-  router.push({ name: 'object', params: { slug: featuredObject.value.slug } })
+
+  if (featuredObject.value.slug) {
+    router.push({ name: 'object', params: { slug: featuredObject.value.slug } })
+    return
+  }
+
+  router.push({ name: 'objects' })
 }
 
 const goToContact = () => {
