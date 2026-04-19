@@ -26,8 +26,8 @@
 
       <section class="home-actions">
         <button class="home-explore" type="button" @click="goToObjectDetail">
-          <span class="home-explore-name">{{ featuredObject.title }}.</span>
-          <span class="home-explore-link">{{ t('home.explore') }} &nbsp;→</span>
+          <span class="home-explore-text">{{ featuredObject.title }}</span>
+          <span class="home-explore-arrow" aria-hidden="true">→</span>
         </button>
 
         <button class="home-inquiry" type="button" @click="goToContact">
@@ -177,14 +177,22 @@ const goToContact = () => {
   flex-direction: row;
   align-items: center;
   gap: 30px;
+  padding: 0.25rem 1rem;
   text-transform: uppercase;
   font-family: var(--font-body);
 }
 
-.home-explore-name,
-.home-explore-link {
+.home-explore-text {
   font-size: 2rem;
   line-height: 1;
+}
+
+.home-explore-arrow {
+  display: inline-flex;
+  align-items: center;
+  font-size: 2rem;
+  line-height: 1;
+  transform: translateY(-0.11em);
 }
 
 .home-inquiry {
@@ -254,8 +262,11 @@ const goToContact = () => {
     margin-top: 3.3rem;
   }
 
-  .home-explore-name,
-  .home-explore-link {
+  .home-explore-text {
+    font-size: 1.3rem;
+  }
+
+  .home-explore-arrow {
     font-size: 1.3rem;
   }
 
