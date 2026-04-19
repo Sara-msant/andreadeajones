@@ -53,7 +53,7 @@ const comingSoonCover = '/images/objects-coming-soon.jpg'
 
 const comingSoonItem: ObjectsGridItem = {
   slug: '',
-  title: 'Coming soon',
+  title: t('objects.comingSoon'),
   sections: [],
   cover: comingSoonCover,
   gallery: [],

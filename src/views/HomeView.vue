@@ -1,34 +1,13 @@
 <template>
   <PageWrapper>
-    <section v-if="featuredProject" class="home">
+    <section v-if="featuredObject" class="home">
       <section class="home-hero">
         <div class="home-brand">
           <img v-no-right-click :src="fatLogo" alt="Andrea Dea Jones" draggable="false" />
         </div>
 
         <article class="home-intro-card">
-          <div class="home-intro-photos">
-            <img
-              v-no-right-click
-              :src="portraitImage"
-              :alt="t('home.portraitAlt')"
-              draggable="false"
-            />
-          </div>
-
-          <div class="home-intro-copy">
-            <p class="intro-yo">{{ t('home.intro.yo') }}</p>
-            <div class="intro-spacer" aria-hidden="true"></div>
-
-            <div class="intro-im-row">
-              <div aria-hidden="true"></div>
-              <p class="intro-im">{{ t('home.intro.im') }}</p>
-            </div>
-
-            <div class="intro-spacer" aria-hidden="true"></div>
-            <p class="intro-and">{{ t('home.intro.andIDid') }}</p>
-            <p class="intro-this">{{ t('home.intro.this') }}</p>
-          </div>
+          <img v-no-right-click :src="introCopyImage" alt="I did this" draggable="false" />
         </article>
       </section>
 
@@ -40,14 +19,14 @@
       <img
         v-no-right-click
         class="home-object-image"
-        :src="featuredProject.cover"
-        :alt="featuredProject.title"
+        :src="featuredObject.cover"
+        :alt="featuredObject.alt || featuredObject.title"
         draggable="false"
       />
 
       <section class="home-actions">
         <button class="home-explore" type="button" @click="goToObjectDetail">
-          <span class="home-explore-name">{{ featuredProject.title }}.</span>
+          <span class="home-explore-name">{{ featuredObject.title }}.</span>
           <span class="home-explore-link">{{ t('home.explore') }} &nbsp;→</span>
         </button>
 
@@ -64,20 +43,52 @@ import { computed } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useRouter } from 'vue-router'
 import PageWrapper from '@/components/PageWrapper.vue'
-import { useObjects } from '@/composables/useObjects'
-import portraitImage from '@/assets/home/rachel.png'
 import fatLogo from '@/assets/home/fat-logo.png'
+import introCopyImage from '@/assets/home/i-did-this.jpg'
+import featuredMetaRaw from '@/assets/home/featured/meta.json'
+
+type FeaturedMeta = {
+  slug?: string
+  title?: string
+  cover?: string
+  alt?: string
+}
 
 const router = useRouter()
 const { t } = useI18n()
-const { objects } = useObjects()
+const featuredMeta = featuredMetaRaw as FeaturedMeta
 
-// Keep home hero object in sync with the first object shown on the Objects page.
-const featuredProject = computed(() => objects.value[0] ?? null)
+const featuredImageModules = import.meta.glob('@/assets/home/featured/*.{png,jpg,jpeg,webp,avif}', {
+  eager: true,
+})
+
+const featuredCover = computed(() => {
+  if (!featuredMeta.cover) return null
+
+  const imageEntry = Object.entries(featuredImageModules).find(([path]) =>
+    path.endsWith(`/${featuredMeta.cover}`),
+  )
+
+  if (!imageEntry) return null
+  return ((imageEntry[1] as { default?: string }).default ?? imageEntry[1]) as string
+})
+
+const featuredObject = computed(() => {
+  if (!featuredCover.value || !featuredMeta.slug || !featuredMeta.title) {
+    return null
+  }
+
+  return {
+    slug: featuredMeta.slug,
+    title: featuredMeta.title,
+    cover: featuredCover.value,
+    alt: featuredMeta.alt,
+  }
+})
 
 const goToObjectDetail = () => {
-  if (!featuredProject.value) return
-  router.push({ name: 'object', params: { slug: featuredProject.value.slug } })
+  if (!featuredObject.value) return
+  router.push({ name: 'object', params: { slug: featuredObject.value.slug } })
 }
 
 const goToContact = () => {
@@ -119,66 +130,12 @@ const goToContact = () => {
   width: 400px;
   margin-top: 13rem;
   margin-left: auto;
-  background: var(--color-accent);
 }
 
-.home-intro-photos {
+.home-intro-card img {
   display: block;
-}
-
-.home-intro-photos img {
   width: 100%;
-  height: 265px;
-  object-fit: cover;
-  filter: grayscale(100%);
-  border: 1px solid rgba(0, 0, 0, 0.35);
-  border-bottom: none;
-}
-
-.home-intro-copy {
-  padding: 1.1rem 1.05rem 1.3rem;
-  text-transform: uppercase;
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: auto 52px auto 60px auto auto;
-  row-gap: 0;
-}
-
-.intro-yo {
-  font-size: clamp(3.2rem, 4vw, 4.2rem);
-  line-height: 1;
-  font-weight: 700;
-  white-space: nowrap;
-}
-
-.intro-im {
-  margin: 0;
-  font-size: clamp(2.2rem, 2.8vw, 3.2rem);
-  line-height: 1.1;
-}
-
-.intro-im-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: start;
-}
-
-.intro-spacer {
-  width: 100%;
-}
-
-.intro-and {
-  margin-top: 0;
-  font-size: clamp(2.9rem, 3.7vw, 4rem);
-  line-height: 1;
-  font-weight: 700;
-  white-space: nowrap;
-}
-
-.intro-this {
-  margin-top: 8rem;
-  font-size: clamp(2.55rem, 3vw, 3.4rem);
-  line-height: 1;
+  height: auto;
 }
 
 .home-caption {
@@ -282,31 +239,6 @@ const goToContact = () => {
 
   .home-brand {
     width: 100%;
-  }
-
-  .home-intro-photos img {
-    height: 145px;
-  }
-
-  .intro-yo {
-    font-size: 3.15rem;
-  }
-
-  .intro-im {
-    font-size: 2.25rem;
-  }
-
-  .home-intro-copy {
-    grid-template-rows: auto 36px auto 44px auto auto;
-  }
-
-  .intro-and {
-    font-size: 2.95rem;
-  }
-
-  .intro-this {
-    margin-top: 0.3rem;
-    font-size: 2.15rem;
   }
 
   .home-caption {

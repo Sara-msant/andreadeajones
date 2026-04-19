@@ -21,18 +21,6 @@
     }
   },
   "home": {
-    "brand": {
-      "line1": "Andrea",
-      "line2": "Dea",
-      "line3": "Jones."
-    },
-    "portraitAlt": "Portrait d'Andrea",
-    "intro": {
-      "yo": "Salut,",
-      "im": "Je suis Andrea.",
-      "andIDid": "Et j'ai fait",
-      "this": "ça."
-    },
     "caption": {
       "line1": "« Un objet avec structure et attitude »",
       "line2": "Permettez-moi de vous présenter la collection YOMARTINS"
@@ -46,20 +34,15 @@
   "objects": {
     "introAria": "Texte d'introduction des objets",
     "intro": "Chaque objet est développé de manière indépendante, tout en appartenant au même langage matériel et conceptuel où durabilité et élégance coexistent naturellement.",
-    "dimensions": "Dimensions :",
-    "weight": "Poids :"
+    "comingSoon": "Bientôt disponible"
   },
   "object": {
-    "heroAlt": "Image principale de {title}",
     "imageAlt": "Image {index} de {title}",
-    "dimensions": "Dimensions :",
-    "weight": "Poids :",
     "scrollToTop": "Revenir en haut",
     "notFound": "Objet introuvable."
   },
   "editions": {
     "title": "Éditions",
-    "comingSoon": "Contenu à venir.",
     "objectEdition": {
       "title": "Éditions d'objets",
       "description": "Nos objets existent en différentes éditions. Chaque édition définit la manière dont un objet est produit, personnalisé et distribué, sans jamais compromettre son intégrité conceptuelle."

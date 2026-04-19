@@ -21,18 +21,6 @@
     }
   },
   "home": {
-    "brand": {
-      "line1": "Andrea",
-      "line2": "Dea",
-      "line3": "Jones."
-    },
-    "portraitAlt": "Andrea portrait",
-    "intro": {
-      "yo": "Yo,",
-      "im": "I'm Andrea.",
-      "andIDid": "And I did",
-      "this": "this."
-    },
     "caption": {
       "line1": "“An object with structure and attitude”",
       "line2": "Allow me to introduce YOMARTINS collection"
@@ -46,20 +34,15 @@
   "objects": {
     "introAria": "Objects intro text",
     "intro": "Each object is developed independently, yet part of the same material and conceptual language where sustainability and elegance naturally coexist.",
-    "dimensions": "Dimensions:",
-    "weight": "Weight:"
+    "comingSoon": "Coming soon"
   },
   "object": {
-    "heroAlt": "{title} hero image",
     "imageAlt": "{title} image {index}",
-    "dimensions": "Dimensions :",
-    "weight": "Weight :",
     "scrollToTop": "Scroll to top",
     "notFound": "Object not found."
   },
   "editions": {
     "title": "Editions",
-    "comingSoon": "Content coming soon.",
     "objectEdition": {
       "title": "Objects Edition",
       "description": "Our objects exist in different editions. Each edition defines how an object is produced, customized, and distributed, without ever compromising its conceptual integrity."
