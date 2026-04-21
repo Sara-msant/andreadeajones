@@ -138,7 +138,7 @@ const goToObject = (item: ObjectsGridItem) => {
 }
 
 .portfolio-card-image--blurred {
-  filter: blur(14px);
+  filter: blur(0px);
   transform: scale(1.12);
 }
 
