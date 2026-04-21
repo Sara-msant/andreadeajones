@@ -245,10 +245,12 @@ const goToContact = () => {
 
 @media (max-width: 768px) {
   .home-hero {
-    padding-top: 0.2rem;
+    padding-top: 5rem;
+    gap: 5rem;
   }
 
   .home-intro-card {
+    margin-top: 0;
     margin-left: 0;
     width: min(100%, 400px);
   }
@@ -259,7 +261,15 @@ const goToContact = () => {
 
   .home-caption {
     font-size: 1.8rem;
-    margin-top: 3.3rem;
+    margin-top: 5rem;
+  }
+
+  .home-object-image {
+    margin-top: 5rem;
+  }
+
+  .home-actions {
+    margin-top: 5rem;
   }
 
   .home-explore-text {
@@ -272,6 +282,23 @@ const goToContact = () => {
 
   .home-inquiry {
     font-size: 1.05rem;
+  }
+}
+
+@media (max-width: 390px) {
+  .home-hero {
+    padding-top: 4rem;
+    gap: 4rem;
+  }
+
+  .home-caption {
+    margin-top: 4rem;
+    font-size: 1.4rem;
+  }
+
+  .home-object-image,
+  .home-actions {
+    margin-top: 4rem;
   }
 }
 </style>

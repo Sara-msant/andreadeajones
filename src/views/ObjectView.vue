@@ -190,8 +190,8 @@ const scrollToTop = (): void => {
 
 @media (max-width: 768px) {
   .object-page {
-    gap: 5.5rem;
-    padding: 2.5rem 0 4.5rem;
+    gap: 5rem;
+    padding: 5rem 0 5rem;
   }
 
   .object-paragraph,
@@ -200,11 +200,23 @@ const scrollToTop = (): void => {
   }
 
   .object-image-caption {
-    text-align: left;
+    text-align: right;
   }
 
   .object-paragraph {
+    padding-top: 5rem;
     font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 390px) {
+  .object-page {
+    gap: 4rem;
+    padding: 4rem 0;
+  }
+
+  .object-paragraph {
+    padding-top: 4rem;
   }
 }
 </style>

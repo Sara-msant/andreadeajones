@@ -97,18 +97,31 @@ const { t } = useI18n()
 
 @media (max-width: 768px) {
   .about-page {
-    padding-top: 1.25rem;
+    padding-top: 5rem;
+  }
+
+  .about-portrait-wrapper {
+    width: min(100%, 340px);
   }
 
   .about-portrait {
-    width: min(100%, 340px);
-    margin-bottom: 2rem;
+    width: 100%;
   }
 
   .about-copy {
     font-size: 0.78rem;
     line-height: 1.45;
     letter-spacing: 0.01em;
+  }
+}
+
+@media (max-width: 390px) {
+  .about-page {
+    padding-top: 4rem;
+  }
+
+  .about-portrait-wrapper {
+    width: min(100%, 300px);
   }
 }
 </style>

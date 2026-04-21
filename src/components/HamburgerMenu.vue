@@ -303,6 +303,8 @@ onMounted(() => {
   color: var(--color-text);
   font-family: var(--font-body);
   font-size: 1.75rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   text-decoration: none;
   line-height: 1;
@@ -310,6 +312,12 @@ onMounted(() => {
 
 .social-link:hover {
   color: var(--color-accent);
+}
+
+@media (max-width: 390px) {
+  .social-link {
+    font-size: 1.45rem;
+  }
 }
 
 /* Lang dropdown */

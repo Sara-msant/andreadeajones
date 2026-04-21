@@ -421,13 +421,13 @@ const setLang = (lang: (typeof languages)[number]) => {
 
 @media (max-width: 768px) {
   .andrea-header {
-    height: 82px;
-    padding: 0 rem;
+    height: 74px;
+    padding: 0 1.25rem;
     align-items: center;
   }
 
   .andrea-favicon {
-    height: 34px;
+    height: 20px;
   }
 
   .andrea-compact-route {
@@ -437,6 +437,22 @@ const setLang = (lang: (typeof languages)[number]) => {
     max-width: min(52vw, 240px);
     transform: translate(-50%, -50%);
     font-size: clamp(0.92rem, 3.9vw, 1.08rem);
+  }
+}
+
+@media (max-width: 390px) {
+  .andrea-header {
+    height: 68px;
+    padding: 0 1rem;
+  }
+
+  .andrea-favicon {
+    height: 18px;
+  }
+
+  .andrea-compact-route {
+    max-width: min(56vw, 200px);
+    font-size: clamp(0.86rem, 3.5vw, 0.98rem);
   }
 }
 </style>

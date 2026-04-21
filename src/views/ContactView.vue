@@ -295,7 +295,7 @@ const handleSubmit = async () => {
 
 @media (max-width: 768px) {
   .contact-page {
-    padding-top: 1rem;
+    padding-top: 5rem;
   }
 
   .contact-description {
@@ -304,6 +304,16 @@ const handleSubmit = async () => {
 
   .contact-form {
     margin-top: 2rem;
+  }
+}
+
+@media (max-width: 390px) {
+  .contact-page {
+    padding-top: 4rem;
+  }
+
+  .contact-form {
+    margin-top: 1.6rem;
   }
 }
 
