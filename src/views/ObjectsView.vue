@@ -124,7 +124,6 @@ const goToObject = (item: ObjectsGridItem) => {
 .portfolio-card-image {
   width: 100%;
   aspect-ratio: 4 / 5;
-  border: 1px solid #868686;
   background: #e8e8e8;
   overflow: hidden;
 }
