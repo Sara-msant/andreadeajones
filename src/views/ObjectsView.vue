@@ -169,8 +169,12 @@ const goToObject = (item: ObjectsGridItem) => {
 
 /* ===== Mobile (< 600px) ===== */
 @media (max-width: 600px) {
+  .portfolio-grid-wrapper {
+    padding: 5rem 0;
+  }
+
   .objects-intro {
-    margin-bottom: 1.5rem;
+    margin-bottom: 5rem;
     font-size: 0.8rem;
     line-height: 1.45;
     padding: 0 0.25rem;

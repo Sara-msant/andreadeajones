@@ -87,11 +87,12 @@
 </template>
 
 <script setup lang="ts">
-import { computed, nextTick, onMounted, onUnmounted, ref } from 'vue'
+import { computed, nextTick, onMounted, onUnmounted, ref, watch } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useRoute, useRouter } from 'vue-router'
 import HamburgerMenu from '@/components/HamburgerMenu.vue'
 import { useObjects } from '@/composables/useObjects'
+import { disableScrollLock, enableScrollLock } from '@/utils/scrollLock'
 
 defineOptions({
   name: 'SiteHeader',
@@ -162,6 +163,7 @@ onUnmounted(() => {
 })
 
 const languages = ['en', 'fr', 'pt'] as const
+const MENU_SCROLL_LOCK_HANDLE = 'header-hamburger-menu'
 
 const navItems = [
   { name: 'objects', labelKey: 'nav.objects' },
@@ -191,6 +193,19 @@ const setLang = (lang: (typeof languages)[number]) => {
   localStorage.setItem('lang', lang)
   langOpen.value = false
 }
+
+watch(isMenuOpen, (menuOpen) => {
+  if (menuOpen) {
+    enableScrollLock({ handle: MENU_SCROLL_LOCK_HANDLE })
+    return
+  }
+
+  disableScrollLock(MENU_SCROLL_LOCK_HANDLE)
+})
+
+onUnmounted(() => {
+  disableScrollLock(MENU_SCROLL_LOCK_HANDLE)
+})
 </script>
 
 <style scoped>

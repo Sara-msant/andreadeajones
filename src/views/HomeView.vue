@@ -244,6 +244,10 @@ const goToContact = () => {
 }
 
 @media (max-width: 768px) {
+  .home {
+    padding-bottom: 5rem;
+  }
+
   .home-hero {
     padding-top: 5rem;
     gap: 5rem;
@@ -286,6 +290,10 @@ const goToContact = () => {
 }
 
 @media (max-width: 390px) {
+  .home {
+    padding-bottom: 4rem;
+  }
+
   .home-hero {
     padding-top: 4rem;
     gap: 4rem;

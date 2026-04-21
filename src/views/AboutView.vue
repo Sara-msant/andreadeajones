@@ -98,6 +98,7 @@ const { t } = useI18n()
 @media (max-width: 768px) {
   .about-page {
     padding-top: 5rem;
+    padding-bottom: 5rem;
   }
 
   .about-portrait-wrapper {
@@ -118,6 +119,7 @@ const { t } = useI18n()
 @media (max-width: 390px) {
   .about-page {
     padding-top: 4rem;
+    padding-bottom: 4rem;
   }
 
   .about-portrait-wrapper {

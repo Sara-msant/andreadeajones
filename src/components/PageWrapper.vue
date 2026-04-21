@@ -20,6 +20,8 @@ defineProps<{
 <style scoped>
 .page-wrapper {
   min-height: 100vh;
+  min-height: 100svh;
+  min-height: 100dvh;
   background: var(--color-background);
   display: flex;
   flex-direction: column;

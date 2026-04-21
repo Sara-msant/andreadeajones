@@ -2,7 +2,7 @@
   <transition name="andrea-menu-fade">
     <div v-if="menuOpen" class="andrea-menu-overlay" @click.self="close">
       <div class="andrea-menu">
-        <div class="andrea-menu-inner">
+        <div class="andrea-menu-inner" data-scroll-lock-allow>
           <!-- Header -->
           <header class="andrea-menu-header">
             <div class="andrea-menu-lang-wrapper">

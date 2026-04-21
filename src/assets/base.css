@@ -17,6 +17,8 @@
 
 body {
   min-height: 100vh;
+  min-height: 100svh;
+  min-height: 100dvh;
   color: var(--color-text);
   background: var(--color-background);
   line-height: 1.6;
@@ -25,4 +27,13 @@ body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+html.is-scroll-locked,
+body.is-scroll-locked {
+  overscroll-behavior: none;
+}
+
+body.is-scroll-locked {
+  overflow: hidden;
 }
