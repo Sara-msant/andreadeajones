@@ -20,7 +20,16 @@
               v-no-right-click
               :src="item.cover"
               :alt="item.title"
+              class="portfolio-card-image-base"
               :class="{ 'portfolio-card-image--blurred': item.isPlaceholder }"
+              draggable="false"
+            />
+            <img
+              v-if="item.hoverCover && !item.isPlaceholder"
+              v-no-right-click
+              :src="item.hoverCover"
+              :alt="item.title"
+              class="portfolio-card-image-hover"
               draggable="false"
             />
           </div>
@@ -122,6 +131,7 @@ const goToObject = (item: ObjectsGridItem) => {
 }
 
 .portfolio-card-image {
+  position: relative;
   width: 100%;
   aspect-ratio: 4 / 5;
   background: #e8e8e8;
@@ -129,12 +139,31 @@ const goToObject = (item: ObjectsGridItem) => {
 }
 
 .portfolio-card-image img {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center;
   user-select: none;
   -webkit-user-select: none;
+  transition: opacity 220ms ease;
+}
+
+.portfolio-card-image-base {
+  opacity: 1;
+}
+
+.portfolio-card-image-hover {
+  opacity: 0;
+}
+
+.portfolio-card:hover .portfolio-card-image-base {
+  opacity: 0;
+}
+
+.portfolio-card:hover .portfolio-card-image-hover {
+  opacity: 1;
 }
 
 .portfolio-card-image--blurred {

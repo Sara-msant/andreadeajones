@@ -8,6 +8,7 @@ export interface ObjectItem {
   weight?: string
   sections: ObjectSection[]
   cover: string
+  hoverCover?: string
   gallery: string[]
   order?: number
 }
@@ -49,6 +50,8 @@ type ObjectConfig = {
   title?: string
   dimensions?: string
   weight?: string
+  cover?: string
+  hoverCover?: string
   sections?: SectionConfig[]
 }
 
@@ -144,6 +147,8 @@ export const useObjects = () => {
         title: item.title,
         dimensions: item.dimensions,
         weight: item.weight,
+        cover: item.cover,
+        hoverCover: item.hoverCover,
         sections: item.sections,
       })
     })
@@ -172,7 +177,7 @@ export const useObjects = () => {
     // folder -> { cover, gallery }
     const imagesByFolder = new Map<
       string,
-      { cover?: string; images: { src: string; file: string }[] }
+      { cover?: string; hoverCover?: string; images: { src: string; file: string }[] }
     >()
 
     Object.entries(imageModules).forEach(([path, mod]) => {
@@ -182,11 +187,13 @@ export const useObjects = () => {
       const file = parts[parts.length - 1] as string
 
       if (!imagesByFolder.has(folder)) {
-        imagesByFolder.set(folder, { cover: undefined, images: [] })
+        imagesByFolder.set(folder, { cover: undefined, hoverCover: undefined, images: [] })
       }
       const entry = imagesByFolder.get(folder)!
-      // convention: any file starting with "cover" is the cover image
-      if (/^cover/i.test(file)) {
+      // convention: files starting with "cover-hover" are used for card hover state.
+      if (/^cover-hover/i.test(file)) {
+        entry.hoverCover = src
+      } else if (/^cover(?!-hover)/i.test(file)) {
         entry.cover = src
       }
       entry.images.push({ src, file })
@@ -198,6 +205,7 @@ export const useObjects = () => {
       const config = configByFolder.get(folder) ?? {}
       const imgEntry = imagesByFolder.get(folder) ?? {
         cover: undefined,
+        hoverCover: undefined,
         images: [],
       }
 
@@ -211,8 +219,15 @@ export const useObjects = () => {
         return
       }
 
-      // pick cover: explicit cover if present, otherwise first image
-      const coverSrc = imgEntry.cover ?? allImages[0]!.src
+      // pick cover: explicit config first, then filename convention, then first image
+      const coverSrc = config.cover
+        ? (allImages.find((img) => img.file.toLowerCase() === config.cover?.toLowerCase())?.src ??
+          imgEntry.cover ??
+          allImages[0]!.src)
+        : (imgEntry.cover ?? allImages[0]!.src)
+      const hoverCoverSrc = config.hoverCover
+        ? allImages.find((img) => img.file.toLowerCase() === config.hoverCover?.toLowerCase())?.src
+        : imgEntry.hoverCover
 
       // build gallery with cover as first item
       const gallery = [
@@ -279,6 +294,7 @@ export const useObjects = () => {
         weight: config.weight,
         sections,
         cover,
+        ...(hoverCoverSrc && hoverCoverSrc !== cover ? { hoverCover: hoverCoverSrc } : {}),
         gallery,
         order: config.order ?? meta.order,
       }

@@ -114,10 +114,22 @@ Important: section ids in stool/meta-\*.json must match the ids in root meta.jso
 The cover image is shown as the thumbnail/card image on the Objects listing page.
 
 - Preferred behavior
-  : If an image file in the object folder starts with `cover` (for example `cover.png`, `cover.jpg`, `cover-v2.webp`), the app uses that as the object cover.
+  : If an image file in the object folder starts with `cover` but not `cover-hover` (for example `cover.png`, `cover.jpg`, `cover-v2.png`), the app uses that as the object cover.
+
+- Explicit cover override
+  : You can set `cover` in `src/assets/objects/meta.json` to point to a specific filename in the object folder.
+
+- Hover behavior
+  : If an image file starts with `cover-hover` (for example `cover-hover.png` or `cover-hover.jpg`), the Objects listing page crossfades to that image on hover.
+
+- Explicit hover override
+  : You can also set `hoverCover` in `src/assets/objects/meta.json` to point to a specific filename in the object folder.
+
+- Hover fallback behavior
+  : If no matching hover image exists, the card keeps showing the normal cover and no hover crossfade is applied.
 
 - Fallback behavior
-  : If no `cover*` file exists, the app uses the first image in filename sort order.
+  : If no matching cover file exists, the app uses the first image in filename sort order.
 
 - Practical recommendation
   : Always include a `cover` file so the card image is predictable.
@@ -127,7 +139,7 @@ The cover image is shown as the thumbnail/card image on the Objects listing page
 - If folder name in root meta.json does not exist, that object will not load correctly.
 - If section ids do not match between root meta.json and meta-\*.json, text may be missing.
 - If an image filename is wrong, that section image will not appear.
-- The cover image is not configured in sections; it is selected by the `cover*` filename rule described above.
+- The cover and hover images are not configured in sections; `cover-hover*` is reserved for the hover state, while other `cover*` files are treated as normal covers unless `cover` / `hoverCover` is set in root meta.json.
 
 ## Quick checklist before testing
 
