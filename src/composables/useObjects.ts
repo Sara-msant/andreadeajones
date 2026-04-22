@@ -55,6 +55,16 @@ type ObjectConfig = {
   sections?: SectionConfig[]
 }
 
+type RootObjectsMeta = {
+  objects: Array<
+    ObjectConfig & {
+      folder: string
+    }
+  >
+}
+
+const rootObjectsMeta = objectsMeta as RootObjectsMeta
+
 export const useObjects = () => {
   const { locale } = useI18n()
 
@@ -140,7 +150,7 @@ export const useObjects = () => {
     const metaByFolder = new Map<string, ObjectMeta>()
     // Build config from consolidated meta.json
     const configByFolder = new Map<string, ObjectConfig>()
-    objectsMeta.objects.forEach((item) => {
+    rootObjectsMeta.objects.forEach((item) => {
       configByFolder.set(item.folder, {
         order: item.order,
         slug: item.slug,
