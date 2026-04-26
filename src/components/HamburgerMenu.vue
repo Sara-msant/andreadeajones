@@ -90,7 +90,6 @@ const items = [
   { key: 'home', labelKey: 'nav.home', to: '/' },
   { key: 'collections', labelKey: 'nav.collections', to: '/collections' },
   { key: 'about', labelKey: 'nav.about', to: '/about' },
-  { key: 'editions', labelKey: 'nav.editions', to: '/edition' },
   { key: 'contact', labelKey: 'nav.contact', to: '/contact' },
 ]
 

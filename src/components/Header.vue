@@ -42,9 +42,16 @@
       </template>
     </nav>
 
-    <span v-if="isCompact && compactRouteLabel" class="andrea-compact-route" aria-current="page">
-      {{ compactRouteLabel }}
-    </span>
+    <div
+      v-if="isCompact && (compactRouteLabel || compactCollectionLabel)"
+      class="andrea-compact-route"
+      aria-current="page"
+    >
+      <span v-if="compactCollectionLabel" class="andrea-compact-collection">{{
+        compactCollectionLabel
+      }}</span>
+      <span v-if="compactRouteLabel" class="andrea-compact-object">{{ compactRouteLabel }}</span>
+    </div>
 
     <div ref="actionsRef" class="andrea-header-actions">
       <div class="andrea-lang-wrapper">
@@ -195,9 +202,21 @@ const isNavItemActive = (name: string) => {
   return route.name === name
 }
 
+const compactCollectionLabel = computed(() => {
+  if (route.name === 'collectionObject') {
+    const collectionSlug = route.params.collectionSlug
+    if (typeof collectionSlug !== 'string') return null
+    return getCollectionBySlug(collectionSlug)?.title?.trim() || null
+  }
+  return null
+})
+
 const compactRouteLabel = computed(() => {
   if (route.name === 'collectionObject') {
-    return currentObjectTitle.value
+    const collectionSlug = route.params.collectionSlug
+    const objectSlug = route.params.objectSlug
+    if (typeof collectionSlug !== 'string' || typeof objectSlug !== 'string') return null
+    return getCollectionObjectBySlugs(collectionSlug, objectSlug)?.displayTitle || null
   }
 
   const activeNavItem = navItems.find((item) => item.name === route.name)
@@ -431,22 +450,38 @@ onUnmounted(() => {
   top: 34px;
   height: 42px;
   display: flex;
+  flex-direction: column;
   align-items: center;
+  justify-content: center;
   max-width: min(56vw, 340px);
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
   pointer-events: none;
   color: var(--color-text);
-  text-decoration: underline;
-  text-decoration-color: currentColor;
-  text-underline-offset: 0.16em;
   font-family: var(--font-body);
-  font-size: clamp(1rem, 4vw, 1.35rem);
   font-weight: 500;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   line-height: 1;
+  gap: 0.25em;
+}
+
+.andrea-compact-collection {
+  font-size: clamp(0.75rem, 3vw, 0.95rem);
+  opacity: 0.6;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+
+.andrea-compact-object {
+  font-size: clamp(1rem, 4vw, 1.35rem);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+  text-decoration: underline;
+  text-decoration-color: currentColor;
+  text-underline-offset: 0.16em;
 }
 
 .andrea-header.is-compact .andrea-lang-wrapper {
@@ -471,9 +506,11 @@ onUnmounted(() => {
   .andrea-compact-route {
     top: 50%;
     height: auto;
-    display: block;
     max-width: min(52vw, 240px);
     transform: translate(-50%, -50%);
+  }
+
+  .andrea-compact-object {
     font-size: clamp(0.92rem, 3.9vw, 1.08rem);
   }
 }
@@ -490,6 +527,9 @@ onUnmounted(() => {
 
   .andrea-compact-route {
     max-width: min(56vw, 200px);
+  }
+
+  .andrea-compact-object {
     font-size: clamp(0.86rem, 3.5vw, 0.98rem);
   }
 }
