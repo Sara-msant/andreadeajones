@@ -22,7 +22,7 @@ type GtagCommand = [string, ...unknown[]]
 
 declare global {
   interface Window {
-    dataLayer: GtagCommand[]
+    dataLayer: IArguments[]
     gtag: (...args: GtagCommand) => void
   }
 }
@@ -41,13 +41,15 @@ const loadGoogleAnalytics = () => {
   }
 
   window.dataLayer = window.dataLayer || []
-  function gtag(...args: GtagCommand) {
-    window.dataLayer.push(args)
+  function gtag() {
+    // Google processes the queued command tuples from the raw arguments object.
+    // eslint-disable-next-line prefer-rest-params
+    window.dataLayer.push(arguments)
   }
-  window.gtag = gtag
+  window.gtag = gtag as (...args: GtagCommand) => void
   gtag('js', new Date())
   if (measurementId) {
-    gtag('config', measurementId)
+    gtag('config', measurementId, { send_page_view: false })
   }
 }
 
