@@ -255,8 +255,10 @@ onUnmounted(() => {
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
   z-index: 9999;
   overflow-x: clip;
   color: var(--color-text);

@@ -31,12 +31,18 @@ defineProps<{
   box-sizing: border-box;
   display: flex;
   flex: 1;
-  margin: 2.5rem;
+  margin: calc(2.5rem + 110px) 2.5rem 2.5rem;
 }
 
 @media (max-width: 768px) {
   .content {
-    margin: 0.5rem 1.5rem 0;
+    margin: calc(0.5rem + 74px) 1.5rem 0;
+  }
+}
+
+@media (max-width: 390px) {
+  .content {
+    margin: calc(0.5rem + 68px) 1.5rem 0;
   }
 }
 </style>
