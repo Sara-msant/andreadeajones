@@ -1,0 +1,13 @@
+{
+    "description": "Uma colecao moldada pela cortica, pela estrutura e pela presenca.",
+    "placeholders": {
+        "object02": {
+            "title": "Objeto 02",
+            "summary": "Em desenvolvimento"
+        },
+        "moreObjects": {
+            "title": "Mais objetos",
+            "summary": "Em breve"
+        }
+    }
+}

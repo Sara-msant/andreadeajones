@@ -46,6 +46,7 @@ import PageWrapper from '@/components/PageWrapper.vue'
 import fatLogo from '@/assets/home/fat-logo.png'
 import introCopyImage from '@/assets/home/i-did-this.png'
 import featuredMetaRaw from '@/assets/home/featured/meta.json'
+import { useCollections } from '@/composables/useCollections'
 
 type FeaturedMeta = {
   slug?: string
@@ -56,6 +57,7 @@ type FeaturedMeta = {
 
 const router = useRouter()
 const { t } = useI18n()
+const { getCollectionByObjectSlug } = useCollections()
 const featuredMeta = featuredMetaRaw as FeaturedMeta
 
 const featuredImageModules = import.meta.glob('@/assets/home/featured/*.{png,jpg,jpeg,webp,avif}', {
@@ -92,11 +94,21 @@ const goToObjectDetail = () => {
   if (!featuredObject.value) return
 
   if (featuredObject.value.slug) {
-    router.push({ name: 'object', params: { slug: featuredObject.value.slug } })
-    return
+    const collection = getCollectionByObjectSlug(featuredObject.value.slug)
+
+    if (collection) {
+      router.push({
+        name: 'collectionObject',
+        params: {
+          collectionSlug: collection.slug,
+          objectSlug: featuredObject.value.slug,
+        },
+      })
+      return
+    }
   }
 
-  router.push({ name: 'objects' })
+  router.push({ name: 'collections' })
 }
 
 const goToContact = () => {

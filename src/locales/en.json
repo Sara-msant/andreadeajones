@@ -1,6 +1,7 @@
 ﻿{
   "nav": {
     "home": "Home",
+    "collections": "Collections",
     "objects": "Objects",
     "about": "About",
     "editions": "Editions",
@@ -35,6 +36,45 @@
     "introAria": "Objects intro text",
     "intro": "Each object is developed independently, yet part of the same material and conceptual language where sustainability and elegance naturally coexist.",
     "comingSoon": "Coming soon"
+  },
+  "collections": {
+    "introAria": "Collections intro text",
+    "introLine1": "Each collection brings together a family of objects.",
+    "introLine2": "Connected by a shared language of material, structure, and presence.",
+    "items": {
+      "yomartins": {
+        "description": "A collection shaped by cork, structure, and presence.",
+        "objects": {
+          "stool": {
+            "cardTitle": "Object 01",
+            "summary": "Low stool in cork"
+          }
+        },
+        "placeholders": {
+          "inDevelopmentTitle": "Object 02",
+          "inDevelopmentSummary": "In development",
+          "moreTitle": "More objects",
+          "moreSummary": "Coming soon"
+        }
+      },
+      "atelierStudies": {
+        "description": "A testing collection built from repeated object studies for layout, routing, and card behavior.",
+        "objects": {
+          "prototypeSeat01": {
+            "cardTitle": "Object 01",
+            "summary": "Prototype seat in natural cork"
+          },
+          "prototypeSeat02": {
+            "cardTitle": "Object 02",
+            "summary": "Prototype seat in dark cork"
+          },
+          "prototypeSeat03": {
+            "cardTitle": "Object 03",
+            "summary": "Prototype seat in mixed cork"
+          }
+        }
+      }
+    }
   },
   "object": {
     "imageAlt": "{title} image {index}",
@@ -86,6 +126,7 @@
   },
   "about": {
     "portraitAlt": "RACHEL CAMBIER, founder of Andrea Dea Jones",
+    "portraitCaption": "RACHEL CAMBIER / FOUNDER",
     "paragraphs": {
       "p1": "Andrea Dea Jones is a design practice centered on objects, material, and form. ",
       "p2": "Created by Rachel Cambier, it brings together an interior architect’s eye with a growing body of objects shaped by structure, presence, and character.",

@@ -41,7 +41,8 @@ const loadGoogleAnalytics = () => {
   }
 
   window.dataLayer = window.dataLayer || []
-  function gtag() {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  function gtag(..._args: GtagCommand) {
     // Google processes the queued command tuples from the raw arguments object.
     // eslint-disable-next-line prefer-rest-params
     window.dataLayer.push(arguments)

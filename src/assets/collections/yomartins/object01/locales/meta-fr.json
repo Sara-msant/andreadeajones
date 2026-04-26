@@ -1,0 +1,45 @@
+{
+    "cardTitle": "Objet 01",
+    "summary": "Tabouret bas en liege",
+    "sections": {
+        "overview": {
+            "caption": [
+                "YOMARTINS STOOL 2026.",
+                "__DIMENSIONS:__ L 37 x P 37 x H 45 cm",
+                "__POIDS:__ 9,0 Kg"
+            ],
+            "text": "YOMARTINS est un tabouret en liege qui explore l'equilibre entre forme sculpturale et sincerite du materiau. Fabrique en liege portugais, naturellement leger, resilient et tactile. Il offre une assise confortable definie par des proportions douces et reflechies."
+        },
+        "separated_blocks": {
+            "caption": [
+                "BLOCS",
+                "SEPARES"
+            ],
+            "text": "La structure repose sur un systeme d'emboitement soigneusement concu, ou la forme et la tension travaillent ensemble pour garantir la stabilite."
+        },
+        "interlocking_system": {
+            "caption": [
+                "SYSTEME",
+                "D'EMBOITEMENT."
+            ],
+            "text": "Durable par nature et fabrique avec soin, le tabouret reflete un dialogue reflechi entre savoir-faire local, construction intelligente et design moderne."
+        },
+        "material_variations": {
+            "caption": "variations",
+            "text": "La collection de tabourets Yomartins est disponible en une gamme de variations distinctes, chacune definie par sa composition materielle unique et son expression esthetique. Celles-ci incluent des variations en liege clair, liege brun et liege mixte, offrant un eventail de tons et de textures pour repondre a differentes preferences et a divers contextes interieurs."
+        },
+        "cork_trees": {
+            "caption": [
+                "CHENES",
+                "LIEGE."
+            ],
+            "text": "Faconnee par des artisans qualifies, la piece assume l'imperfection et la sincerite du materiau, donnant naissance a un objet a la fois ancre et expressif. Plus qu'une assise, c'est une declaration - silencieuse, tactile et resolument contemporaine."
+        },
+        "craftsmanship": {
+            "caption": [
+                "SAVOIR-FAIRE."
+            ],
+            "text": "YOMARTINS existe a la croisee de l'objet et de la sculpture. Sa forme audacieuse, presque architecturale, eleve le liege au-dela de la fonction, revelant sa texture, sa chaleur et sa beaute brute."
+        }
+    }
+}

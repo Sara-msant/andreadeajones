@@ -1,8 +1,8 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '@/views/HomeView.vue'
-import EditionsView from '@/views/EditionsView.vue'
-import ObjectsView from '@/views/ObjectsView.vue'
-import ObjectView from '@/views/ObjectView.vue'
+// import EditionsView from '@/views/EditionsView.vue'
+import CollectionsView from '@/views/CollectionsView.vue'
+import CollectionObjectView from '@/views/CollectionObjectView.vue'
 import AboutView from '@/views/AboutView.vue'
 import ContactView from '@/views/ContactView.vue'
 
@@ -41,24 +41,23 @@ const router = createRouter({
       meta: globalRouteMeta,
     },
     {
-      path: '/object',
-      name: 'objects',
-      component: ObjectsView,
+      path: '/collections',
+      name: 'collections',
+      component: CollectionsView,
       meta: globalRouteMeta,
     },
     {
-      path: '/object/:slug',
-      name: 'object',
-      component: ObjectView,
-      props: true,
+      path: '/collections/:collectionSlug/:objectSlug',
+      name: 'collectionObject',
+      component: CollectionObjectView,
       meta: globalRouteMeta,
     },
-    {
-      path: '/edition',
-      name: 'editions',
-      component: EditionsView,
-      meta: globalRouteMeta,
-    },
+    // {
+    //   path: '/edition',
+    //   name: 'editions',
+    //   component: EditionsView,
+    //   meta: globalRouteMeta,
+    // },
     {
       path: '/about',
       name: 'about',

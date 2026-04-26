@@ -1,5 +1,11 @@
 <template>
   <PageWrapper>
+    <div v-if="objectItem" class="object-floating-actions">
+      <button type="button" class="object-inquiry" @click="goToContact">
+        {{ t('home.purchaseInquiry') }}
+      </button>
+    </div>
+
     <section v-if="objectItem" class="object-page">
       <section
         v-for="(section, index) in sections"
@@ -55,16 +61,28 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import { useI18n } from 'vue-i18n'
-import { useRoute } from 'vue-router'
-import { useObjects } from '@/composables/useObjects'
+import { useRoute, useRouter } from 'vue-router'
+import { useCollections } from '@/composables/useCollections'
 import PageWrapper from '@/components/PageWrapper.vue'
 
+const router = useRouter()
 const route = useRoute()
 const { t } = useI18n()
-const { getObjectBySlug } = useObjects()
+const { getCollectionObjectBySlugs } = useCollections()
 
-const slug = computed(() => route.params.slug as string)
-const objectItem = computed(() => getObjectBySlug(slug.value) ?? null)
+const collectionSlug = computed(() =>
+  typeof route.params.collectionSlug === 'string' ? route.params.collectionSlug : '',
+)
+const objectSlug = computed(() =>
+  typeof route.params.objectSlug === 'string' ? route.params.objectSlug : '',
+)
+const objectItem = computed(() => {
+  if (collectionSlug.value && objectSlug.value) {
+    return getCollectionObjectBySlugs(collectionSlug.value, objectSlug.value) ?? null
+  }
+
+  return null
+})
 const sections = computed(() => objectItem.value?.sections ?? [])
 
 const escapeHtml = (value: string): string => {
@@ -86,15 +104,43 @@ const formatRichText = (value: string): string => {
 const scrollToTop = (): void => {
   window.scrollTo({ top: 0, behavior: 'smooth' })
 }
+
+const goToContact = () => {
+  router.push({ name: 'contact' })
+}
 </script>
 
 <style scoped>
+.object-floating-actions {
+  position: fixed;
+  top: 122px;
+  right: 2.5rem;
+  z-index: 30;
+}
+
+.object-inquiry {
+  border: none;
+  background: var(--color-accent);
+  color: var(--color-text);
+  cursor: pointer;
+  text-transform: uppercase;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  letter-spacing: 0.03em;
+  padding: 0.48rem 1.8rem;
+}
+
+.object-inquiry:hover {
+  background: var(--color-text);
+  color: var(--color-accent);
+}
+
 .object-page {
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 15rem; /* espace entre dessus de la photo et texte du desssus*/
-  padding: 1rem 0 8rem; /* espace entre header et photo du tabouret 1*/
+  gap: 15rem;
+  padding: 1rem 0 8rem;
 }
 
 .object-block {
@@ -102,7 +148,7 @@ const scrollToTop = (): void => {
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  gap: 1rem; /*espace entre photos et sous-titre */
+  gap: 1rem;
 }
 
 .object-image {
@@ -144,7 +190,7 @@ const scrollToTop = (): void => {
 .object-paragraph {
   width: min(100%, 980px);
   margin: 0 auto;
-  padding-top: 150px; /*espace entre le haut du text et le sous titre */
+  padding-top: 150px;
   text-align: center;
   font-size: 1.02rem;
   line-height: 1.45;
@@ -189,6 +235,16 @@ const scrollToTop = (): void => {
 }
 
 @media (max-width: 768px) {
+  .object-floating-actions {
+    top: 82px;
+    right: 1.25rem;
+  }
+
+  .object-inquiry {
+    font-size: 0.86rem;
+    padding: 0.4rem 1rem;
+  }
+
   .object-page {
     gap: 5rem;
     padding: 5rem 0 5rem;
@@ -210,6 +266,16 @@ const scrollToTop = (): void => {
 }
 
 @media (max-width: 390px) {
+  .object-floating-actions {
+    top: 74px;
+    right: 1rem;
+  }
+
+  .object-inquiry {
+    font-size: 0.8rem;
+    padding: 0.36rem 0.9rem;
+  }
+
   .object-page {
     gap: 4rem;
     padding: 4rem 0;

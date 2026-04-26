@@ -25,12 +25,12 @@
           <RouterLink
             :to="{ name: item.name }"
             class="andrea-nav-link"
-            :class="{ 'is-active': route.name === item.name }"
+            :class="{ 'is-active': isNavItemActive(item.name) }"
           >
             {{ t(item.labelKey) }}
           </RouterLink>
           <span
-            v-if="item.name === 'objects' && currentObjectTitle"
+            v-if="item.name === 'collections' && currentObjectTitle"
             class="andrea-nav-subroute"
             aria-current="page"
           >
@@ -91,7 +91,7 @@ import { computed, nextTick, onMounted, onUnmounted, ref, watch } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useRoute, useRouter } from 'vue-router'
 import HamburgerMenu from '@/components/HamburgerMenu.vue'
-import { useObjects } from '@/composables/useObjects'
+import { useCollections } from '@/composables/useCollections'
 import { disableScrollLock, enableScrollLock } from '@/utils/scrollLock'
 
 defineOptions({
@@ -111,13 +111,28 @@ withDefaults(
   },
 )
 
-const { getObjectBySlug } = useObjects()
+const { getCollectionBySlug, getCollectionObjectBySlugs } = useCollections()
 
 const currentObjectTitle = computed(() => {
-  if (route.name !== 'object') return null
-  const slug = route.params.slug
-  if (typeof slug !== 'string') return null
-  return getObjectBySlug(slug)?.title ?? null
+  if (route.name === 'collectionObject') {
+    const collectionSlug = route.params.collectionSlug
+    const objectSlug = route.params.objectSlug
+
+    if (typeof collectionSlug !== 'string' || typeof objectSlug !== 'string') {
+      return null
+    }
+
+    const collection = getCollectionBySlug(collectionSlug)
+    const objectTitle = getCollectionObjectBySlugs(collectionSlug, objectSlug)?.displayTitle
+
+    if (!objectTitle) {
+      return null
+    }
+
+    return collection?.title?.trim() ? `${collection.title} / ${objectTitle}` : objectTitle
+  }
+
+  return null
 })
 
 const isMenuOpen = ref(false)
@@ -166,14 +181,22 @@ const languages = ['en', 'fr', 'pt'] as const
 const MENU_SCROLL_LOCK_HANDLE = 'header-hamburger-menu'
 
 const navItems = [
-  { name: 'objects', labelKey: 'nav.objects' },
+  { name: 'collections', labelKey: 'nav.collections' },
   { name: 'about', labelKey: 'nav.about' },
-  { name: 'editions', labelKey: 'nav.editions' },
+  // { name: 'editions', labelKey: 'nav.editions' },
   { name: 'contact', labelKey: 'nav.contact' },
 ]
 
+const isNavItemActive = (name: string) => {
+  if (name === 'collections') {
+    return route.name === 'collections' || route.name === 'collectionObject'
+  }
+
+  return route.name === name
+}
+
 const compactRouteLabel = computed(() => {
-  if (route.name === 'object') {
+  if (route.name === 'collectionObject') {
     return currentObjectTitle.value
   }
 
@@ -321,7 +344,7 @@ onUnmounted(() => {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 0.1em;
+  gap: 0.26em;
 }
 
 .andrea-nav-link {

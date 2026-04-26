@@ -1,0 +1,13 @@
+{
+    "description": "Une collection faconnee par le liege, la structure et la presence.",
+    "placeholders": {
+        "object02": {
+            "title": "Objet 02",
+            "summary": "En developpement"
+        },
+        "moreObjects": {
+            "title": "Plus d'objets",
+            "summary": "Bientot disponible"
+        }
+    }
+}

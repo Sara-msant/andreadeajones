@@ -1,0 +1,13 @@
+{
+    "description": "A collection shaped by cork, structure, and presence.",
+    "placeholders": {
+        "object02": {
+            "title": "Object 02",
+            "summary": "In development"
+        },
+        "moreObjects": {
+            "title": "More objects",
+            "summary": "Coming soon"
+        }
+    }
+}

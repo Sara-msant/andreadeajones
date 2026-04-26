@@ -1,6 +1,7 @@
 ﻿{
   "nav": {
     "home": "Início",
+    "collections": "Coleções",
     "objects": "Objetos",
     "about": "Sobre",
     "editions": "Edições",
@@ -35,6 +36,45 @@
     "introAria": "Texto de introdução dos objetos",
     "intro": "Cada objeto é desenvolvido de forma independente, mas integra a mesma linguagem material e conceptual onde sustentabilidade e elegância coexistem naturalmente.",
     "comingSoon": "Em breve"
+  },
+  "collections": {
+    "introAria": "Texto de introdução das coleções",
+    "introLine1": "Cada coleção reúne uma família de objetos.",
+    "introLine2": "Ligados por uma linguagem comum de matéria, estrutura e presença.",
+    "items": {
+      "yomartins": {
+        "description": "Uma coleção moldada pela cortiça, pela estrutura e pela presença.",
+        "objects": {
+          "stool": {
+            "cardTitle": "Objeto 01",
+            "summary": "Banco baixo em cortiça"
+          }
+        },
+        "placeholders": {
+          "inDevelopmentTitle": "Objeto 02",
+          "inDevelopmentSummary": "Em desenvolvimento",
+          "moreTitle": "Mais objetos",
+          "moreSummary": "Em breve"
+        }
+      },
+      "atelierStudies": {
+        "description": "Uma coleção de teste construída a partir de estudos repetidos do mesmo objeto para validar o layout, as rotas e o comportamento dos cartões.",
+        "objects": {
+          "prototypeSeat01": {
+            "cardTitle": "Objeto 01",
+            "summary": "Assento protótipo em cortiça natural"
+          },
+          "prototypeSeat02": {
+            "cardTitle": "Objeto 02",
+            "summary": "Assento protótipo em cortiça escura"
+          },
+          "prototypeSeat03": {
+            "cardTitle": "Objeto 03",
+            "summary": "Assento protótipo em cortiça mista"
+          }
+        }
+      }
+    }
   },
   "object": {
     "imageAlt": "Imagem {index} de {title}",
@@ -86,6 +126,7 @@
   },
   "about": {
     "portraitAlt": "Retrato de Andrea Dea Jones",
+    "portraitCaption": "RACHEL CAMBIER / FUNDADORA",
     "paragraphs": {
       "p1": "Andrea Dea Jones é uma prática de design centrada em objetos, matéria e forma.",
       "p2": "Criada por Rachel Cambier, cruza o olhar de uma arquiteta de interiores com um universo crescente de objetos definidos por estrutura, presença e carácter.",

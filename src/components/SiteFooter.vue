@@ -1,44 +1,53 @@
 <template>
   <footer class="site-footer" aria-label="Site footer">
-    <div class="site-socials">
-      <a
-        href="https://www.instagram.com/andrea_dea_jones"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        {{ t('common.social.instagram') }}
-      </a>
-      <a href="https://www.tiktok.com/@andrea.dea.jones" target="_blank" rel="noopener noreferrer">
-        {{ t('common.social.tiktok') }}
-      </a>
-    </div>
-
-    <p class="site-copyright">{{ t('home.copyright') }}</p>
-
-    <form class="site-subscribe" @submit.prevent="handleSubscribe">
-      <label class="site-subscribe-title" for="site-footer-email">{{ t('home.subscribe') }}</label>
-      <div class="site-subscribe-row">
-        <input
-          id="site-footer-email"
-          v-model.trim="subscribeEmail"
-          type="email"
-          name="email"
-          autocomplete="email"
-          :placeholder="t('home.emailPlaceholder')"
-          :disabled="loading"
-          required
-        />
-        <button type="submit" :disabled="loading">
-          {{ loading ? t('contact.sending') : t('home.subscribe') }}
-        </button>
+    <v-divider class="site-footer-divider" :thickness="2" />
+    <div class="site-footer-content">
+      <div class="site-socials">
+        <a
+          href="https://www.instagram.com/andrea_dea_jones"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {{ t('common.social.instagram') }}
+        </a>
+        <a
+          href="https://www.tiktok.com/@andrea.dea.jones"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {{ t('common.social.tiktok') }}
+        </a>
       </div>
-      <p v-if="status === 'ok'" class="subscribe-status success">
-        {{ t('contact.successMessage') }}
-      </p>
-      <p v-if="status === 'error'" class="subscribe-status error">
-        {{ t('contact.errorMessage') }}
-      </p>
-    </form>
+
+      <p class="site-copyright">{{ t('home.copyright') }}</p>
+
+      <form class="site-subscribe" @submit.prevent="handleSubscribe">
+        <label class="site-subscribe-title" for="site-footer-email">{{
+          t('home.subscribe')
+        }}</label>
+        <div class="site-subscribe-row">
+          <input
+            id="site-footer-email"
+            v-model.trim="subscribeEmail"
+            type="email"
+            name="email"
+            autocomplete="email"
+            :placeholder="t('home.emailPlaceholder')"
+            :disabled="loading"
+            required
+          />
+          <button type="submit" :disabled="loading">
+            {{ loading ? t('contact.sending') : t('home.subscribe') }}
+          </button>
+        </div>
+        <p v-if="status === 'ok'" class="subscribe-status success">
+          {{ t('contact.successMessage') }}
+        </p>
+        <p v-if="status === 'error'" class="subscribe-status error">
+          {{ t('contact.errorMessage') }}
+        </p>
+      </form>
+    </div>
   </footer>
 </template>
 
@@ -88,8 +97,15 @@ const handleSubscribe = async () => {
 
 <style scoped>
 .site-footer {
-  margin: 10rem 2.5rem 2.5rem;
-  padding: 10rem 0 0;
+  margin: 2.5rem;
+}
+
+.site-footer-divider {
+  border-color: var(--color-border) !important;
+  opacity: 1;
+}
+
+.site-footer-content {
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto;
   grid-template-areas:
@@ -98,21 +114,22 @@ const handleSubscribe = async () => {
   align-items: end;
   row-gap: 1rem;
   gap: 1.8rem;
+  margin-top: 2.5rem;
 }
 
 .site-socials {
   grid-area: social;
   display: flex;
   flex-direction: column;
-  gap: 0.45rem;
+  gap: 0.28rem;
 }
 
 .site-socials a {
   text-decoration: none;
   color: var(--color-text);
   text-transform: uppercase;
-  font-size: clamp(2.2rem, 4.1vw, 5.3rem);
-  line-height: 0.95;
+  font-size: clamp(2.12rem, 3.2vw, 3.78rem);
+  line-height: 0.92;
   font-weight: 700;
 }
 
@@ -207,6 +224,9 @@ const handleSubscribe = async () => {
 @media (max-width: 1200px) {
   .site-footer {
     margin: 0 2.5rem 2rem 2.5rem;
+  }
+
+  .site-footer-content {
     grid-template-columns: 1fr;
     grid-template-areas:
       'social'
@@ -224,6 +244,10 @@ const handleSubscribe = async () => {
 @media (max-width: 768px) {
   .site-footer {
     margin: 0.5rem 1.5rem 1.5rem 1.5rem;
+  }
+
+  .site-footer-content {
+    margin-top: 0;
     padding-top: 1.6rem;
   }
 

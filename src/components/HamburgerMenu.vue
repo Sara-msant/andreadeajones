@@ -88,7 +88,7 @@ const languages = ['en', 'fr', 'pt']
 
 const items = [
   { key: 'home', labelKey: 'nav.home', to: '/' },
-  { key: 'objects', labelKey: 'nav.objects', to: '/object' },
+  { key: 'collections', labelKey: 'nav.collections', to: '/collections' },
   { key: 'about', labelKey: 'nav.about', to: '/about' },
   { key: 'editions', labelKey: 'nav.editions', to: '/edition' },
   { key: 'contact', labelKey: 'nav.contact', to: '/contact' },

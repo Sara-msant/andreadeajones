@@ -1,0 +1,20 @@
+{
+    "objects": [
+        {
+            "folder": "object01",
+            "order": 1
+        }
+    ],
+    "placeholders": [
+        {
+            "id": "object02",
+            "variant": "solid",
+            "order": 2
+        },
+        {
+            "id": "moreObjects",
+            "variant": "outline",
+            "order": 3
+        }
+    ]
+}

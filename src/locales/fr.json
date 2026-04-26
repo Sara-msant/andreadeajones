@@ -1,6 +1,7 @@
 ﻿{
   "nav": {
     "home": "Accueil",
+    "collections": "Collections",
     "objects": "Objets",
     "about": "À propos",
     "editions": "Éditions",
@@ -35,6 +36,45 @@
     "introAria": "Texte d'introduction des objets",
     "intro": "Chaque objet est développé de manière indépendante, tout en appartenant au même langage matériel et conceptuel où durabilité et élégance coexistent naturellement.",
     "comingSoon": "Bientôt disponible"
+  },
+  "collections": {
+    "introAria": "Texte d'introduction des collections",
+    "introLine1": "Chaque collection réunit une famille d'objets.",
+    "introLine2": "Reliés par un langage commun de matière, de structure et de présence.",
+    "items": {
+      "yomartins": {
+        "description": "Une collection façonnée par le liège, la structure et la présence.",
+        "objects": {
+          "stool": {
+            "cardTitle": "Objet 01",
+            "summary": "Tabouret bas en liège"
+          }
+        },
+        "placeholders": {
+          "inDevelopmentTitle": "Objet 02",
+          "inDevelopmentSummary": "En développement",
+          "moreTitle": "Plus d'objets",
+          "moreSummary": "Bientôt disponible"
+        }
+      },
+      "atelierStudies": {
+        "description": "Une collection de test construite à partir d'études répétées du même objet pour vérifier la mise en page, les routes et le comportement des cartes.",
+        "objects": {
+          "prototypeSeat01": {
+            "cardTitle": "Objet 01",
+            "summary": "Siège prototype en liège naturel"
+          },
+          "prototypeSeat02": {
+            "cardTitle": "Objet 02",
+            "summary": "Siège prototype en liège foncé"
+          },
+          "prototypeSeat03": {
+            "cardTitle": "Objet 03",
+            "summary": "Siège prototype en liège mixte"
+          }
+        }
+      }
+    }
   },
   "object": {
     "imageAlt": "Image {index} de {title}",
@@ -86,6 +126,7 @@
   },
   "about": {
     "portraitAlt": "Portrait d'Andrea Dea Jones",
+    "portraitCaption": "RACHEL CAMBIER / FONDATRICE",
     "paragraphs": {
       "p1": "Andrea Dea Jones est une pratique de design centrée sur les objets, la matière et la forme.",
       "p2": "Créée par Rachel Cambier, elle associe le regard d’une architecte d’intérieur à un univers grandissant d’objets définis par la structure, la présence et le caractère..",

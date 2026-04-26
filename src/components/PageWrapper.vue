@@ -31,7 +31,7 @@ defineProps<{
   box-sizing: border-box;
   display: flex;
   flex: 1;
-  margin: 0 2.5rem;
+  margin: 2.5rem;
 }
 
 @media (max-width: 768px) {

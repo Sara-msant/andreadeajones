@@ -11,7 +11,7 @@ This folder controls the featured item shown on the Home page.
 
 ```json
 {
-  "slug": "stool",
+  "slug": "low-stool",
   "title": "YoMartins. Explore",
   "cover": "a-overview.png",
   "alt": "YoMartins object overview"

@@ -4,7 +4,7 @@
       <div class="about-portrait-wrapper">
         <img class="about-portrait" :src="rachelImage" :alt="t('about.portraitAlt')" />
 
-        <div class="about-portrait-title">RACHEL CAMBIER / FOUNDER</div>
+        <div class="about-portrait-title">{{ t('about.portraitCaption') }}</div>
       </div>
 
       <div class="about-copy">
