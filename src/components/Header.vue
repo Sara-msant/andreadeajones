@@ -258,6 +258,7 @@ onUnmounted(() => {
   position: sticky;
   top: 0;
   z-index: 9999;
+  overflow-x: clip;
   color: var(--color-text);
   background: var(--color-background);
   height: 110px;

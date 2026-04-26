@@ -146,6 +146,7 @@ const handleSubscribe = async () => {
   grid-area: subscribe;
   justify-self: end;
   width: 430px;
+  box-sizing: border-box;
   padding: 0.75rem 0.95rem;
   background: var(--color-accent);
 }
@@ -163,6 +164,8 @@ const handleSubscribe = async () => {
   display: flex;
   align-items: center;
   gap: 0.8rem;
+  width: 100%;
+  min-width: 0;
 }
 
 .site-subscribe-row input::placeholder {
@@ -171,7 +174,9 @@ const handleSubscribe = async () => {
 }
 
 .site-subscribe-row input {
-  flex: 1;
+  flex: 1 1 auto;
+  min-width: 0;
+  width: 100%;
   border: none;
   border-bottom: 2px solid var(--color-text);
   background: transparent;
@@ -185,6 +190,8 @@ const handleSubscribe = async () => {
 }
 
 .site-subscribe-row button {
+  flex: 0 0 auto;
+  white-space: nowrap;
   border: 2px solid var(--color-text);
   border-radius: 10px;
   background: transparent;
@@ -252,7 +259,7 @@ const handleSubscribe = async () => {
   }
 
   .site-socials a {
-    font-size: 3.8rem;
+    font-size: 1.9rem;
   }
 
   .site-subscribe {
@@ -261,6 +268,20 @@ const handleSubscribe = async () => {
 
   .site-subscribe-title {
     font-size: 1.2rem;
+  }
+
+  .site-subscribe-row {
+    flex-wrap: wrap;
+    gap: 0.55rem;
+  }
+
+  .site-subscribe-row input {
+    flex-basis: 100%;
+  }
+
+  .site-subscribe-row button {
+    font-size: 0.95rem;
+    padding: 0.18rem 0.6rem;
   }
 }
 </style>
