@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.andrea-dea-jones.com/sitemap.xml
+Sitemap: https://andreadeajones.com/sitemap.xml

@@ -25,7 +25,7 @@ export default defineConfig({
     vue(),
     vueDevTools(),
     sitemap({
-      hostname: 'https://www.andrea-dea-jones.com',
+      hostname: 'https://andreadeajones.com',
       dynamicRoutes: [...staticRoutes, ...objectRoutes],
       changefreq: 'weekly',
       priority: 0.7,

@@ -28,8 +28,10 @@ declare global {
 }
 
 const loadGoogleAnalytics = () => {
-  const googleAnalyticsSrc = ''
-  const measurementId = ''
+  const measurementId = 'G-CD0R1TK2WJ'
+  const googleAnalyticsSrc = measurementId
+    ? `https://www.googletagmanager.com/gtag/js?id=${measurementId}`
+    : ''
 
   const script = document.createElement('script')
   script.async = true
