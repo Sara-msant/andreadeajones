@@ -99,10 +99,10 @@ const goToCollectionObject = (collectionSlug: string, item: CollectionGridItem) 
 
 .collections-intro {
   max-width: 880px;
-  margin: 0 auto 7rem;
+  margin: 0 auto 9rem;
   text-align: center;
-  font-size: 1.20rem;
-  line-height: 1.5;
+  font-size: 1.35rem;
+  line-height: 1.6;
   letter-spacing: 0.02em;
 }
 
@@ -111,7 +111,7 @@ const goToCollectionObject = (collectionSlug: string, item: CollectionGridItem) 
 }
 
 .collections-intro p + p {
-  margin-top: 0.35rem;
+  margin-top: 0.65rem;
 }
 
 .collection-section + .collection-section {
@@ -120,7 +120,7 @@ const goToCollectionObject = (collectionSlug: string, item: CollectionGridItem) 
 
 .collection-header {
   width: min(100%, calc((430px * 3) + (1.5rem * 2)));
-  margin: 0 auto 1.8rem;
+  margin: 0 auto 2.2rem;
 }
 
 .collection-title {
@@ -129,12 +129,14 @@ const goToCollectionObject = (collectionSlug: string, item: CollectionGridItem) 
   line-height: 0.95;
   letter-spacing: 0.06em;
   text-transform: uppercase;
+  font-weight: 700;
 }
 
 .collection-description {
-  margin: 0.9rem 0 0;
+  margin: 1.1rem 0 0;
   font-size: 0.94rem;
-  line-height: 1.45;
+  line-height: 1.5;
+  font-weight: 400;
 }
 
 .collection-grid {
@@ -231,15 +233,27 @@ const goToCollectionObject = (collectionSlug: string, item: CollectionGridItem) 
 .collection-card-title {
   margin: 0;
   font-size: 1.05rem;
-  line-height: 1.3;
+  line-height: 1.2;
   letter-spacing: 0.08em;
   text-transform: uppercase;
+  font-weight: 600;
 }
 
 .collection-card-summary {
-  margin: 0.7rem 0 0;
+  margin: 0.9rem 0 0;
   font-size: 0.88rem;
-  line-height: 1.45;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+.collection-card--placeholder .collection-card-title {
+  font-size: 1.1rem;
+  line-height: 1.25;
+}
+
+.collection-card--placeholder .collection-card-summary {
+  margin: 0.8rem 0 0;
+  font-size: 0.9rem;
 }
 
 @media (max-width: 980px) {
@@ -269,9 +283,9 @@ const goToCollectionObject = (collectionSlug: string, item: CollectionGridItem) 
   }
 
   .collections-intro {
-    margin-bottom: 5rem;
-    font-size: 0.8rem;
-    line-height: 1.45;
+    margin-bottom: 7rem;
+    font-size: 1.1rem;
+    line-height: 1.55;
   }
 
   .collection-section + .collection-section {
