@@ -404,7 +404,7 @@ onUnmounted(() => {
 }
 
 .andrea-nav-subroute-connector {
-  line-height: 1;
+  line-height: 2;
 }
 
 .andrea-nav-subroute-title {

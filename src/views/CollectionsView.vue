@@ -101,7 +101,7 @@ const goToCollectionObject = (collectionSlug: string, item: CollectionGridItem) 
   max-width: 880px;
   margin: 0 auto 7rem;
   text-align: center;
-  font-size: 0.88rem;
+  font-size: 1.20rem;
   line-height: 1.5;
   letter-spacing: 0.02em;
 }
@@ -163,6 +163,9 @@ const goToCollectionObject = (collectionSlug: string, item: CollectionGridItem) 
 
 .collection-card--placeholder {
   cursor: default;
+  position: relative;
+  min-height: auto;
+  aspect-ratio: 4 / 5;
 }
 
 .collection-card-image {
@@ -194,7 +197,9 @@ const goToCollectionObject = (collectionSlug: string, item: CollectionGridItem) 
 }
 
 .collection-card-placeholder-space {
-  position: relative;
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   aspect-ratio: 4 / 5;
   overflow: hidden;
@@ -210,6 +215,17 @@ const goToCollectionObject = (collectionSlug: string, item: CollectionGridItem) 
 
 .collection-card-info {
   margin-top: 1rem;
+}
+
+.collection-card--placeholder .collection-card-info {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  margin-top: 0;
+  text-align: center;
+  padding: 0 1.5rem;
 }
 
 .collection-card-title {
