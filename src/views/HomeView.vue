@@ -122,7 +122,7 @@ const goToContact = () => {
   display: flex;
   flex-direction: column;
   padding: 0 0 2.5rem;
-  background: #fff;
+  background: #f8f6f6;
 }
 
 .home-hero {

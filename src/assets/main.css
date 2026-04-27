@@ -11,7 +11,7 @@
   min-height: 100svh;
   min-height: 100dvh;
   width: 100%;
-  background: #fff;
+  background: #f8f6f6;
   background-size: cover;
   background-position: center;
   color: var(--color-text);
@@ -22,5 +22,5 @@
 
 .v-application,
 .v-application__wrap {
-  background: #fff !important;
+  background: #f8f6f6 !important;
 }
