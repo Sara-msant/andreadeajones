@@ -97,7 +97,7 @@ const handleSubscribe = async () => {
 
 <style scoped>
 .site-footer {
-  margin: 2.5rem;
+  margin: 8rem;
 }
 
 .site-footer-divider {
