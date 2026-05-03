@@ -24,9 +24,8 @@
   "home": {
     "caption": {
       "line1": "“An object with structure and attitude”",
-      "line2": "A low stool made from Portuguese cork"
-    },
-    "explore": "Explore",
+      "line2": "A sculptural low stool\n made in Portugal from cork."
+    },    "intro": "YOMARTINS is the first object by Andrea Dea Jones.\n A compact object with weight, softness and presence.",    "explore": "Explore",
     "purchaseInquiry": "Purchase // Inquiry",
     "copyright": "© Andrea Dea Jones. All rights reserved.",
     "subscribe": "Subscribe",
@@ -51,7 +50,7 @@
           }
         },
         "placeholders": {
-          "inDevelopmentTitle": "Yo*02",
+          "inDevelopmentTitle": "Object 02",
           "inDevelopmentSummary": "In development",
           "moreTitle": "More objects",
           "moreSummary": "Coming soon"
