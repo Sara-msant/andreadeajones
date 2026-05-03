@@ -1,51 +1,88 @@
 {
-    "cardTitle": "Yo*01",
-    "summary": "Low stool in cork",
-    "sections": {
-        "overview": {
-            "caption": [
-                "YO*01 / YOMARTINS STOOL",
-                "__DIMENSIONS:__ W 37 x D 37 x H 45 cm",
-                "__WEIGHT:__ 9.0 Kg",
-                "Made in Portugal",
-                "Available by inquiry"
-            ],
-            "text": "YOMARTINS is a sculptural low stool made in Portugal from Portuguese cork.\n Compact, tactile, and quietly bold, it works as a seat, an object, or a small statement piece.\n Its soft proportions contrast with a solid architectural presence, creating an object that feels both grounded and unexpected."
+  "cardTitle": "Yo*01",
+  "summary": "Low stool in cork",
+  "sections": {
+    "overview": {
+      "caption": [
+        "YO*01 / YOMARTINS STOOL",
+        "__DIMENSIONS:__ W 37 x D 37 x H 45 cm",
+        "__WEIGHT:__ 9.0 Kg"
+      ],
+      "text": "YOMARTINS is a sculptural low stool made in Portugal from Portuguese cork.\n Compact, tactile, and quietly bold, it works as a seat, an object, or a small statement piece.\n Its soft proportions contrast with a solid architectural presence, creating an object that feels both grounded and unexpected."
+    },
+    "separated_blocks": {
+      "caption": [
+        "SEPARATED",
+        "BLOCKS"
+      ],
+      "text": "Each block is shaped to lock into the next, creating a stable structure without losing the softness of the form. The result is a compact object with weight, balance, and presence."
+    },
+    "interlocking_system": {
+      "caption": [
+        "INTERLOCKING",
+        "SYSTEM."
+      ],
+      "text": "Sustainable by nature and crafted with care, the stool reflects a dialogue between local expertise, intelligent construction, and modern design."
+    },
+    "material_variations": {
+      "caption": [
+        "Available variations:",
+        "Light Cork",
+        "Brown Cork",
+        "Mixed Cork"
+      ],
+      "text": "YO*01 is available in a selection of cork compositions, from light natural cork to darker and mixed cork variations.\n Each version changes the character of the object while preserving the same compact silhouette, soft geometry, and sculptural presence."
+    },
+    "cork_trees": {
+      "caption": [
+        "CORK",
+        "TREES."
+      ],
+      "text": "Cork is renewable, resilient, warm to the touch, and deeply connected to the Portuguese landscape. For YO*01, it becomes more than a material — it becomes structure, surface, and identity."
+    },
+    "craftsmanship": {
+      "caption": [
+        "CRAFTSMANSHIP."
+      ],
+      "text": "Designed as a functional object with sculptural intent, YO*01 brings together material honesty, local craftsmanship, and a bold visual language.\n It is made for interiors that welcome objects with character, pieces that are useful, tactile, and quietly impossible to ignore."
+    }
+  },
+  "details": {
+    "title": "DETAILS",
+    "items": [
+      {
+        "label": "Material",
+        "value": "Portuguese cork"
+      },
+      {
+        "label": "Dimensions",
+        "value": "W 37 × D 37 × H 45 cm"
+      },
+      {
+        "label": "Weight",
+        "value": "Approx. 9 kg"
+      },
+      {
+        "label": "Use",
+        "value": "Low stool / accent object / sculptural piece"
+      },
+      {
+        "label": "Origin",
+        "value": "Made in Portugal"
+      },
+        {
+        "label": "Availability",
+        "value": "Available now"
         },
-        "separated_blocks": {
-            "caption": [
-                "SEPARATED",
-                "BLOCKS"
-            ],
-            "text": "Each block is shaped to lock into the next, creating a stable structure without losing the softness of the form. The result is a compact object with weight, balance, and presence."
-        },
-        "interlocking_system": {
-            "caption": [
-                "INTERLOCKING",
-                "SYSTEM."
-            ],
-            "text": "Sustainable by nature and crafted with care, the stool reflects a dialogue between local expertise, intelligent construction, and modern design."
-        },
-        "material_variations": {
-            "caption": ["Available variations:",
-                       "Light Cork",
-                       "Brown Cork",
-                       "Mixed Cork"
-            ],
-            "text": "YO*01 is available in a selection of cork compositions, from light natural cork to darker and mixed cork variations.\n Each version changes the character of the object while preserving the same compact silhouette, soft geometry, and sculptural presence."
-        },
-        "cork_trees": {
-            "caption": [
-                "CORK",
-                "TREES."
-            ],
-            "text": "Cork is renewable, resilient, warm to the touch, and deeply connected to the Portuguese landscape. For YO*01, it becomes more than a material — it becomes structure, surface, and identity."
-        },
-        "craftsmanship": {
-            "caption": [
-                "CRAFTSMANSHIP."
-            ],
-            "text": "Designed as a functional object with sculptural intent, YO*01 brings together material honesty, local craftsmanship, and a bold visual language.\n It is made for interiors that welcome objects with character, pieces that are useful, tactile, and quietly impossible to ignore."
+        {
+        "label": "Shipping",
+        "value": "May take up to 4 weeks"
         }
+    ]
+  },
+  "finalCta": {
+  "title": "Interested in YO*01?",
+  "text": "YO*01 is available now. For cork variations, pricing, and shipping details, send a purchase inquiry. Shipping may take up to 4 weeks.",
+  "buttonLabel": "PURCHASE // INQUIRY"
     }
 }

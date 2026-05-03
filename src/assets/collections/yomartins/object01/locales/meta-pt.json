@@ -1,44 +1,87 @@
 {
-    "cardTitle": "Yo*01",
-    "summary": "Banco baixo em cortica",
-    "sections": {
-        "overview": {
-            "caption": [
-                "YOMARTINS STOOL 2026.",
-                "__DIMENSOES:__ L 37 x P 37 x A 45 cm",
-                "__PESO:__ 9,0 Kg"
-            ],
-            "text": "YOMARTINS e um banco de cortica que explora o equilibrio entre forma escultorica e honestidade material. Feito em cortica portuguesa, naturalmente leve, resistente e tatil. Oferece um assento confortavel definido por proporcoes suaves e bem ponderadas."
-        },
-        "separated_blocks": {
-            "caption": [
-                "BLOCOS",
-                "SEPARADOS"
-            ],
-            "text": "A estrutura assenta num sistema de encaixe cuidadosamente desenhado, onde forma e tensao trabalham em conjunto para garantir estabilidade."
-        },
-        "interlocking_system": {
-            "caption": [
-                "SISTEMA",
-                "DE ENCAIXE."
-            ],
-            "text": "Sustentavel por natureza e fabricado com cuidado, o banco reflete um dialogo pensado entre conhecimento local, construcao inteligente e design moderno."
-        },
-        "material_variations": {
-            "caption": "variacoes",
-            "text": "A colecao de bancos Yomartins esta disponivel numa gama de variacoes distintas, cada uma definida pela sua composicao material unica e expressao estetica. Estas incluem variacoes em cortica clara, cortica castanha e cortica mista, oferecendo um espectro de tons e texturas para se adequar a diferentes preferencias e contextos de interiores."
-        },
-        "cork_trees": {
-            "caption": [
-                "SOBREIROS."
-            ],
-            "text": "Moldada por artesaos experientes, a peca assume a imperfeicao e a honestidade material, resultando num objeto que se sente simultaneamente enraizado e expressivo. Mais do que um assento, e uma afirmacao - silenciosa, tatil e confiantemente contemporanea."
-        },
-        "craftsmanship": {
-            "caption": [
-                "ARTESANATO."
-            ],
-            "text": "YOMARTINS existe no cruzamento entre objeto e escultura. A sua forma ousada, quase arquitetonica, eleva a cortica para alem da funcao, revelando a sua textura, calor e beleza crua."
-        }
+  "cardTitle": "Yo*01",
+  "summary": "Banco baixo em cortiça",
+  "sections": {
+    "overview": {
+      "caption": [
+        "YO*01 / BANCO YOMARTINS",
+        "__DIMENSÕES:__ L 37 x P 37 x A 45 cm",
+        "__PESO:__ 9.0 Kg"
+      ],
+      "text": "YOMARTINS é um banco baixo escultórico, feito em Portugal a partir de cortiça portuguesa.\n Compacto, tátil e discretamente ousado, funciona como assento, objeto ou pequena peça de destaque.\n As suas proporções suaves contrastam com uma presença arquitetónica sólida, criando um objeto simultaneamente enraizado e inesperado."
+    },
+    "separated_blocks": {
+      "caption": [
+        "BLOCOS",
+        "SEPARADOS"
+      ],
+      "text": "Cada bloco é desenhado para encaixar no seguinte, criando uma estrutura estável sem perder a suavidade da forma. O resultado é um objeto compacto, com peso, equilíbrio e presença."
+    },
+    "interlocking_system": {
+      "caption": [
+        "SISTEMA",
+        "DE ENCAIXE."
+      ],
+      "text": "Sustentável por natureza e trabalhado com cuidado, o banco reflete um diálogo entre saber-fazer local, construção inteligente e design contemporâneo."
+    },
+    "material_variations": {
+      "caption": [
+        "Variações disponíveis:",
+        "Cortiça clara",
+        "Cortiça castanha",
+        "Cortiça mista"
+      ],
+      "text": "YO*01 está disponível numa seleção de composições em cortiça, desde cortiça natural clara até variações mais escuras e misturas de cortiça.\n Cada versão altera o carácter do objeto, preservando a mesma silhueta compacta, geometria suave e presença escultórica."
+    },
+    "cork_trees": {
+      "caption": [
+        "SOBREIROS."
+      ],
+      "text": "A cortiça é renovável, resistente, quente ao toque e profundamente ligada à paisagem portuguesa. Em YO*01, torna-se mais do que um material — torna-se estrutura, superfície e identidade."
+    },
+    "craftsmanship": {
+      "caption": [
+        "SABER-FAZER."
+      ],
+      "text": "Desenhado como um objeto funcional com intenção escultórica, YO*01 reúne honestidade material, produção local e uma linguagem visual forte.\n Foi pensado para interiores que acolhem objetos com carácter — peças úteis, táteis e silenciosamente impossíveis de ignorar."
     }
+  },
+  "details": {
+    "title": "DETALHES",
+    "items": [
+      {
+        "label": "Material",
+        "value": "Cortiça portuguesa"
+      },
+      {
+        "label": "Dimensões",
+        "value": "L 37 × P 37 × A 45 cm"
+      },
+      {
+        "label": "Peso",
+        "value": "Aprox. 9 kg"
+      },
+      {
+        "label": "Uso",
+        "value": "Banco baixo / objeto de destaque / peça escultórica"
+      },
+      {
+        "label": "Origem",
+        "value": "Feito em Portugal"
+      },
+      {
+    "label": "Disponibilidade",
+    "value": "Disponível"
+    },
+    {
+    "label": "Envio",
+    "value": "Pode demorar até 4 semanas"
+    }
+    ]
+  },
+  "finalCta": {
+    "title": "Interessado em YO*01?",
+    "text": "YO*01 está disponível. Para variações de cortiça, preço e detalhes de envio, envie um pedido de compra. O envio pode demorar até 4 semanas.",
+    "buttonLabel": "COMPRA // PEDIDO"
+  }
 }

@@ -42,6 +42,45 @@
         <p class="object-paragraph" v-html="formatRichText(section.text)"></p>
       </section>
 
+      <section
+        v-if="objectDetails?.items?.length"
+        class="object-details-section"
+        aria-labelledby="object-details-title"
+      >
+        <p id="object-details-title" class="object-section-label">
+          {{ objectDetails.title }}
+        </p>
+
+        <dl class="object-details-list">
+          <div v-for="detail in objectDetails.items" :key="detail.label">
+            <dt>{{ detail.label }}</dt>
+            <dd>{{ detail.value }}</dd>
+          </div>
+        </dl>
+      </section>
+
+     <section
+        v-if="objectFinalCta?.title || objectFinalCta?.text || objectFinalCta?.buttonLabel"
+        class="object-final-cta"
+        :aria-labelledby="objectFinalCta?.title ? 'object-final-cta-title' : undefined"
+      >
+        <p
+          v-if="objectFinalCta.title"
+          id="object-final-cta-title"
+          class="object-final-cta-title"
+        >
+          {{ objectFinalCta.title }}
+        </p>
+
+        <p v-if="objectFinalCta.text" class="object-final-cta-text">
+          {{ objectFinalCta.text }}
+        </p>
+
+        <button type="button" class="object-final-cta-button" @click="goToContact">
+          {{ objectFinalCta.buttonLabel || t('home.purchaseInquiry') }}
+        </button>
+      </section>
+
       <button
         type="button"
         class="scroll-top-button"
@@ -85,6 +124,10 @@ const objectItem = computed(() => {
 })
 const sections = computed(() => objectItem.value?.sections ?? [])
 
+const objectDetails = computed(() => objectItem.value?.details ?? null)
+
+const objectFinalCta = computed(() => objectItem.value?.finalCta ?? null)
+
 const escapeHtml = (value: string): string => {
   return value
     .replace(/&/g, '&amp;')
@@ -108,6 +151,8 @@ const scrollToTop = (): void => {
 const goToContact = () => {
   router.push({ name: 'contact' })
 }
+
+
 </script>
 
 <style scoped>
@@ -139,7 +184,7 @@ const goToContact = () => {
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: clamp(6.5rem, 10vh, 10rem);
+  gap: clamp(5.5rem, 9vh, 8rem);
   padding: 1rem 0 6rem;
 }
 
@@ -187,18 +232,18 @@ const goToContact = () => {
   text-align: right;
   text-transform: uppercase;
   white-space: pre-line;
-  font-size: 0.76rem;
-  line-height: 1.2;
+  font-size: 0.82rem;
+  line-height: 1.25;
   letter-spacing: 0.02em;
 }
 
 .object-paragraph {
-  width: min(100%, 64ch);
+  width: min(100%, 58ch);
   margin: 0 auto;
   padding-top: clamp(3rem, 6vh, 5.5rem);
   text-align: center;
-  font-size: 1.02rem;
-  line-height: 1.5;
+  font-size: 1.08rem;
+  line-height: 1.55;
 }
 
 .object-image-caption :deep(.rich-italic),
@@ -224,7 +269,7 @@ const goToContact = () => {
   border: none;
   background: transparent;
   color: inherit;
-  font-size: 3rem;
+  font-size: 2.4rem;
   line-height: 1;
   cursor: pointer;
   padding: 0.25rem 0.6rem;
@@ -239,6 +284,97 @@ const goToContact = () => {
   outline-offset: 3px;
 }
 
+.object-details-section {
+  width: min(100%, 600px);
+  margin: 0 auto;
+  padding-top: 2.5rem;
+  border-top: 1px solid var(--color-border);
+  text-align: center;
+}
+
+.object-section-label {
+  margin: 0 0 2rem;
+  text-transform: uppercase;
+  font-size: 0.82rem;
+  line-height: 1.2;
+  letter-spacing: 0.08em;
+  font-weight: 700;
+}
+
+.object-details-list {
+  margin: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.75rem;
+}
+
+.object-details-list div {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 1.5rem;
+  align-items: baseline;
+}
+
+.object-details-list dt,
+.object-details-list dd {
+  margin: 0;
+  font-size: 0.88rem;
+  line-height: 1.45;
+}
+
+.object-details-list dt {
+  text-align: right;
+  text-transform: uppercase;
+  text-decoration: underline;
+  text-underline-offset: 0.12em;
+  font-weight: 600;
+}
+
+.object-details-list dd {
+  text-align: left;
+}
+
+.object-final-cta {
+  width: min(100%, 620px);
+  margin: 0 auto;
+  text-align: center;
+}
+
+.object-final-cta-title {
+  margin: 0 0 1.2rem;
+  text-transform: uppercase;
+  font-size: 1.15rem;
+  line-height: 1.2;
+  letter-spacing: 0.08em;
+  font-weight: 700;
+}
+
+.object-final-cta-text {
+  width: min(100%, 44ch);
+  margin: 0 auto 2rem;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.object-final-cta-button {
+  border: none;
+  background: var(--color-accent);
+  color: var(--color-text);
+  cursor: pointer;
+  text-transform: uppercase;
+  font-family: var(--font-body);
+  font-size: 0.86rem;
+  padding: 1rem 2.9rem;
+  min-width: 280px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+.object-final-cta-button:hover {
+  background: var(--color-text);
+  color: var(--color-accent);
+}
+
 @media (max-width: 768px) {
   .object-floating-actions {
     position: fixed;
@@ -249,8 +385,8 @@ const goToContact = () => {
   }
 
   .object-inquiry {
-    font-size: 0.78rem;
-    padding: 0.55rem 1.1rem;
+    font-size: 0.72rem;
+    padding: 0.45rem 0.95rem;
   }
 
   .object-page {
@@ -268,17 +404,68 @@ const goToContact = () => {
     max-height: none;
   }
 
-  .object-image-caption {
-    width: 100%;
-    font-size: 0.72rem;
-    padding: 0 0.25rem;
+   .object-paragraph {
+    width: min(100%, 36ch);
+    padding-top: 2.75rem;
+    font-size: 0.92rem;
+    line-height: 1.6;
   }
 
-  .object-paragraph {
+  .object-image-caption {
+    font-size: 0.76rem;
+    line-height: 1.25;
+  }
+
+  .object-details-section {
+    width: min(100%, 36ch);
+    padding-top: 2rem;
+  }
+
+
+  .object-section-label {
+    margin-bottom: 1.5rem;
+  }
+
+  .object-details-list {
+    gap: 1rem;
+  }
+
+  .object-details-list div {
+    grid-template-columns: 0.9fr 1.35fr;
+    gap: 1.8rem;
+  }
+
+  .object-details-list dt {
+    text-align: right;
+    font-size: 0.72rem;
+  }
+
+  .object-details-list dd {
+    text-align: left;
+    font-size: 0.78rem;
+  }
+
+  .object-final-cta {
     width: min(100%, 34ch);
-    padding-top: 3rem;
+  }
+
+  .object-final-cta-title {
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+  }
+
+  .object-final-cta-text {
+    width: min(100%, 32ch);
     font-size: 0.85rem;
     line-height: 1.55;
+  }
+
+  .object-final-cta-button {
+    min-width: 0;
+    width: 100%;
+    max-width: 260px;
+    font-size: 0.72rem;
+    padding: 0.75rem 1.4rem;
   }
 }
 
@@ -290,7 +477,7 @@ const goToContact = () => {
   }
 
   .object-inquiry {
-    font-size: 0.8rem;
+    font-size: 0.7rem;
     padding: 0.36rem 0.9rem;
   }
 
@@ -303,4 +490,18 @@ const goToContact = () => {
     padding-top: 3rem;
   }
 }
+
+@media (max-width: 360px) {
+  .object-details-list div {
+    grid-template-columns: 1fr;
+    gap: 0.15rem;
+  }
+
+  .object-details-list dt,
+  .object-details-list dd {
+    text-align: center;
+  }
+}
+
+
 </style>

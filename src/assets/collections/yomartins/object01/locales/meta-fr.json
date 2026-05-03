@@ -1,45 +1,87 @@
 {
-    "cardTitle": "Yo*01",
-    "summary": "Tabouret bas en liege",
-    "sections": {
-        "overview": {
-            "caption": [
-                "YOMARTINS STOOL 2026.",
-                "__DIMENSIONS:__ L 37 x P 37 x H 45 cm",
-                "__POIDS:__ 9,0 Kg"
-            ],
-            "text": "YOMARTINS est un tabouret en liege qui explore l'equilibre entre forme sculpturale et sincerite du materiau. Fabrique en liege portugais, naturellement leger, resilient et tactile. Il offre une assise confortable definie par des proportions douces et reflechies."
-        },
-        "separated_blocks": {
-            "caption": [
-                "BLOCS",
-                "SEPARES"
-            ],
-            "text": "La structure repose sur un systeme d'emboitement soigneusement concu, ou la forme et la tension travaillent ensemble pour garantir la stabilite."
-        },
-        "interlocking_system": {
-            "caption": [
-                "SYSTEME",
-                "D'EMBOITEMENT."
-            ],
-            "text": "Durable par nature et fabrique avec soin, le tabouret reflete un dialogue reflechi entre savoir-faire local, construction intelligente et design moderne."
-        },
-        "material_variations": {
-            "caption": "variations",
-            "text": "La collection de tabourets Yomartins est disponible en une gamme de variations distinctes, chacune definie par sa composition materielle unique et son expression esthetique. Celles-ci incluent des variations en liege clair, liege brun et liege mixte, offrant un eventail de tons et de textures pour repondre a differentes preferences et a divers contextes interieurs."
-        },
-        "cork_trees": {
-            "caption": [
-                "CHENES",
-                "LIEGE."
-            ],
-            "text": "Faconnee par des artisans qualifies, la piece assume l'imperfection et la sincerite du materiau, donnant naissance a un objet a la fois ancre et expressif. Plus qu'une assise, c'est une declaration - silencieuse, tactile et resolument contemporaine."
-        },
-        "craftsmanship": {
-            "caption": [
-                "SAVOIR-FAIRE."
-            ],
-            "text": "YOMARTINS existe a la croisee de l'objet et de la sculpture. Sa forme audacieuse, presque architecturale, eleve le liege au-dela de la fonction, revelant sa texture, sa chaleur et sa beaute brute."
-        }
+  "cardTitle": "Yo*01",
+  "summary": "Tabouret bas en liège",
+  "sections": {
+    "overview": {
+      "caption": [
+        "YO*01 / TABOURET YOMARTINS",
+        "__DIMENSIONS :__ L 37 x P 37 x H 45 cm",
+        "__POIDS :__ 9.0 Kg"
+      ],
+      "text": "YOMARTINS est un tabouret bas sculptural, fabriqué au Portugal à partir de liège portugais.\n Compact, tactile et discrètement audacieux, il peut être utilisé comme assise, objet ou petite pièce d’accent.\n Ses proportions douces contrastent avec une présence architecturale solide, créant un objet à la fois ancré et inattendu."
+    },
+    "separated_blocks": {
+      "caption": [
+        "BLOCS",
+        "SÉPARÉS"
+      ],
+      "text": "Chaque bloc est façonné pour s’emboîter dans le suivant, créant une structure stable sans perdre la douceur de la forme. Le résultat est un objet compact, avec poids, équilibre et présence."
+    },
+    "interlocking_system": {
+      "caption": [
+        "SYSTÈME",
+        "D’ASSEMBLAGE."
+      ],
+      "text": "Durable par nature et fabriqué avec soin, le tabouret reflète un dialogue entre savoir-faire local, construction intelligente et design contemporain."
+    },
+    "material_variations": {
+      "caption": [
+        "Variations disponibles :",
+        "Liège clair",
+        "Liège brun",
+        "Liège mixte"
+      ],
+      "text": "YO*01 est disponible dans une sélection de compositions en liège, du liège naturel clair aux variations plus foncées et aux mélanges de liège.\n Chaque version modifie le caractère de l’objet tout en conservant la même silhouette compacte, la même géométrie douce et la même présence sculpturale."
+    },
+    "cork_trees": {
+      "caption": [
+        "CHÊNES-LIÈGES."
+      ],
+      "text": "Le liège est renouvelable, résistant, chaud au toucher et profondément lié au paysage portugais. Pour YO*01, il devient plus qu’un matériau — il devient structure, surface et identité."
+    },
+    "craftsmanship": {
+      "caption": [
+        "SAVOIR-FAIRE."
+      ],
+      "text": "Conçu comme un objet fonctionnel à l’intention sculpturale, YO*01 réunit honnêteté matérielle, artisanat local et langage visuel affirmé.\n Il est pensé pour des intérieurs qui accueillent des objets de caractère — des pièces utiles, tactiles et discrètement impossibles à ignorer."
     }
+  },
+  "details": {
+    "title": "DÉTAILS",
+    "items": [
+      {
+        "label": "Matériau",
+        "value": "Liège portugais"
+      },
+      {
+        "label": "Dimensions",
+        "value": "L 37 × P 37 × H 45 cm"
+      },
+      {
+        "label": "Poids",
+        "value": "Env. 9 kg"
+      },
+      {
+        "label": "Usage",
+        "value": "Tabouret bas / objet d’accent / pièce sculpturale"
+      },
+      {
+        "label": "Origine",
+        "value": "Fabriqué au Portugal"
+      },
+      {
+        "label": "Disponibilité",
+        "value": "Disponible"
+        },
+        {
+        "label": "Expédition",
+        "value": "Peut prendre jusqu’à 4 semaines"
+        }
+    ]
+  },
+  "finalCta": {
+    "title": "Intéressé par YO*01 ?",
+    "text": "YO*01 est disponible. Pour les variations de liège, les prix et les détails d’expédition, envoyez une demande d’achat. L’expédition peut prendre jusqu’à 4 semaines.",
+    "buttonLabel": "ACHAT // DEMANDE"
+  }
 }

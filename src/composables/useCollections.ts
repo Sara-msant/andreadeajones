@@ -37,6 +37,22 @@ export interface CollectionObjectSection {
   videoEmbedUrl?: string
 }
 
+export interface CollectionObjectDetailItem {
+  label: string
+  value: string
+}
+
+export interface CollectionObjectDetails {
+  title?: string
+  items?: CollectionObjectDetailItem[]
+}
+
+export interface CollectionObjectFinalCta {
+  title?: string
+  text?: string
+  buttonLabel?: string
+}
+
 export interface CollectionObjectItem {
   slug: string
   title: string
@@ -50,6 +66,8 @@ export interface CollectionObjectItem {
   collectionSlug: string
   displayTitle: string
   summary: string
+  details?: CollectionObjectDetails
+  finalCta?: CollectionObjectFinalCta
 }
 
 export interface CollectionPlaceholderItem {
@@ -112,6 +130,8 @@ type CollectionObjectLocaleMeta = {
   cardTitle?: string
   summary?: string
   sections?: Record<string, { text?: string; caption?: string | string[] }>
+  details?: CollectionObjectDetails
+  finalCta?: CollectionObjectFinalCta
 }
 
 const rootCollectionsMeta = collectionsMeta as RootCollectionsMeta
@@ -371,22 +391,24 @@ export const useCollections = () => {
               })
               .filter((section): section is CollectionObjectSection => section !== null)
 
-            const collectionObject: CollectionObjectItem & { sortOrder: number } = {
-              slug: itemConfig.slug,
-              title: itemConfig.title ?? localizedObject.cardTitle?.trim() ?? itemConfig.slug,
-              dimensions: itemConfig.dimensions,
-              weight: itemConfig.weight,
-              sections,
-              cover: coverSrc,
-              gallery,
-              order: itemConfig.order,
-              kind: 'object' as const,
-              collectionSlug: config.folder,
-              displayTitle:
-                localizedObject.cardTitle?.trim() || itemConfig.title?.trim() || itemConfig.slug,
-              summary: localizedObject.summary?.trim() || '',
-              sortOrder: objectRef.order ?? itemConfig.order ?? index,
-            }
+          const collectionObject: CollectionObjectItem & { sortOrder: number } = {
+            slug: itemConfig.slug,
+            title: itemConfig.title ?? localizedObject.cardTitle?.trim() ?? itemConfig.slug,
+            dimensions: itemConfig.dimensions,
+            weight: itemConfig.weight,
+            sections,
+            details: localizedObject.details,
+            finalCta: localizedObject.finalCta,
+            cover: coverSrc,
+            gallery,
+            order: itemConfig.order,
+            kind: 'object' as const,
+            collectionSlug: config.folder,
+            displayTitle:
+              localizedObject.cardTitle?.trim() || itemConfig.title?.trim() || itemConfig.slug,
+            summary: localizedObject.summary?.trim() || '',
+            sortOrder: objectRef.order ?? itemConfig.order ?? index,
+          }
             return collectionObject
           })
           .filter((item): item is CollectionObjectItem & { sortOrder: number } => item !== null)
