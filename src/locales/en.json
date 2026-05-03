@@ -38,8 +38,8 @@
   },
   "collections": {
     "introAria": "Collections intro text",
-    "introLine1": "Each collection brings together a family of objects.",
-    "introLine2": "Connected by a shared language of material, structure, and presence.",
+    "introLine1": "Objects grouped by material, structure, and presence.",
+    "introLine2": "Each collection begins with a shared attitude.",
     "items": {
       "yomartins": {
         "description": "A collection shaped by cork, structure, and presence.",

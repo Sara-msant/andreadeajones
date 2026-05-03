@@ -94,14 +94,14 @@ const goToCollectionObject = (collectionSlug: string, item: CollectionGridItem) 
 <style scoped>
 .collections-page {
   width: 100%;
-  padding: 8rem 0 0;
+  padding: 4.5rem 0 7;
 }
 
 .collections-intro {
   max-width: 880px;
-  margin: 0 auto 9rem;
+  margin: 0 auto 5.5rem;
   text-align: center;
-  font-size: 1.35rem;
+  font-size: 1.25rem;
   line-height: 1.6;
   letter-spacing: 0.02em;
 }
@@ -194,8 +194,12 @@ const goToCollectionObject = (collectionSlug: string, item: CollectionGridItem) 
   opacity: 1;
 }
 
-.collection-card--object:hover .collection-card-image-main {
-  filter: grayscale(16%) brightness(0.93);
+.collection-card--object {
+  transition: transform 180ms ease;
+}
+
+.collection-card--object:hover {
+  transform: translateY(-4px);
 }
 
 .collection-card-placeholder-space {
@@ -208,7 +212,7 @@ const goToCollectionObject = (collectionSlug: string, item: CollectionGridItem) 
 }
 
 .collection-card-placeholder-space--solid {
-  background: #67ff00;
+  background: var(--color-accent);
 }
 
 .collection-card-placeholder-space--outline {
@@ -258,7 +262,7 @@ const goToCollectionObject = (collectionSlug: string, item: CollectionGridItem) 
 
 @media (max-width: 980px) {
   .collections-page {
-    padding-top: 6rem;
+    padding-top: 4rem 0 5rem;
   }
 
   .collection-header {
@@ -279,12 +283,12 @@ const goToCollectionObject = (collectionSlug: string, item: CollectionGridItem) 
 
 @media (max-width: 600px) {
   .collections-page {
-    padding-top: 5rem;
+    padding-top: 3rem 0 4rem;
   }
 
   .collections-intro {
-    margin-bottom: 7rem;
-    font-size: 1.1rem;
+    margin-bottom: 4rem;
+    font-size: 1rem;
     line-height: 1.55;
   }
 
