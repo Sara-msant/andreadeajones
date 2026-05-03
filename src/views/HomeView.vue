@@ -15,6 +15,7 @@
 
           <!-- Text + Object row -->
           <div class="home-content-row">
+
             <div class="home-left-col">
               <p class="home-caption">
                 <span class="line-1">{{ t('home.caption.line1') }}</span>
@@ -22,17 +23,6 @@
               </p>
 
               <p class="home-intro-text">{{ t('home.intro') }}</p>
-
-              <section class="home-actions">
-                <button class="home-explore" type="button" @click="goToObjectDetail">
-                  <span class="home-explore-text">DISCOVER YO*01</span>
-                  <span class="home-explore-arrow" aria-hidden="true">→</span>
-                </button>
-
-                <button class="home-inquiry" type="button" @click="goToContact">
-                  {{ t('home.purchaseInquiry') }}
-                </button>
-              </section>
             </div>
 
             <div class="home-center-col">
@@ -51,6 +41,17 @@
                 />
               </button>
             </div>
+
+            <section class="home-actions">
+              <button class="home-explore" type="button" @click="goToObjectDetail">
+                <span class="home-explore-text">DISCOVER YO*01</span>
+                <span class="home-explore-arrow" aria-hidden="true">→</span>
+              </button>
+
+              <button class="home-inquiry" type="button" @click="goToContact">
+                {{ t('home.purchaseInquiry') }}
+              </button>
+            </section>
           </div>
         </div>
 
@@ -192,10 +193,11 @@ const goToContact = () => {
 
 
 .home-left-col {
+  grid-column: 1 / 2;
+  grid-row: 1;
   display: flex;
   flex-direction: column;
   padding: 0;
-  height: 100%;
 }
 
 .home-divider {
@@ -212,11 +214,12 @@ const goToContact = () => {
   grid-row: 3;
   display: grid;
   grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.15fr);
+  grid-template-rows: auto 1fr auto;
   column-gap: 0.5rem;
   padding-top: 1rem;
   min-height: 0;
   height: 100%;
-  align-items: stretch;
+  align-items: start;
 }
 
 
@@ -254,12 +257,16 @@ const goToContact = () => {
 }
 
 .home-actions {
+  grid-column: 1 / 2;
+  grid-row: 3;
+  align-self: end;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 1rem;
-  margin-top: clamp(2rem, 5vh, 4.5rem);
-  padding-top: 0;
+  margin-top: 0;
+  padding-top: 2rem;
+  padding-bottom: 19px;
 }
 
 .home-explore {
@@ -320,6 +327,8 @@ const goToContact = () => {
 
 
 .home-center-col {
+  grid-column: 2 / 3;
+  grid-row: 1 / 4;
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
@@ -375,47 +384,8 @@ const goToContact = () => {
 }
 
 
-@media (min-width: 1600px) {
-  .home-actions {
-    margin-top: auto;
-    padding-top: 2rem;
-  }
-}
 
-@media (max-width: 1599px) and (min-width: 1025px) {
-  .home-actions {
-    margin-top: clamp(2rem, 5vh, 4.5rem);
-    padding-top: 0;
-  }
-}
-
-@media (min-width: 1025px) {
-  .home-hero {
-    align-items: stretch;
-  }
-
-  .home-main-area {
-    grid-template-rows: auto 1px 1fr;
-    height: 100%;
-  }
-
-  .home-content-row {
-    height: 100%;
-    align-items: stretch;
-  }
-
-  .home-left-col {
-    height: 100%;
-  }
-
-  .home-actions {
-    margin-top: auto;
-    padding-top: 2rem;
-    padding-bottom: 19px;
-  }
-}
-
-@media (max-width: 1450px) and (min-width: 1025px) {
+@media (max-width: 1450px) and (min-width: 1201px) {
   .home-hero {
     grid-template-columns: minmax(0, 1.15fr) minmax(320px, 430px);
     column-gap: 1.5rem;
@@ -442,11 +412,11 @@ const goToContact = () => {
   }
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1200px) and (min-width: 1025px){
 
   .home-hero {
     grid-template-columns: minmax(0, 2fr) minmax(300px, 0.9fr);
-    padding: 4rem 2rem;
+    padding: 3rem 2rem 1rem;
     column-gap: 2rem;
     row-gap: 3rem;
   }
@@ -474,93 +444,124 @@ const goToContact = () => {
 }
 
 @media (max-width: 1024px) {
+  .home-hero {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 1.5rem 0;
+    gap: 1.5rem;
+    align-items: stretch;
+  }
+
+  .home-main-area,
+  .home-content-row {
+    display: contents;
+  }
+
   .home-logo-section {
-    grid-column: 1;
-    grid-row: 1;
+    order: 1;
     width: 100%;
     padding: 0;
   }
 
-  .home-hero {
-    grid-template-columns: 1fr;
-    grid-template-rows: auto 1px auto auto auto;
-    padding: 2rem 1.5rem 0;
-    gap: 2rem;
+  .home-brand {
+    width: 100%;
+    max-width: 620px;
   }
 
-
-  .home-left-col {
-    grid-column: 1;
-    grid-row: 3;
-    padding-top: 0;
-    padding-bottom: 1.5rem;
-    border-bottom: 1px solid #1d1d1d;
+  .home-brand img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
   }
 
-  .home-center-col {
-    grid-column: 1;
-    grid-row: 4;
+  .home-divider {
+    order: 2;
+    width: 100%;
   }
 
   .home-intro-card {
-    grid-column: 1;
-    grid-row: 5;
-    min-height: 300px;
+    order: 3;
+    width: 100%;
+    max-width: min(100%, 420px);
+    justify-self: auto;
+    align-self: center;
+    height: auto;
+    min-height: unset;
+    margin-bottom: 1.5rem;
   }
 
-  .home-caption {
-    font-size: 1.1rem;
+  .home-intro-card img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
   }
 
-  .line-1 {
-    font-size: 1.1rem;
-  }
-
-  .line-2 {
-    font-size: 0.85rem;
-  }
-
-  .home-intro-text {
-    font-size: 0.8rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .home {
-    padding-bottom: 2rem;
-  }
-
-  .home-logo-section {
+  .home-left-col {
+    order: 4;
     width: 100%;
     padding: 0;
+    border-bottom: none;
+    align-items: center;
+    text-align: center;
   }
 
-  .home-hero {
-    padding: 2rem 1rem 0;
-    gap: 1.5rem;
+  .home-center-col {
+    order: 5;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .home-object-link {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .home-object-image {
+    max-width: min(78vw, 420px);
+  }
+
+  .home-actions {
+    order: 6;
+    width: 100%;
+    margin-top: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    gap: 0.9rem;
   }
 
   .home-caption {
-    font-size: 1rem;
+    font-size: clamp(1.45rem, 5vw, 2rem);
+    line-height: 1.15;
+    max-width: 18ch;
+    margin: 0 0 1rem;
+    text-align: center;
   }
 
   .line-1 {
-    font-size: 1rem;
-    margin-bottom: 0.15rem;
+    font-size: inherit;
+    margin-bottom: 0.7rem;
   }
 
   .line-2 {
-    font-size: 0.8rem;
+    font-size: clamp(0.95rem, 3.3vw, 1.1rem);
+    line-height: 1.3;
   }
 
   .home-intro-text {
-    font-size: 0.95rem;
-    line-height: 1.6;
+    font-size: 0.85rem;
+    line-height: 1.55;
+    max-width: 30ch;
+    margin: 0;
+    text-align: center;
+  }
+
+  .home-actions {
+    align-items: center;
   }
 
   .home-explore {
     font-size: 0.75rem;
-    gap: 12px;
+    gap: 10px;
   }
 
   .home-explore-text {
@@ -571,65 +572,99 @@ const goToContact = () => {
     font-size: 0.8rem;
   }
 
+
   .home-inquiry {
-    font-size: 0.7rem;
-    padding: 0.35rem 1.8rem;
+    min-width: 0;
+    width: 100%;
+    max-width: 260px;
+    font-size: 0.72rem;
+    padding: 0.75rem 1.4rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .home {
+    padding-bottom: 2rem;
+  }
+
+  .home-hero {
+    padding: 1.5rem 1rem 0;
+    gap: 1.5rem;
+  }
+
+  .home-brand {
+    max-width: 460px;
+  }
+
+  .home-object-image {
+    max-width: min(78vw, 360px);
   }
 
   .home-intro-card {
-    min-height: 250px;
+    max-width: min(100%, 360px);
+  }
+
+  .home-caption {
+    font-size: clamp(1.35rem, 6vw, 1.75rem);
+  }
+
+  .line-2 {
+    font-size: 0.9rem;
+  }
+
+  .home-intro-text {
+    font-size: 0.8rem;
+    line-height: 1.55;
   }
 }
 
 @media (max-width: 480px) {
-  .home-logo-section {
-    width: 100%;
-    padding: 0;
-  }
-
   .home-hero {
-    padding: 1.5rem 0.75rem 0;
-    gap: 1.2rem;
+    padding: 1.25rem 0.75rem 0;
+    gap: 1.25rem;
   }
 
-  .home-left-col {
-    gap: 1rem;
+  .home-brand {
+    max-width: 340px;
   }
 
   .home-caption {
-    font-size: 0.9rem;
+    font-size: 1.35rem;
+    max-width: 18ch;
   }
 
   .line-1 {
-    font-size: 0.9rem;
+    font-size: inherit;
+    margin-bottom: 0.55rem;
   }
 
   .line-2 {
-    font-size: 0.75rem;
+    font-size: 0.85rem;
   }
 
   .home-intro-text {
-    font-size: 0.7rem;
-    line-height: 1.4;
+    font-size: 0.75rem;
+    line-height: 1.5;
+    max-width: 32ch;
   }
 
   .home-actions {
-    gap: 0.8rem;
-    margin-top: 0.5rem;
+    gap: 0.75rem;
   }
 
-  .home-explore {
-    font-size: 0.65rem;
-    gap: 10px;
-  }
-
-  .home-inquiry {
-    font-size: 0.65rem;
-    padding: 0.3rem 1.5rem;
+  .home-object-image {
+    max-width: min(82vw, 300px);
   }
 
   .home-intro-card {
-    min-height: 200px;
+    max-width: min(100%, 320px);
+    margin-bottom: 1.25rem;
+  }
+
+  .home-inquiry {
+    max-width: 240px;
+    font-size: 0.65rem;
+    padding: 0.55rem 1.2rem;
   }
 }
 </style>
