@@ -139,8 +139,8 @@ const goToContact = () => {
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 15rem;
-  padding: 1rem 0 8rem;
+  gap: clamp(6.5rem, 10vh, 10rem);
+  padding: 1rem 0 6rem;
 }
 
 .object-block {
@@ -153,11 +153,15 @@ const goToContact = () => {
 
 .object-image {
   width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 .object-image img {
   display: block;
-  width: 100%;
+  width: auto;
+  max-width: 100%;
+  max-height: min(78vh, 860px);
   height: auto;
   object-fit: contain;
 }
@@ -178,22 +182,23 @@ const goToContact = () => {
 }
 
 .object-image-caption {
-  width: 100%;
-  margin-top: 0.7rem;
+  width: min(100%, 980px);
+  margin: 0.65rem auto 0;
   text-align: right;
   text-transform: uppercase;
   white-space: pre-line;
-  font-size: 0.9rem;
+  font-size: 0.76rem;
   line-height: 1.2;
+  letter-spacing: 0.02em;
 }
 
 .object-paragraph {
-  width: min(100%, 980px);
+  width: min(100%, 64ch);
   margin: 0 auto;
-  padding-top: 150px;
+  padding-top: clamp(3rem, 6vh, 5.5rem);
   text-align: center;
   font-size: 1.02rem;
-  line-height: 1.45;
+  line-height: 1.5;
 }
 
 .object-image-caption :deep(.rich-italic),
@@ -215,11 +220,11 @@ const goToContact = () => {
 
 .scroll-top-button {
   align-self: center;
-  margin-top: -1.5rem;
+  margin-top: -1rem;
   border: none;
   background: transparent;
   color: inherit;
-  font-size: 5rem;
+  font-size: 3rem;
   line-height: 1;
   cursor: pointer;
   padding: 0.25rem 0.6rem;
@@ -236,39 +241,52 @@ const goToContact = () => {
 
 @media (max-width: 768px) {
   .object-floating-actions {
+    position: fixed;
     top: 82px;
-    right: 1.25rem;
+    right: 1rem;
+    bottom: auto;
+    z-index: 40;
   }
 
   .object-inquiry {
-    font-size: 0.86rem;
-    padding: 0.4rem 1rem;
+    font-size: 0.78rem;
+    padding: 0.55rem 1.1rem;
   }
 
   .object-page {
-    gap: 5rem;
-    padding: 5rem 0 5rem;
+    gap: 4.5rem;
+    padding: 4rem 1rem 5rem;
   }
 
-  .object-paragraph,
+
   .object-block {
     width: 100%;
   }
 
+  .object-image img {
+    max-width: 100%;
+    max-height: none;
+  }
+
   .object-image-caption {
-    text-align: right;
+    width: 100%;
+    font-size: 0.72rem;
+    padding: 0 0.25rem;
   }
 
   .object-paragraph {
-    padding-top: 5rem;
-    font-size: 0.95rem;
+    width: min(100%, 34ch);
+    padding-top: 3rem;
+    font-size: 0.85rem;
+    line-height: 1.55;
   }
 }
 
 @media (max-width: 390px) {
-  .object-floating-actions {
+   .object-floating-actions {
     top: 74px;
     right: 1rem;
+    bottom: auto;
   }
 
   .object-inquiry {
@@ -278,11 +296,11 @@ const goToContact = () => {
 
   .object-page {
     gap: 4rem;
-    padding: 4rem 0;
+    padding: 4rem 1rem 5rem;
   }
 
   .object-paragraph {
-    padding-top: 4rem;
+    padding-top: 3rem;
   }
 }
 </style>
