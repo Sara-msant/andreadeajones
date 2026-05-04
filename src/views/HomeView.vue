@@ -383,9 +383,49 @@ const goToContact = () => {
   object-fit: contain;
 }
 
+@media (max-width: 1650px) and (min-width: 1201px) {
+  .home-hero {
+    grid-template-columns: minmax(0, 1fr) minmax(340px, 500px);
+    width: min(100%, 1600px);
+    column-gap: 1.75rem;
+    padding: 2.5rem 3.5rem 1rem;
+  }
 
+  .home-main-area {
+    max-width: none;
+  }
 
-@media (max-width: 1450px) and (min-width: 1201px) {
+  .home-intro-card {
+    max-width: 500px;
+  }
+
+  .home-content-row {
+    grid-template-columns: minmax(320px, 0.85fr) minmax(380px, 1.25fr);
+    column-gap: 1rem;
+  }
+
+  .home-center-col {
+    justify-content: center;
+    overflow: visible;
+  }
+
+  .home-object-image {
+    max-width: 640px;
+    transform: scale(1.16);
+    transform-origin: top center;
+  }
+
+  .home-object-link:hover .home-object-image {
+    transform: translateY(-4px) scale(1.16);
+  }
+
+  .home-brand,
+  .home-brand img {
+    max-width: 760px;
+  }
+}
+
+@media (max-width: 1450px) and (min-width: 1025px)  {
   .home-hero {
     grid-template-columns: minmax(0, 1.15fr) minmax(320px, 430px);
     column-gap: 1.5rem;
@@ -401,7 +441,13 @@ const goToContact = () => {
   }
 
   .home-object-image {
-    max-width: 560px;
+    max-width: 600px;
+    transform: scale(1.12);
+    transform-origin: top center;
+  }
+
+  .home-object-link:hover .home-object-image {
+    transform: translateY(-4px) scale(1.12);
   }
     .home-brand {
     max-width: 650px;
