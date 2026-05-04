@@ -383,25 +383,127 @@ const goToContact = () => {
   object-fit: contain;
 }
 
-@media (max-width: 1650px) and (min-width: 1201px) {
+/* Large laptops — MacBook 15/16, around 1461px–1650px */
+@media (max-width: 1650px) and (min-width: 1461px) {
   .home-hero {
-    grid-template-columns: minmax(0, 1fr) minmax(340px, 500px);
-    width: min(100%, 1600px);
-    column-gap: 1.75rem;
+    grid-template-columns: minmax(0, 1fr) minmax(340px, 450px);
+    width: min(100%, 1580px);
+    column-gap: 1.5rem;
     padding: 2.5rem 3.5rem 1rem;
   }
 
   .home-main-area {
     max-width: none;
+    row-gap: 1.6rem;
+  }
+
+  .home-brand,
+  .home-brand img {
+    max-width: 740px;
   }
 
   .home-intro-card {
-    max-width: 500px;
+    max-width: 450px;
   }
 
   .home-content-row {
-    grid-template-columns: minmax(320px, 0.85fr) minmax(380px, 1.25fr);
+    grid-template-columns: minmax(300px, 0.82fr) minmax(400px, 1.18fr);
     column-gap: 1rem;
+    padding-top: 0.85rem;
+  }
+
+  .home-caption {
+    font-size: clamp(2.05rem, 2.7vw, 2.35rem);
+    max-width: 13ch;
+  }
+
+  .line-1 {
+    font-size: inherit;
+    margin-bottom: 1rem;
+  }
+
+  .line-2 {
+    font-size: 1.2rem;
+  }
+
+  .home-intro-text {
+    font-size: 0.9rem;
+    line-height: 1.55;
+    max-width: 32ch;
+  }
+
+  .home-center-col {
+    justify-content: center;
+    overflow: visible;
+  }
+
+  .home-object-link {
+    width: 100%;
+    overflow: visible;
+  }
+
+  .home-object-image {
+    max-width: 660px;
+    transform: scale(1.12);
+    transform-origin: top center;
+  }
+
+  .home-object-link:hover .home-object-image {
+    transform: translateY(-4px) scale(1.12);
+  }
+
+  .home-actions {
+    padding-bottom: 0;
+  }
+}
+
+/* Smaller laptops — around 1201px–1460px */
+@media (max-width: 1460px) and (min-width: 1201px) {
+  .home-hero {
+    grid-template-columns: minmax(0, 1fr) minmax(320px, 430px);
+    width: min(100%, 1400px);
+    column-gap: 1.4rem;
+    padding: 2.5rem 2.75rem 1rem;
+  }
+
+  .home-main-area {
+    max-width: none;
+    row-gap: 1.5rem;
+  }
+
+  .home-brand,
+  .home-brand img {
+    max-width: 650px;
+  }
+
+  .home-intro-card {
+    max-width: 430px;
+  }
+
+  .home-content-row {
+    grid-template-columns: minmax(290px, 0.88fr) minmax(340px, 1.12fr);
+    column-gap: 1rem;
+    padding-top: 0.85rem;
+  }
+
+  .home-caption {
+    font-size: 1.95rem;
+    max-width: 13ch;
+  }
+
+  .line-1 {
+    font-size: inherit;
+    margin-bottom: 0.9rem;
+  }
+
+  .line-2 {
+    font-size: 1.08rem;
+  }
+
+  .home-intro-text {
+    font-size: 0.86rem;
+    line-height: 1.55;
+    max-width: 31ch;
   }
 
   .home-center-col {
@@ -410,82 +512,88 @@ const goToContact = () => {
   }
 
   .home-object-image {
-    max-width: 640px;
-    transform: scale(1.16);
+    max-width: 600px;
+    transform: scale(1.08);
     transform-origin: top center;
   }
 
   .home-object-link:hover .home-object-image {
-    transform: translateY(-4px) scale(1.16);
+    transform: translateY(-4px) scale(1.08);
+  }
+
+  .home-actions {
+    padding-bottom: 0;
+  }
+}
+
+/* Tablet landscape / very small laptops — 1025px–1200px */
+@media (max-width: 1200px) and (min-width: 1025px) {
+  .home-hero {
+    grid-template-columns: minmax(0, 1fr) minmax(280px, 360px);
+    padding: 2.5rem 2rem 1rem;
+    column-gap: 1.5rem;
   }
 
   .home-brand,
   .home-brand img {
-    max-width: 760px;
-  }
-}
-
-@media (max-width: 1450px) and (min-width: 1025px)  {
-  .home-hero {
-    grid-template-columns: minmax(0, 1.15fr) minmax(320px, 430px);
-    column-gap: 1.5rem;
+    max-width: 560px;
   }
 
   .home-intro-card {
-    max-width: 430px;
+    max-width: 360px;
   }
 
   .home-content-row {
-    grid-template-columns: minmax(320px, 1.1fr) minmax(240px, 0.9fr);
+    grid-template-columns: minmax(260px, 0.95fr) minmax(300px, 1.05fr);
     column-gap: 1rem;
   }
 
+  .home-caption {
+    font-size: 1.65rem;
+    max-width: 13ch;
+  }
+
+  .line-1 {
+    font-size: inherit;
+    margin-bottom: 0.8rem;
+  }
+
+  .line-2 {
+    font-size: 0.98rem;
+  }
+
+  .home-intro-text {
+    font-size: 0.8rem;
+    line-height: 1.5;
+    max-width: 30ch;
+  }
+
+  .home-center-col {
+    justify-content: center;
+  }
+
   .home-object-image {
-    max-width: 600px;
-    transform: scale(1.12);
+    max-width: 500px;
+    transform: scale(1.04);
     transform-origin: top center;
   }
 
   .home-object-link:hover .home-object-image {
-    transform: translateY(-4px) scale(1.12);
-  }
-    .home-brand {
-    max-width: 650px;
+    transform: translateY(-4px) scale(1.04);
   }
 
-  .home-brand img {
-    max-width: 650px;
-  }
-}
-
-@media (max-width: 1200px) and (min-width: 1025px){
-
-  .home-hero {
-    grid-template-columns: minmax(0, 2fr) minmax(300px, 0.9fr);
-    padding: 3rem 2rem 1rem;
-    column-gap: 2rem;
-    row-gap: 3rem;
+  .home-actions {
+    padding-bottom: 0;
   }
 
-  .home-caption {
-    font-size: 1.75rem;
-    max-width: 11ch;
+  .home-center-col {
+    justify-content: center;
+    overflow: visible;
   }
 
-  .line-1 {
-    font-size: 1.75rem;
-  }
-
-  .line-2 {
-    font-size: 1.05rem;
-  }
-
-  .home-intro-text {
-    font-size: 0.85rem;
-  }
-
-  .home-intro-card {
-    min-height: unset;
+  .home-object-link {
+    width: 100%;
+    overflow: visible;
   }
 }
 
