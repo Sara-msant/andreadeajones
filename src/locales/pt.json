@@ -24,8 +24,10 @@
   "home": {
     "caption": {
       "line1": "“Um objeto com estrutura e atitude”",
-      "line2": "Um banco feito em cortiça portuguesa"
-    },    "intro": "Apresentando YOMARTINS,\no primeiro objeto de Andrea Dea Jones.\nUm banco em cortiça portuguesa.\nCriado por uma mente belga.",    "explore": "Explorar",
+      "line2": "Um banco baixo escultórico\n feito em Portugal em cortiça."
+    },
+    "intro": "YOMARTINS é o primeiro objeto de Andrea Dea Jones.\n Um objeto compacto, com peso, suavidade e presença.",
+    "explore": "Explorar",
     "purchaseInquiry": "Compra // Pedido",
     "copyright": "© Andrea Dea Jones. Todos os direitos reservados.",
     "subscribe": "Subscrever",
@@ -38,8 +40,8 @@
   },
   "collections": {
     "introAria": "Texto de introdução das coleções",
-    "introLine1": "Cada coleção reúne uma família de objetos.",
-    "introLine2": "Ligados por uma linguagem comum de matéria, estrutura e presença.",
+    "introLine1": "Objetos agrupados por material, estrutura e presença.",
+    "introLine2": "Cada coleção começa com uma atitude comum.",
     "items": {
       "yomartins": {
         "description": "Uma coleção moldada pela cortiça, pela estrutura e pela presença.",
@@ -98,7 +100,7 @@
   },
   "contact": {
     "title": "ENTRE EM CONTACTO",
-    "description": "Para pedidos, encomendas ou colaborações, use o formulário abaixo ou contacte-nos diretamente. Todas as mensagens recebem resposta pessoal.",
+    "description": "Para pedidos de compra, encomendas ou colaborações, use o formulário abaixo. Todas as mensagens recebem resposta pessoal.",
     "name": "Nome",
     "email": "Email",
     "interestLabel": "Interesse em",
@@ -124,13 +126,13 @@
     }
   },
   "about": {
-    "portraitAlt": "Retrato de Andrea Dea Jones",
+    "portraitAlt": "RACHEL CAMBIER, fundadora de Andrea Dea Jones",
     "portraitCaption": "RACHEL CAMBIER / FUNDADORA",
     "paragraphs": {
       "p1": "Andrea Dea Jones é uma prática de design centrada em objetos, matéria e forma.",
       "p2": "Criada por Rachel Cambier, cruza o olhar de uma arquiteta de interiores com um universo crescente de objetos definidos por estrutura, presença e carácter.",
       "p3": "Com formação em arquitetura de interiores na Bélgica, Rachel desenvolveu a sua prática entre a Bélgica, França e Portugal, movendo-se entre interiores, design à medida e criação de objetos.",
-      "p4": "Hoje, a partir de Portugal, trabalha entre espaços e objetos, com um interesse particular por peças que se afirmam pela sua materialidade, pelo seu lado tátil e por uma expressão contida mas distinta.",
+      "p4": "Hoje, a partir de Portugal, trabalha entre espaços e objetos, com um interesse particular por peças que se sentem enraizadas, táteis e discretamente expressivas.",
       "p5": "Rachel Cambier é também cofundadora do JORA Studio, uma prática de arquitetura e design de interiores sediada no Algarve.",
       "p6": ""
     },

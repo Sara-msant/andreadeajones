@@ -24,8 +24,10 @@
   "home": {
     "caption": {
       "line1": "“Un objet avec structure et attitude”",
-      "line2": "Un tabouret bas fabriqué en liège portugais"
-    },    "intro": "Présentation de YOMARTINS,\nle premier objet d'Andrea Dea Jones.\nUn tabouret bas en liège portugais.\nConçu par un esprit belge.",    "explore": "Explorer",
+      "line2": "Un tabouret bas sculptural\n fabriqué au Portugal en liège."
+    },
+    "intro": "YOMARTINS est le premier objet d’Andrea Dea Jones.\n Un objet compact, avec du poids, de la douceur et de la présence.",
+    "explore": "Explorer",
     "purchaseInquiry": "Achat // Demande",
     "copyright": "© Andrea Dea Jones. Tous droits réservés.",
     "subscribe": "S'abonner",
@@ -38,8 +40,8 @@
   },
   "collections": {
     "introAria": "Texte d'introduction des collections",
-    "introLine1": "Chaque collection réunit une famille d'objets.",
-    "introLine2": "Reliés par un langage commun de matière, de structure et de présence.",
+    "introLine1": "Objets regroupés par matière, structure et présence.",
+    "introLine2": "Chaque collection commence par une attitude commune.",
     "items": {
       "yomartins": {
         "description": "Une collection façonnée par le liège, la structure et la présence.",
@@ -94,11 +96,11 @@
       "title": "Édition Galerie",
       "description": "L'Édition Galerie est produite en série limitée. Chaque version est définie par une combinaison précise de matériaux et de finitions, choisie comme une interprétation spécifique de l'objet."
     },
-    "note": "Toutes les editions ne sont pas disponibles pour chaque objet. Certaines pieces existent uniquement en Édition Studio, d'autres uniquement en Édition Galerie."
-  },
+    "note": "Toutes les éditions ne sont pas disponibles pour chaque objet. Certaines pièces existent uniquement en Édition Studio, d'autres uniquement en Édition Galerie."
+    },
   "contact": {
     "title": "PRENONS CONTACT",
-    "description": "Pour les demandes, commandes ou collaborations, veuillez utiliser le formulaire ci-dessous ou nous contacter directement. Chaque message reçoit une réponse personnelle.",
+    "description": "Pour les demandes d’achat, les commandes ou les collaborations, veuillez utiliser le formulaire ci-dessous. Chaque message reçoit une réponse personnelle.",
     "name": "Nom",
     "email": "E-mail",
     "interestLabel": "Intérêt pour",
@@ -124,13 +126,13 @@
     }
   },
   "about": {
-    "portraitAlt": "Portrait d'Andrea Dea Jones",
+    "portraitAlt": "RACHEL CAMBIER, fondatrice d’Andrea Dea Jones",
     "portraitCaption": "RACHEL CAMBIER / FONDATRICE",
     "paragraphs": {
       "p1": "Andrea Dea Jones est une pratique de design centrée sur les objets, la matière et la forme.",
-      "p2": "Créée par Rachel Cambier, elle associe le regard d’une architecte d’intérieur à un univers grandissant d’objets définis par la structure, la présence et le caractère..",
+      "p2": "Créée par Rachel Cambier, elle associe le regard d’une architecte d’intérieur à un univers grandissant d’objets définis par la structure, la présence et le caractère.",
       "p3": "Formée en architecture d’intérieur en Belgique, Rachel a développé sa pratique entre la Belgique, la France et le Portugal, évoluant entre intérieurs, design sur mesure et création d’objets.",
-      "p4": "Aujourd’hui installée au Portugal, elle travaille entre espaces et objets, avec un intérêt particulier pour des pièces affirmées par leur matérialité, leur qualité tactile et une expression à la fois retenue et singulière.",
+      "p4": "Aujourd’hui installée au Portugal, elle travaille entre espaces et objets, avec un intérêt particulier pour des pièces ancrées, tactiles et discrètement expressives.",
       "p5": "Rachel Cambier est également cofondatrice de JORA Studio, une pratique d’architecture et de design d’intérieur basée en Algarve.",
       "p6": ""
     },

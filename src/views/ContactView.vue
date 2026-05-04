@@ -171,11 +171,11 @@ const handleSubmit = async () => {
 <style scoped>
 .contact-page {
   width: 100%;
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: clamp(10rem, 6vw, 5rem);
-  padding-bottom: 10rem;
+  padding: clamp(3rem, 5vh, 5rem) 1rem clamp(4rem, 6vh, 6rem);
 }
 
 .contact-header {
@@ -190,17 +190,17 @@ const handleSubmit = async () => {
 }
 
 .contact-description {
-  margin-top: 3.2rem;
+  margin-top: clamp(1.4rem, 2.5vh, 2.2rem);
   font-size: clamp(0.8rem, 1vw, 0.92rem);
   line-height: 1.6;
-  max-width: 720px;
+  max-width: 620px;
   margin-left: auto;
   margin-right: auto;
 }
 
 .contact-form {
   width: min(100%, 560px);
-  margin-top: clamp(2.2rem, 7vw, 5rem);
+  margin-top: clamp(1.8rem, 4vh, 3rem);
   display: flex;
   flex-direction: column;
   gap: 0.9rem;
@@ -231,7 +231,7 @@ const handleSubmit = async () => {
 
 .form-textarea {
   resize: vertical;
-  min-height: 180px;
+  min-height: 150px;
 }
 
 .form-input:focus,
@@ -251,21 +251,19 @@ const handleSubmit = async () => {
 }
 
 .submit-btn {
-  margin: 1.8rem auto 0;
+  margin: 1.6rem auto 0;
   border: none;
   border-radius: 0;
   background: #6dff14;
   color: #1d1d1d;
-  width: 110px;
+  min-width: 130px;
   height: 38px;
+  padding: 0 1.4rem;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   font-family: var(--font-body);
-  font-size: 0.88rem;
+  font-size: 0.82rem;
   cursor: pointer;
-  transition:
-    filter 0.2s ease,
-    transform 0.2s ease;
 }
 
 .submit-btn:hover:not(:disabled) {
@@ -295,21 +293,37 @@ const handleSubmit = async () => {
 
 @media (max-width: 768px) {
   .contact-page {
-    padding-top: 5rem;
+    padding: 4rem 1rem 5rem;
   }
 
   .contact-description {
-    margin-top: 1.6rem;
+    margin-top: 1.5rem;
+    max-width: 34ch;
   }
 
   .contact-form {
+    width: min(100%, 360px);
     margin-top: 2rem;
+  }
+
+  .form-textarea {
+    min-height: 150px;
   }
 }
 
 @media (max-width: 390px) {
   .contact-page {
-    padding-top: 4rem;
+    padding-top: 3.5rem;
+  }
+
+  .contact-form {
+    margin-top: 1.6rem;
+  }
+}
+
+@media (max-width: 390px) {
+  .contact-page {
+    padding-top: 3.5rem;
   }
 
   .contact-form {

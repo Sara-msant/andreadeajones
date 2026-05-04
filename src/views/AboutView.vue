@@ -40,45 +40,22 @@ const { t } = useI18n()
 </script>
 
 <style scoped>
+
 .about-page {
   width: 100%;
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: clamp(10rem, 4vw, 4rem) 0 2rem;
-}
-
-.about-portrait {
-  /* photo autoportrait*/
-  width: min(100%, 430px);
-  height: auto;
-  display: block;
-  margin-bottom: clamp(2rem, 1vw, 4rem);
-}
-
-.about-copy {
-  width: min(100%, 980px);
-  text-align: center;
-  font-size: clamp(0.72rem, 0.85vw, 0.82rem);
-  line-height: 1.35;
-  letter-spacing: 0.02em;
-}
-
-.about-copy p + p {
-  margin-top: clamp(1.15rem, 2vw, 1.75rem);
-}
-
-.about-copy a {
-  color: inherit;
-  text-decoration: underline;
-  text-underline-offset: 2px;
+  padding: clamp(1.25rem, 2.5vh, 2rem) 1rem 1.5rem;
 }
 
 .about-portrait-wrapper {
-  position: relative;
-  width: min(100%, 430px);
-  margin-bottom: clamp(10rem, 5vw, 4rem);
+  width: 100%;
+  max-width: 360px;
+  margin: 0 auto clamp(1.75rem, 3vh, 2.5rem);
 }
+
 
 .about-portrait {
   width: 100%;
@@ -87,43 +64,68 @@ const { t } = useI18n()
 }
 
 .about-portrait-title {
-  /* ANDREA DEA JONES subtitle*/
   text-align: right;
-  margin-top: 0.1rem;
+  margin-top: 0.25rem;
   font-size: 0.75rem;
   letter-spacing: 0.02em;
   opacity: 0.8;
 }
 
+.about-copy {
+  width: 100%;
+  max-width: 680px;
+  margin: 0 auto;
+  text-align: center;
+  font-size: clamp(0.78rem, 0.82vw, 0.88rem);
+  line-height: 1.42;
+  letter-spacing: 0.02em;
+}
+
+.about-copy p {
+  margin: 0;
+}
+
+.about-copy p + p {
+  margin-top: 0.75rem;
+}
+
+.about-copy a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
 @media (max-width: 768px) {
   .about-page {
-    padding-top: 5rem;
-    padding-bottom: 5rem;
+    padding: 4rem 1rem 4rem;
   }
 
   .about-portrait-wrapper {
-    width: min(100%, 340px);
-  }
-
-  .about-portrait {
-    width: 100%;
+    width: min(340px, 100%);
+    margin-bottom: 3rem;
   }
 
   .about-copy {
-    font-size: 0.78rem;
-    line-height: 1.45;
+    width: min(36ch, 100%);
+    font-size: 0.82rem;
+    line-height: 1.5;
     letter-spacing: 0.01em;
+  }
+
+  .about-copy p + p {
+    margin-top: 1rem;
   }
 }
 
 @media (max-width: 390px) {
   .about-page {
-    padding-top: 4rem;
-    padding-bottom: 4rem;
+    padding-top: 3.5rem;
+    padding-bottom: 3.5rem;
   }
 
   .about-portrait-wrapper {
-    width: min(100%, 300px);
+    width: min(300px, 100%);
+    margin-bottom: 2.5rem;
   }
 }
 </style>
