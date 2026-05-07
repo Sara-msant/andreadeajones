@@ -24,9 +24,9 @@
   "home": {
     "caption": {
       "line1": "“Un objet avec structure et attitude”",
-      "line2": "Un tabouret bas sculptural\n fabriqué au Portugal en liège."
+      "line2": "Sculpté en liège portugais, ce tabouret bas allie matière naturelle et présence sculpturale."
     },
-    "intro": "YOMARTINS est le premier objet d’Andrea Dea Jones.\n Un objet compact, avec du poids, de la douceur et de la présence.",
+    "intro": "YOMARTINS, première signature d’Andrea Dea Jones. \nUn tabouret bas made in Portugal, empreint d’une vision belge.",
     "explore": "Explorer",
     "purchaseInquiry": "Achat // Demande",
     "copyright": "© Andrea Dea Jones. Tous droits réservés.",
@@ -40,7 +40,7 @@
   },
   "collections": {
     "introAria": "Texte d'introduction des collections",
-    "introLine1": "Objets regroupés par matière, structure et présence.",
+    "introLine1": "Chaque collection réunit des objets qui dialoguent par leur matière et leur présence.",
     "introLine2": "Chaque collection commence par une attitude commune.",
     "items": {
       "yomartins": {
@@ -100,7 +100,7 @@
     },
   "contact": {
     "title": "PRENONS CONTACT",
-    "description": "Pour les demandes d’achat, les commandes ou les collaborations, veuillez utiliser le formulaire ci-dessous. Chaque message reçoit une réponse personnelle.",
+    "description": "Pour les demandes d’achat, les commandes ou les collaborations, veuillez remplir le formulaire ci-dessous. Chaque message fera l’objet d’une réponse personnelle.",
     "name": "Nom",
     "email": "E-mail",
     "interestLabel": "Intérêt pour",
@@ -129,11 +129,11 @@
     "portraitAlt": "RACHEL CAMBIER, fondatrice d’Andrea Dea Jones",
     "portraitCaption": "RACHEL CAMBIER / FONDATRICE",
     "paragraphs": {
-      "p1": "Andrea Dea Jones est une pratique de design centrée sur les objets, la matière et la forme.",
+      "p1": "Andrea Dea Jones est un studio de design dédié à l’objet, à la matière et à la forme.",
       "p2": "Créée par Rachel Cambier, elle associe le regard d’une architecte d’intérieur à un univers grandissant d’objets définis par la structure, la présence et le caractère.",
       "p3": "Formée en architecture d’intérieur en Belgique, Rachel a développé sa pratique entre la Belgique, la France et le Portugal, évoluant entre intérieurs, design sur mesure et création d’objets.",
       "p4": "Aujourd’hui installée au Portugal, elle travaille entre espaces et objets, avec un intérêt particulier pour des pièces ancrées, tactiles et discrètement expressives.",
-      "p5": "Rachel Cambier est également cofondatrice de JORA Studio, une pratique d’architecture et de design d’intérieur basée en Algarve.",
+      "p5": "Rachel est également cofondatrice de JORA Studio, une pratique d’architecture et de design d’intérieur basée en Algarve.",
       "p6": ""
     },
     "agencyIntro": "Découvrir JORA Studio",

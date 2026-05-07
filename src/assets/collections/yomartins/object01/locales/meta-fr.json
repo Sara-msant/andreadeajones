@@ -27,9 +27,9 @@
     "material_variations": {
       "caption": [
         "Variations disponibles :",
-        "Liège clair",
-        "Liège brun",
-        "Liège mixte"
+        "Liège naturel",
+        "Liège brun intense",
+        "Composition mixte de liège"
       ],
       "text": "YO*01 est disponible dans une sélection de compositions en liège, du liège naturel clair aux variations plus foncées et aux mélanges de liège.\n Chaque version modifie le caractère de l’objet tout en conservant la même silhouette compacte, la même géométrie douce et la même présence sculpturale."
     },
@@ -37,13 +37,13 @@
       "caption": [
         "CHÊNES-LIÈGES."
       ],
-      "text": "Le liège est renouvelable, résistant, chaud au toucher et profondément lié au paysage portugais. Pour YO*01, il devient plus qu’un matériau — il devient structure, surface et identité."
+      "text": "Le liège est renouvelable, résistant, chaud au toucher et profondément lié au paysage portugais. Pour YO*01, il devient plus qu’un matériau, il devient structure, surface et identité."
     },
     "craftsmanship": {
       "caption": [
         "SAVOIR-FAIRE."
       ],
-      "text": "Conçu comme un objet fonctionnel à l’intention sculpturale, YO*01 réunit honnêteté matérielle, artisanat local et langage visuel affirmé.\n Il est pensé pour des intérieurs qui accueillent des objets de caractère — des pièces utiles, tactiles et discrètement impossibles à ignorer."
+      "text": "Conçu comme un objet fonctionnel à l’intention sculpturale, YO*01 associe honnêteté matérielle, artisanat local et approche durable dans un langage visuel affirmé. Il s’intègre dans des intérieurs qui privilégient des pièces de caractère, utiles, tactiles et subtilement remarquables."
     }
   },
   "details": {
@@ -81,7 +81,7 @@
   },
   "finalCta": {
     "title": "Intéressé par YO*01 ?",
-    "text": "YO*01 est disponible. Pour les variations de liège, les prix et les détails d’expédition, envoyez une demande d’achat. L’expédition peut prendre jusqu’à 4 semaines.",
+    "text": "YO*01 est disponible. Pour les différentes variantes de liège, les tarifs et les modalités d’expédition, merci d’envoyer une demande d’achat. Le délai d’expédition peut aller jusqu’à 4 semaines.",
     "buttonLabel": "ACHAT // DEMANDE"
   }
 }

@@ -1,5 +1,5 @@
 {
-    "description": "Une collection faconnee par le liege, la structure et la presence.",
+    "description": "Une collection sculpturale façonnée en liège, alliant matière naturelle et engagement durable.",
     "placeholders": {
         "object02": {
             "title": "Yo*02",
@@ -7,7 +7,7 @@
         },
         "moreObjects": {
             "title": "Plus d'objets",
-            "summary": "Pieces a venir"
+            "summary": "Pièces a venir"
         }
     }
 }
